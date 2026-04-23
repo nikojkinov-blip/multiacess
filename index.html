@@ -1,200 +1,366 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>AI Access Bot</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
+        :root {
+            --bg: #0f0f1a;
+            --card: #1a1a2e;
+            --accent: #6c5ce7;
+            --accent2: #a855f7;
+            --green: #10b981;
+            --yellow: #f59e0b;
+            --red: #ef4444;
+            --text: #f1f5f9;
+            --text2: #94a3b8;
+            --border: rgba(255,255,255,0.06);
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #1a1a2e;
-            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
             min-height: 100vh;
-            padding: 15px;
+            padding-bottom: 20px;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
         }
+
+        /* Header */
         .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            padding: 32px 20px 24px;
             text-align: center;
-            padding: 20px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            margin-bottom: 20px;
+            border-radius: 0 0 32px 32px;
+            position: relative;
+            overflow: hidden;
         }
-        .header h1 { font-size: 22px; }
-        .header .emoji { font-size: 48px; }
-        .header p { opacity: 0.7; font-size: 14px; margin-top: 5px; }
-        
-        .card {
-            background: rgba(255,255,255,0.08);
-            border-radius: 16px;
-            padding: 18px;
-            margin-bottom: 12px;
-            border: 1px solid rgba(255,255,255,0.1);
+        .header::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            animation: moveGrid 20s linear infinite;
         }
-        .card h3 { font-size: 16px; margin-bottom: 12px; }
-        
-        .stats-row {
+        @keyframes moveGrid {
+            from { transform: translate(0, 0); }
+            to { transform: translate(20px, 20px); }
+        }
+        .header-content { position: relative; z-index: 1; }
+        .header .emoji { font-size: 48px; animation: bounce 2s ease infinite; }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .header h1 { font-size: 22px; font-weight: 700; margin-top: 8px; }
+        .header p { font-size: 13px; opacity: 0.85; margin-top: 4px; }
+
+        /* Tabs */
+        .tabs {
             display: flex;
+            gap: 4px;
+            margin: 20px 16px;
+            background: var(--card);
+            border-radius: 16px;
+            padding: 4px;
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+            border: 1px solid var(--border);
+        }
+        .tab {
+            flex: 1;
+            padding: 12px 8px;
+            border: none;
+            border-radius: 12px;
+            background: transparent;
+            color: var(--text2);
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        .tab.active {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+        }
+
+        /* Content */
+        .tab-content { display: none; padding: 0 16px; }
+        .tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 14px;
+            border: 1px solid var(--border);
+            transition: transform 0.2s ease;
+        }
+        .card:active { transform: scale(0.98); }
+        .card h3 {
+            font-size: 16px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card h3 .icon { font-size: 20px; }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
         }
         .stat-box {
-            flex: 1;
-            background: rgba(255,255,255,0.1);
-            border-radius: 12px;
-            padding: 15px 10px;
+            background: var(--card);
+            border-radius: 16px;
+            padding: 16px 12px;
             text-align: center;
+            border: 1px solid var(--border);
         }
-        .stat-box .value { font-size: 24px; font-weight: bold; }
-        .stat-box .label { font-size: 11px; opacity: 0.7; margin-top: 3px; }
-        
+        .stat-box .value {
+            font-size: 26px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .stat-box .label {
+            font-size: 11px;
+            color: var(--text2);
+            margin-top: 4px;
+        }
+
+        /* XP Bar */
+        .xp-bar {
+            background: rgba(255,255,255,0.08);
+            border-radius: 12px;
+            height: 10px;
+            margin-top: 12px;
+            overflow: hidden;
+        }
+        .xp-fill {
+            height: 100%;
+            border-radius: 12px;
+            background: linear-gradient(90deg, var(--accent), var(--accent2));
+            transition: width 0.5s ease;
+            position: relative;
+        }
+        .xp-fill::after {
+            content: '';
+            position: absolute;
+            right: 0; top: 0; bottom: 0;
+            width: 20px;
+            background: white;
+            opacity: 0.3;
+            border-radius: 0 12px 12px 0;
+        }
+
+        /* Buttons */
         .btn {
             display: block;
             width: 100%;
             padding: 14px;
             border: none;
-            border-radius: 12px;
+            border-radius: 14px;
             font-size: 15px;
+            font-weight: 600;
             cursor: pointer;
             margin-bottom: 8px;
-            font-weight: 600;
-            transition: all 0.2s;
+            transition: all 0.2s ease;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
-        .btn:active { transform: scale(0.97); opacity: 0.8; }
-        .btn-blue { background: #4e73df; color: white; }
-        .btn-green { background: #1cc88a; color: white; }
-        .btn-purple { background: #764ba2; color: white; }
-        .btn-outline { 
-            background: transparent; 
-            border: 1px solid rgba(255,255,255,0.3); 
-            color: white; 
+        .btn:active {
+            transform: scale(0.96);
+            opacity: 0.85;
         }
-        
-        .nav-tabs {
-            display: flex;
-            gap: 5px;
-            margin-bottom: 18px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 12px;
-            padding: 4px;
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: white;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
         }
-        .nav-tab {
-            flex: 1;
-            padding: 12px 8px;
-            border: none;
-            border-radius: 10px;
+        .btn-success { background: var(--green); color: white; }
+        .btn-warning { background: var(--yellow); color: #1a1a2e; }
+        .btn-outline {
             background: transparent;
-            color: rgba(255,255,255,0.6);
-            cursor: pointer;
-            font-size: 13px;
-            text-align: center;
-            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.15);
+            color: var(--text);
         }
-        .nav-tab.active { 
-            background: #4e73df; 
-            color: white; 
-            box-shadow: 0 2px 10px rgba(78,115,223,0.3);
-        }
-        
-        .tab-content { display: none; }
-        .tab-content.active { display: block; }
-        
+
+        /* Key Box */
         .key-box {
             background: rgba(0,0,0,0.3);
-            padding: 12px;
-            border-radius: 8px;
-            font-family: monospace;
+            padding: 14px;
+            border-radius: 12px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
             word-break: break-all;
-            font-size: 13px;
             margin-top: 8px;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid var(--border);
+            position: relative;
         }
-        
+        .key-box .copy-btn {
+            position: absolute;
+            right: 8px;
+            top: 8px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 11px;
+            cursor: pointer;
+        }
+
+        /* Achievements */
         .achievement-tag {
             display: inline-block;
-            background: rgba(255,255,255,0.12);
-            padding: 6px 14px;
+            background: rgba(255,255,255,0.06);
+            padding: 8px 14px;
             border-radius: 20px;
             margin: 3px;
             font-size: 13px;
-            border: 1px solid rgba(255,255,255,0.15);
+            border: 1px solid var(--border);
         }
-        
+
+        /* Orders */
         .order-item {
-            background: rgba(255,255,255,0.05);
-            padding: 12px;
-            border-radius: 10px;
+            background: rgba(255,255,255,0.03);
+            padding: 14px;
+            border-radius: 12px;
             margin-bottom: 8px;
-            border-left: 3px solid #4e73df;
+            border-left: 3px solid var(--accent);
         }
-        
-        .popup {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.8);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-        .popup-content {
-            background: #2a2a4a;
-            border-radius: 16px;
-            padding: 25px;
-            margin: 20px;
-            max-width: 400px;
-            width: 100%;
-        }
-        .popup h3 { margin-bottom: 15px; }
-        .popup input, .popup select {
-            width: 100%;
-            padding: 12px;
-            border-radius: 10px;
-            border: 1px solid rgba(255,255,255,0.2);
-            background: rgba(255,255,255,0.1);
-            color: white;
-            margin-bottom: 10px;
-            font-size: 15px;
-        }
-        .popup select option { background: #2a2a4a; color: white; }
-        
+        .order-item.completed { border-left-color: var(--green); }
+        .order-item.pending { border-left-color: var(--yellow); }
+
+        /* Toast */
         .toast {
             position: fixed;
-            bottom: 20px;
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
-            background: #1cc88a;
+            background: var(--green);
             color: white;
             padding: 12px 24px;
-            border-radius: 12px;
+            border-radius: 14px;
             font-weight: 600;
+            font-size: 14px;
             z-index: 999;
             animation: slideUp 0.3s ease;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
         }
         @keyframes slideUp {
             from { transform: translateX(-50%) translateY(100px); opacity: 0; }
             to { transform: translateX(-50%) translateY(0); opacity: 1; }
         }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .modal.active { display: flex; }
+        .modal-content {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 24px;
+            max-width: 400px;
+            width: 100%;
+            border: 1px solid var(--border);
+        }
+        .modal h3 { margin-bottom: 16px; }
+        .modal textarea {
+            width: 100%;
+            height: 100px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text);
+            padding: 12px;
+            font-family: inherit;
+            font-size: 14px;
+            resize: vertical;
+        }
+
+        /* Pulse Animation */
+        .pulse {
+            animation: pulse 2s ease infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 30px;
+            color: var(--text2);
+        }
+        .loading .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 12px;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
+
+    <!-- Header -->
     <div class="header">
-        <div class="emoji">🤖</div>
-        <h1>AI Access Bot</h1>
-        <p id="user-greeting">Загрузка...</p>
+        <div class="header-content">
+            <div class="emoji">🤖</div>
+            <h1>AI Access Bot</h1>
+            <p id="user-greeting">Загрузка...</p>
+        </div>
     </div>
-    
-    <!-- Вкладки -->
-    <div class="nav-tabs">
-        <button class="nav-tab active" onclick="switchTab('profile')">👤 Профиль</button>
-        <button class="nav-tab" onclick="switchTab('pricing')">💎 Цены</button>
-        <button class="nav-tab" onclick="switchTab('support')">💬 Помощь</button>
+
+    <!-- Tabs -->
+    <div class="tabs">
+        <button class="tab active" onclick="switchTab('profile')">👤 Профиль</button>
+        <button class="tab" onclick="switchTab('keys')">🔑 Ключи</button>
+        <button class="tab" onclick="switchTab('sim')">📱 SIM</button>
+        <button class="tab" onclick="switchTab('help')">💬</button>
     </div>
-    
-    <!-- Профиль -->
+
+    <!-- Profile Tab -->
     <div id="tab-profile" class="tab-content active">
-        <div class="stats-row">
+        <div class="stats-grid">
             <div class="stat-box">
                 <div class="value" id="stat-requests">0</div>
                 <div class="label">Запросов</div>
@@ -208,151 +374,202 @@
                 <div class="label">XP</div>
             </div>
         </div>
-        
+
         <div class="card">
-            <h3>📊 Статус подписок</h3>
-            <p id="sub-info">Загрузка...</p>
-        </div>
-        
-        <div class="card">
-            <h3>🏆 Достижения</h3>
-            <div id="achievements">Пока нет достижений</div>
-        </div>
-        
-        <button class="btn btn-blue" onclick="sendBotCommand('key')">🔑 Получить API ключ</button>
-        <button class="btn btn-outline" onclick="sendBotCommand('profile')">👤 Открыть профиль в боте</button>
-    </div>
-    
-    <!-- Цены -->
-    <div id="tab-pricing" class="tab-content">
-        <div class="card">
-            <h3>🤖 AI Access</h3>
-            <p>Доступ к ChatGPT, Claude, Midjourney</p>
-            <div style="margin-top:12px;">
-                <div class="order-item">
-                    <strong>30 дней</strong> — 49 ₽
-                </div>
-                <div class="order-item">
-                    <strong>90 дней</strong> — 99 ₽ <span style="color:#1cc88a;">-33%</span>
-                </div>
-                <div class="order-item">
-                    <strong>365 дней</strong> — 299 ₽ <span style="color:#1cc88a;">-45%</span>
-                </div>
+            <h3><span class="icon">📊</span> Прогресс уровня</h3>
+            <p id="level-name" style="margin-bottom:4px;">Новичок</p>
+            <small style="color:var(--text2);" id="xp-text">0 / 100 XP</small>
+            <div class="xp-bar">
+                <div class="xp-fill" id="xp-bar" style="width: 0%;"></div>
             </div>
-            <button class="btn btn-blue" style="margin-top:12px;" onclick="sendBotCommand('start')">🤖 Купить AI доступ</button>
         </div>
-        
+
         <div class="card">
-            <h3>📱 SIM.DL</h3>
-            <p>Активация сим-карт через доверенное лицо</p>
-            <div style="margin-top:12px;">
-                <div class="order-item"><strong>30 дней</strong> — 299 ₽</div>
-                <div class="order-item"><strong>90 дней</strong> — 599 ₽</div>
-                <div class="order-item"><strong>365 дней</strong> — 1499 ₽</div>
-            </div>
-            <button class="btn btn-purple" style="margin-top:12px;" onclick="sendBotCommand('start')">📱 Купить SIM доступ</button>
+            <h3><span class="icon">💎</span> Статус подписок</h3>
+            <div id="sub-info">Загрузка...</div>
+        </div>
+
+        <div class="card">
+            <h3><span class="icon">🏆</span> Достижения</h3>
+            <div id="achievements">Загрузка...</div>
+        </div>
+
+        <button class="btn btn-primary" onclick="sendBotCmd('key')">🔑 Получить API ключ</button>
+        <button class="btn btn-outline" onclick="sendBotCmd('profile')">👤 Открыть в боте</button>
+    </div>
+
+    <!-- Keys Tab -->
+    <div id="tab-keys" class="tab-content">
+        <div class="card">
+            <h3><span class="icon">🔑</span> AI API Ключи</h3>
+            <div id="keys-list">Загрузка...</div>
+        </div>
+        <button class="btn btn-primary" onclick="generateKey()">🔄 Сгенерировать новый ключ</button>
+        <button class="btn btn-outline" onclick="sendBotCmd('key')">📋 Все ключи в боте</button>
+    </div>
+
+    <!-- SIM Tab -->
+    <div id="tab-sim" class="tab-content">
+        <div class="card">
+            <h3><span class="icon">📱</span> Мои SIM заказы</h3>
+            <div id="sim-orders">Загрузка...</div>
+        </div>
+        <button class="btn btn-primary" onclick="sendBotCmd('start')">📱 Новый заказ</button>
+    </div>
+
+    <!-- Help Tab -->
+    <div id="tab-help" class="tab-content">
+        <div class="card">
+            <h3><span class="icon">💬</span> Частые вопросы</h3>
+            <button class="btn btn-outline" onclick="showFAQ('price')">💰 Сколько стоит?</button>
+            <button class="btn btn-outline" onclick="showFAQ('trial')">🆓 Есть ли триал?</button>
+            <button class="btn btn-outline" onclick="showFAQ('key')">🔑 Как получить ключ?</button>
+            <button class="btn btn-outline" onclick="showFAQ('sim')">📱 Как работает SIM.DL?</button>
+            <button class="btn btn-outline" onclick="showFAQ('pay')">💳 Способы оплаты?</button>
+        </div>
+
+        <div class="card">
+            <h3><span class="icon">📝</span> Нужна помощь?</h3>
+            <textarea id="help-msg" placeholder="Опишите проблему..."></textarea>
+            <button class="btn btn-success" onclick="sendHelp()" style="margin-top:8px;">📞 Отправить</button>
         </div>
     </div>
-    
-    <!-- Поддержка -->
-    <div id="tab-support" class="tab-content">
-        <div class="card">
-            <h3>💬 Частые вопросы</h3>
-            <button class="btn btn-outline" onclick="showAnswer('price')">💰 Сколько стоит?</button>
-            <button class="btn btn-outline" onclick="showAnswer('trial')">🆓 Есть ли триал?</button>
-            <button class="btn btn-outline" onclick="showAnswer('key')">🔑 Как получить ключ?</button>
-            <button class="btn btn-outline" onclick="showAnswer('sim')">📱 Как работает SIM.DL?</button>
-        </div>
-        
-        <div class="card">
-            <h3>📝 Нужна помощь?</h3>
-            <textarea id="support-msg" style="width:100%;height:80px;border-radius:10px;padding:10px;background:rgba(255,255,255,0.1);color:white;border:1px solid rgba(255,255,255,0.2);margin-bottom:10px;" placeholder="Опишите проблему..."></textarea>
-            <button class="btn btn-green" onclick="sendSupport()">📞 Отправить в поддержку</button>
+
+    <!-- FAQ Modal -->
+    <div class="modal" id="faq-modal">
+        <div class="modal-content">
+            <h3 id="faq-title">Ответ</h3>
+            <p id="faq-text" style="line-height:1.6;"></p>
+            <button class="btn btn-primary" onclick="closeModal()" style="margin-top:16px;">Понятно</button>
         </div>
     </div>
-    
-    <!-- Попап ответа -->
-    <div class="popup" id="answer-popup">
-        <div class="popup-content">
-            <h3 id="answer-title">Ответ</h3>
-            <p id="answer-text"></p>
-            <button class="btn btn-blue" onclick="closePopup()">Понятно</button>
-        </div>
-    </div>
-    
+
     <script>
+        // ============== INIT ==============
         const tg = window.Telegram.WebApp;
         tg.ready();
         tg.expand();
-        
-        // Данные пользователя из Telegram
+
+        // User data
         const user = tg.initDataUnsafe?.user;
+        const userId = user?.id || new URLSearchParams(location.search).get('user_id');
+        
         if (user) {
             document.getElementById('user-greeting').textContent = 
                 '👋 ' + user.first_name + (user.username ? ' (@' + user.username + ')' : '');
         }
-        
-        // FAQ ответы
-        const answers = {
-            price: '💰 Стоимость:\n• AI Access — 49 ₽ (30 дн)\n• SIM.DL — 299 ₽ (30 дн)\nЕсть скидки на 90 и 365 дней!',
-            trial: '🆓 Да! Триал AI Access на 3 дня бесллатно.\nИспользуйте кнопку «Получить доступ» в боте.',
-            key: '🔑 После оплаты:\n1. Нажмите «Мой ключ» в боте\n2. Или используйте /key\nКлюч активируется через 10-15 мин.',
-            sim: '📱 SIM.DL — активация сим-карт:\n1. Оплатите доступ\n2. Выберите оператора/регион\n3. Получите номер\nРаботает для Билайн, МТС, Мегафон, Tele2'
+
+        // ============== FAQ DATA ==============
+        const faq = {
+            price: '💰 <b>Стоимость:</b><br><br>🤖 AI Access:<br>• 30 дней — 49 ₽<br>• 90 дней — 99 ₽<br>• 365 дней — 299 ₽<br><br>📱 SIM.DL:<br>• 30 дней — 299 ₽<br>• 90 дней — 599 ₽<br>• 365 дней — 1499 ₽',
+            trial: '🆓 <b>Да, есть триал!</b><br><br>AI Access — 3 дня бесллатно.<br>Нажмите кнопку «Триал» в боте или используйте команду /trial',
+            key: '🔑 <b>Как получить ключ:</b><br><br>1. Оплатите доступ<br>2. Нажмите «Мой ключ» в боте<br>3. Или команда /key<br><br>Ключ активируется через 10-15 минут.',
+            sim: '📱 <b>SIM.DL — активация сим-карт:</b><br><br>1. Оплатите доступ (299 ₽)<br>2. Выберите оператора<br>3. Выберите регион<br>4. Выберите тариф<br>5. Получите номер<br><br>Операторы: Билайн, МТС, Мегафон, Tele2',
+            pay: '💳 <b>Способы оплаты:</b><br><br>• Перевод на карту (СБП)<br>• Криптовалюта (TON, USDT, BTC)<br>• Telegram Stars<br><br>Выберите способ в боте.'
         };
-        
+
+        // ============== TAB SWITCHING ==============
         function switchTab(name) {
-            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.nav-tab').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
             document.getElementById('tab-' + name).classList.add('active');
             event.target.classList.add('active');
         }
-        
-        function showAnswer(key) {
-            document.getElementById('answer-title').textContent = '💬 Ответ';
-            document.getElementById('answer-text').textContent = answers[key];
-            document.getElementById('answer-popup').style.display = 'flex';
+
+        // ============== FAQ ==============
+        function showFAQ(key) {
+            document.getElementById('faq-title').textContent = '💬 ' + Object.keys(faq).find(k => faq[k] === faq[key]) || 'Ответ';
+            document.getElementById('faq-text').innerHTML = faq[key];
+            document.getElementById('faq-modal').classList.add('active');
         }
-        
-        function closePopup() {
-            document.getElementById('answer-popup').style.display = 'none';
+
+        function closeModal() {
+            document.getElementById('faq-modal').classList.remove('active');
         }
-        
-        function sendBotCommand(cmd) {
-            tg.sendData(JSON.stringify({action: cmd}));
+
+        // ============== BOT COMMANDS ==============
+        function sendBotCmd(cmd) {
+            tg.sendData(JSON.stringify({action: cmd, user_id: userId}));
             showToast('✅ Отправлено в бота!');
         }
-        
-        function sendSupport() {
-            const msg = document.getElementById('support-msg').value;
+
+        function sendHelp() {
+            const msg = document.getElementById('help-msg').value.trim();
             if (msg) {
-                tg.sendData(JSON.stringify({action: 'support', message: msg}));
-                document.getElementById('support-msg').value = '';
+                tg.sendData(JSON.stringify({action: 'support', message: msg, user_id: userId}));
+                document.getElementById('help-msg').value = '';
                 showToast('✅ Сообщение отправлено!');
+            } else {
+                showToast('⚠️ Введите сообщение');
             }
         }
-        
+
+        function generateKey() {
+            tg.sendData(JSON.stringify({action: 'generate_key', user_id: userId}));
+            showToast('🔄 Запрос на новый ключ...');
+        }
+
+        // ============== TOAST ==============
         function showToast(text) {
+            const existing = document.querySelector('.toast');
+            if (existing) existing.remove();
+            
             const toast = document.createElement('div');
             toast.className = 'toast';
             toast.textContent = text;
             document.body.appendChild(toast);
-            setTimeout(() => toast.remove(), 2000);
+            setTimeout(() => toast.remove(), 2500);
         }
-        
-        // Загрузка данных из URL параметров (опционально)
-        const params = new URLSearchParams(window.location.search);
-        const userId = params.get('user_id');
-        if (userId) {
+
+        // ============== LOAD DATA ==============
+        function loadProfile() {
             document.getElementById('stat-requests').textContent = '...';
-            document.getElementById('sub-info').textContent = '🤖 AI: ... | 📱 SIM: ...';
+            document.getElementById('sub-info').innerHTML = '🤖 AI: ...<br>📱 SIM: ...';
+            document.getElementById('achievements').innerHTML = '<span class="achievement-tag">Загрузка...</span>';
         }
-        
-        // Установка цвета темы из Telegram
-        if (tg.colorScheme === 'dark') {
-            document.body.style.background = '#1a1a2e';
-        } else {
-            document.body.style.background = '#1a1a2e'; // Всегда тёмная
+
+        function loadKeys() {
+            document.getElementById('keys-list').innerHTML = 
+                '<div class="key-box">Загрузка ключей...<br><small style="color:var(--text2);">Нажмите «Сгенерировать» или откройте бота</small></div>';
         }
+
+        function loadSimOrders() {
+            document.getElementById('sim-orders').innerHTML = 
+                '<div class="loading"><div class="spinner"></div>Загрузка заказов...</div>';
+        }
+
+        // Init
+        loadProfile();
+        loadKeys();
+        loadSimOrders();
+
+        // ============== RECEIVE DATA FROM BOT ==============
+        tg.onEvent('mainButtonClicked', () => {
+            tg.sendData(JSON.stringify({action: 'main_button'}));
+        });
+
+        // Close modal on background click
+        document.getElementById('faq-modal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        // Swipe between tabs
+        let touchStartX = 0;
+        document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
+        document.addEventListener('touchend', e => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 80) {
+                const tabs = ['profile', 'keys', 'sim', 'help'];
+                const current = tabs.findIndex(t => document.getElementById('tab-' + t).classList.contains('active'));
+                const next = diff > 0 ? Math.min(tabs.length - 1, current + 1) : Math.max(0, current - 1);
+                if (next !== current) {
+                    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+                    document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+                    document.getElementById('tab-' + tabs[next]).classList.add('active');
+                    document.querySelectorAll('.tab')[next].classList.add('active');
+                }
+            }
+        });
     </script>
 </body>
 </html>
