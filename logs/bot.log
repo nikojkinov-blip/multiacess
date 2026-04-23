@@ -1,0 +1,2307 @@
+2026-04-22 20:52:45,314 - __main__ - INFO - Бот запущен
+2026-04-22 20:53:06,372 - aiogram.dispatcher - INFO - Start polling
+2026-04-22 20:53:27,408 - aiogram.dispatcher - INFO - Polling stopped
+2026-04-22 21:03:32,538 - __main__ - INFO - Бот запущен
+2026-04-22 21:03:39,523 - aiogram.dispatcher - INFO - Start polling
+2026-04-22 21:03:39,619 - aiogram.dispatcher - INFO - Run polling for bot @ai_accessS_bot id=8710550961 - 'ai access'
+2026-04-22 21:03:43,434 - middlewares.logging_mw - INFO - [2026-04-22 21:03:43] User 6593438966 (@KizLyar115): /start
+2026-04-22 21:03:50,241 - middlewares.logging_mw - INFO - [2026-04-22 21:03:50] User 6593438966 (@KizLyar115): /start
+2026-04-22 21:03:50,263 - aiogram.event - INFO - Update id=33576331 is handled. Duration 6829 ms by bot id=8710550961
+2026-04-22 21:03:54,830 - aiogram.event - INFO - Update id=33576332 is handled. Duration 4589 ms by bot id=8710550961
+2026-04-22 21:03:55,043 - aiogram.event - INFO - Update id=33576333 is handled. Duration 261 ms by bot id=8710550961
+2026-04-22 21:03:58,396 - aiogram.event - INFO - Update id=33576334 is not handled. Duration 3 ms by bot id=8710550961
+2026-04-22 21:04:06,264 - aiogram.event - INFO - Update id=33576335 is not handled. Duration 3 ms by bot id=8710550961
+2026-04-22 21:04:10,243 - aiogram.event - INFO - Update id=33576336 is not handled. Duration 2 ms by bot id=8710550961
+2026-04-22 21:04:11,084 - aiogram.event - INFO - Update id=33576337 is not handled. Duration 2 ms by bot id=8710550961
+2026-04-22 21:04:11,408 - aiogram.event - INFO - Update id=33576338 is handled. Duration 232 ms by bot id=8710550961
+2026-04-22 21:04:11,819 - aiogram.event - INFO - Update id=33576339 is handled. Duration 223 ms by bot id=8710550961
+2026-04-22 21:04:13,015 - aiogram.event - INFO - Update id=33576340 is not handled. Duration 2 ms by bot id=8710550961
+2026-04-22 21:04:13,832 - aiogram.event - INFO - Update id=33576341 is not handled. Duration 3 ms by bot id=8710550961
+2026-04-22 21:04:14,586 - aiogram.event - INFO - Update id=33576342 is not handled. Duration 2 ms by bot id=8710550961
+2026-04-22 21:04:15,620 - aiogram.event - INFO - Update id=33576343 is handled. Duration 208 ms by bot id=8710550961
+2026-04-22 21:04:19,673 - aiogram.event - INFO - Update id=33576344 is handled. Duration 251 ms by bot id=8710550961
+2026-04-22 21:04:21,030 - aiogram.event - INFO - Update id=33576345 is not handled. Duration 2 ms by bot id=8710550961
+2026-04-22 21:04:44,632 - aiogram.event - INFO - Update id=33576346 is not handled. Duration 3 ms by bot id=8710550961
+2026-04-22 21:04:55,675 - aiogram.event - INFO - Update id=33576347 is not handled. Duration 2 ms by bot id=8710550961
+2026-04-22 21:05:03,226 - aiogram.event - INFO - Update id=33576348 is not handled. Duration 3 ms by bot id=8710550961
+2026-04-22 21:05:07,624 - aiogram.event - INFO - Update id=33576349 is not handled. Duration 2 ms by bot id=8710550961
+2026-04-22 21:05:12,561 - aiogram.event - INFO - Update id=33576350 is handled. Duration 221 ms by bot id=8710550961
+2026-04-22 21:05:13,799 - aiogram.event - INFO - Update id=33576351 is handled. Duration 271 ms by bot id=8710550961
+2026-04-22 21:05:31,343 - aiogram.event - INFO - Update id=33576352 is not handled. Duration 2 ms by bot id=8710550961
+2026-04-22 21:05:40,007 - aiogram.dispatcher - INFO - Polling stopped
+2026-04-22 21:05:40,008 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 21:05:40,008 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-22 21:05:40,269 - aiogram.dispatcher - INFO - Polling stopped for bot @ai_accessS_bot id=8710550961 - 'ai access'
+2026-04-22 21:10:52,781 - __main__ - INFO - Бот запущен
+2026-04-22 21:10:53,175 - aiogram.dispatcher - INFO - Start polling
+2026-04-22 21:11:02,400 - middlewares.logging_mw - INFO - [2026-04-22 21:11:02] User 6593438966 (@KizLyar115): /start
+2026-04-22 21:11:24,254 - aiogram.event - INFO - Update id=33576354 is not handled. Duration 21854 ms by bot id=8710550961
+2026-04-22 21:11:24,254 - aiogram.event - ERROR - Cause exception while process update id=33576354 by bot id=8710550961
+TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+Traceback (most recent call last):
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 167, in make_request
+    async with session.post(
+               ~~~~~~~~~~~~^
+        url,
+        ^^^^
+        data=form,
+        ^^^^^^^^^^
+        timeout=self.timeout if timeout is None else timeout,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as resp:
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\client.py", line 1521, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\client.py", line 788, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\client.py", line 766, in _connect_and_send_request
+    await resp.start(conn)
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\client_reqrep.py", line 539, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\streams.py", line 707, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 191, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 183, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\middlewares\throttling.py", line 29, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\middlewares\ban_middleware.py", line 23, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\middlewares\logging_mw.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\handlers\common.py", line 64, in cmd_start
+    await message.answer(START_MESSAGE, reply_markup=get_main_keyboard())
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\methods\base.py", line 82, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\bot.py", line 493, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\base.py", line 259, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 176, in make_request
+    raise TelegramNetworkError(method=method, message=f"{type(e).__name__}: {e}") from e
+aiogram.exceptions.TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 21:11:31,651 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 21:11:31,651 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-22 21:11:39,605 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8710550961)
+2026-04-22 21:11:39,606 - middlewares.logging_mw - INFO - [2026-04-22 21:11:39] User 6593438966 (@KizLyar115): /start
+2026-04-22 21:11:40,005 - aiogram.event - INFO - Update id=33576355 is handled. Duration 399 ms by bot id=8710550961
+2026-04-22 21:11:49,873 - aiogram.event - INFO - Update id=33576356 is handled. Duration 296 ms by bot id=8710550961
+2026-04-22 21:11:53,064 - aiogram.event - INFO - Update id=33576357 is handled. Duration 605 ms by bot id=8710550961
+2026-04-22 21:11:54,233 - aiogram.event - INFO - Update id=33576358 is handled. Duration 239 ms by bot id=8710550961
+2026-04-22 21:11:54,917 - aiogram.event - INFO - Update id=33576359 is handled. Duration 244 ms by bot id=8710550961
+2026-04-22 21:11:55,803 - aiogram.event - INFO - Update id=33576360 is handled. Duration 240 ms by bot id=8710550961
+2026-04-22 21:11:58,149 - aiogram.event - INFO - Update id=33576361 is handled. Duration 370 ms by bot id=8710550961
+2026-04-22 21:17:28,779 - __main__ - INFO - Бот запущен
+2026-04-22 21:17:30,678 - aiogram.dispatcher - INFO - Start polling
+2026-04-22 21:18:10,331 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 21:18:10,331 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-22 21:18:26,747 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8710550961)
+2026-04-22 21:20:43,682 - middlewares.logging_mw - INFO - [2026-04-22 21:20:43] User 6593438966 (@KizLyar115): /start
+2026-04-22 21:20:45,129 - aiogram.event - INFO - Update id=33576362 is handled. Duration 1447 ms by bot id=8710550961
+2026-04-22 21:20:47,584 - aiogram.event - INFO - Update id=33576363 is handled. Duration 241 ms by bot id=8710550961
+2026-04-22 21:20:48,576 - aiogram.event - INFO - Update id=33576364 is handled. Duration 205 ms by bot id=8710550961
+2026-04-22 21:20:49,668 - aiogram.event - INFO - Update id=33576365 is handled. Duration 227 ms by bot id=8710550961
+2026-04-22 21:20:50,530 - aiogram.event - INFO - Update id=33576366 is handled. Duration 209 ms by bot id=8710550961
+2026-04-22 21:20:51,354 - aiogram.event - INFO - Update id=33576367 is handled. Duration 213 ms by bot id=8710550961
+2026-04-22 21:20:55,047 - aiogram.event - INFO - Update id=33576368 is not handled. Duration 4 ms by bot id=8710550961
+2026-04-22 21:20:55,851 - middlewares.logging_mw - INFO - [2026-04-22 21:20:55] User 6593438966 (@KizLyar115): /broadcast 123
+2026-04-22 21:20:55,960 - aiogram.event - INFO - Update id=33576369 is handled. Duration 109 ms by bot id=8710550961
+2026-04-22 21:20:57,609 - aiogram.event - INFO - Update id=33576370 is handled. Duration 514 ms by bot id=8710550961
+2026-04-22 21:21:04,989 - aiogram.event - INFO - Update id=33576371 is handled. Duration 332 ms by bot id=8710550961
+2026-04-22 21:21:10,659 - aiogram.event - INFO - Update id=33576372 is not handled. Duration 4 ms by bot id=8710550961
+2026-04-22 21:21:12,183 - aiogram.event - INFO - Update id=33576373 is handled. Duration 225 ms by bot id=8710550961
+2026-04-22 21:21:16,598 - middlewares.logging_mw - INFO - [2026-04-22 21:21:16] User 6593438966 (@KizLyar115): /start
+2026-04-22 21:21:16,710 - aiogram.event - INFO - Update id=33576374 is handled. Duration 112 ms by bot id=8710550961
+2026-04-22 21:21:18,142 - aiogram.event - INFO - Update id=33576375 is handled. Duration 204 ms by bot id=8710550961
+2026-04-22 21:21:19,443 - aiogram.event - INFO - Update id=33576376 is handled. Duration 97 ms by bot id=8710550961
+2026-04-22 21:22:08,815 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 21:22:08,815 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-22 21:22:30,841 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+2026-04-22 21:22:30,841 - aiogram.dispatcher - WARNING - Sleep for 1.377233 seconds and try again... (tryings = 1, bot id = 8710550961)
+2026-04-22 21:23:02,919 - aiogram.dispatcher - INFO - Connection established (tryings = 2, bot id = 8710550961)
+2026-04-22 21:24:41,409 - aiogram.event - INFO - Update id=33576377 is handled. Duration 4586 ms by bot id=8710550961
+2026-04-22 21:24:46,225 - middlewares.logging_mw - INFO - [2026-04-22 21:24:46] User 6593438966 (@KizLyar115): /start
+2026-04-22 21:24:46,398 - aiogram.event - INFO - Update id=33576378 is handled. Duration 173 ms by bot id=8710550961
+2026-04-22 21:24:52,166 - aiogram.event - INFO - Update id=33576379 is handled. Duration 202 ms by bot id=8710550961
+2026-04-22 21:24:55,896 - aiogram.event - INFO - Update id=33576380 is handled. Duration 392 ms by bot id=8710550961
+2026-04-22 21:24:58,697 - aiogram.event - INFO - Update id=33576381 is handled. Duration 258 ms by bot id=8710550961
+2026-04-22 21:25:00,440 - aiogram.event - INFO - Update id=33576382 is handled. Duration 227 ms by bot id=8710550961
+2026-04-22 21:25:03,859 - aiogram.event - INFO - Update id=33576383 is handled. Duration 346 ms by bot id=8710550961
+2026-04-22 21:25:05,936 - aiogram.event - INFO - Update id=33576384 is handled. Duration 476 ms by bot id=8710550961
+2026-04-22 21:25:07,916 - middlewares.logging_mw - INFO - [2026-04-22 21:25:07] User 6593438966 (@KizLyar115): /key
+2026-04-22 21:25:08,022 - aiogram.event - INFO - Update id=33576385 is handled. Duration 107 ms by bot id=8710550961
+2026-04-22 21:25:13,598 - aiogram.event - INFO - Update id=33576386 is handled. Duration 232 ms by bot id=8710550961
+2026-04-22 21:25:16,144 - aiogram.event - INFO - Update id=33576387 is handled. Duration 273 ms by bot id=8710550961
+2026-04-22 21:25:17,700 - aiogram.event - INFO - Update id=33576388 is handled. Duration 402 ms by bot id=8710550961
+2026-04-22 21:25:19,788 - aiogram.event - INFO - Update id=33576389 is handled. Duration 149 ms by bot id=8710550961
+2026-04-22 21:25:22,342 - aiogram.event - INFO - Update id=33576390 is handled. Duration 97 ms by bot id=8710550961
+2026-04-22 21:27:35,474 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 21:27:35,474 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-22 21:27:52,815 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8710550961)
+2026-04-22 21:28:23,538 - aiogram.event - INFO - Update id=33576391 is handled. Duration 2739 ms by bot id=8710550961
+2026-04-22 21:28:27,142 - aiogram.event - INFO - Update id=33576392 is handled. Duration 202 ms by bot id=8710550961
+2026-04-22 21:28:28,079 - aiogram.event - INFO - Update id=33576393 is handled. Duration 204 ms by bot id=8710550961
+2026-04-22 21:28:30,749 - aiogram.event - INFO - Update id=33576394 is handled. Duration 290 ms by bot id=8710550961
+2026-04-22 21:28:32,982 - middlewares.logging_mw - INFO - [2026-04-22 21:28:32] User 6593438966 (@KizLyar115): /ban
+2026-04-22 21:28:33,106 - aiogram.event - INFO - Update id=33576395 is handled. Duration 124 ms by bot id=8710550961
+2026-04-22 21:30:05,683 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 21:30:05,683 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-22 21:30:25,251 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8710550961)
+2026-04-22 21:32:45,611 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 21:32:45,611 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-22 21:32:48,087 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8710550961)
+2026-04-22 21:32:48,088 - middlewares.logging_mw - INFO - [2026-04-22 21:32:48] User 8455683591 (@misha231663): /start
+2026-04-22 21:32:54,842 - middlewares.logging_mw - INFO - [2026-04-22 21:32:54] User 8455683591 (@misha231663): /start
+2026-04-22 21:32:54,882 - aiogram.event - INFO - Update id=33576396 is handled. Duration 6794 ms by bot id=8710550961
+2026-04-22 21:32:55,068 - middlewares.logging_mw - INFO - [2026-04-22 21:32:55] User 8455683591 (@misha231663): /start
+2026-04-22 21:32:55,201 - aiogram.event - INFO - Update id=33576398 is handled. Duration 133 ms by bot id=8710550961
+2026-04-22 21:33:01,813 - aiogram.event - INFO - Update id=33576397 is handled. Duration 6971 ms by bot id=8710550961
+2026-04-22 21:33:21,809 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 21:33:21,809 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-22 21:33:24,222 - aiogram.event - INFO - Update id=33576399 is not handled. Duration 21852 ms by bot id=8710550961
+2026-04-22 21:33:24,222 - aiogram.event - ERROR - Cause exception while process update id=33576399 by bot id=8710550961
+TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+Traceback (most recent call last):
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 167, in make_request
+    async with session.post(
+               ~~~~~~~~~~~~^
+        url,
+        ^^^^
+        data=form,
+        ^^^^^^^^^^
+        timeout=self.timeout if timeout is None else timeout,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as resp:
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\client.py", line 1521, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\client.py", line 788, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\client.py", line 766, in _connect_and_send_request
+    await resp.start(conn)
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\client_reqrep.py", line 539, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\streams.py", line 707, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 191, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 183, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\middlewares\throttling.py", line 29, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\middlewares\ban_middleware.py", line 23, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\handlers\common.py", line 330, in admin_users_list
+    await call.answer()
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\methods\base.py", line 82, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\bot.py", line 493, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\base.py", line 259, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 176, in make_request
+    raise TelegramNetworkError(method=method, message=f"{type(e).__name__}: {e}") from e
+aiogram.exceptions.TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 21:33:31,727 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 21:33:31,728 - aiogram.dispatcher - WARNING - Sleep for 1.403592 seconds and try again... (tryings = 1, bot id = 8710550961)
+2026-04-22 21:33:38,067 - aiogram.dispatcher - INFO - Connection established (tryings = 2, bot id = 8710550961)
+2026-04-22 21:33:38,068 - middlewares.logging_mw - INFO - [2026-04-22 21:33:38] User 6593438966 (@KizLyar115): /ban 8455683591 темщик
+2026-04-22 21:33:39,443 - middlewares.logging_mw - INFO - [2026-04-22 21:33:39] User 6593438966 (@KizLyar115): /ban 8455683591 темщик
+2026-04-22 21:33:39,443 - database.core - ERROR - Database error: UNIQUE constraint failed: banned_users.user_id, query: INSERT INTO banned_users (user_id, reason, banned_by, banned_at) VALUES (?, ?, ?, ?)
+2026-04-22 21:33:39,443 - aiogram.event - INFO - Update id=33576401 is not handled. Duration 0 ms by bot id=8710550961
+2026-04-22 21:33:39,444 - aiogram.event - ERROR - Cause exception while process update id=33576401 by bot id=8710550961
+IntegrityError: UNIQUE constraint failed: banned_users.user_id
+Traceback (most recent call last):
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 191, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 183, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\middlewares\throttling.py", line 29, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\middlewares\ban_middleware.py", line 23, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\middlewares\logging_mw.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\handlers\admin.py", line 193, in cmd_ban
+    BanModel.add(user_id, reason, message.from_user.id)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\database\models.py", line 385, in add
+    db.insert('banned_users', data)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\database\core.py", line 45, in insert
+    self.execute(query, tuple(data.values()))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\database\core.py", line 23, in execute
+    self.cursor.execute(query, params)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: UNIQUE constraint failed: banned_users.user_id
+2026-04-22 21:33:39,785 - aiogram.event - INFO - Update id=33576400 is handled. Duration 1716 ms by bot id=8710550961
+2026-04-22 21:34:05,861 - middlewares.logging_mw - INFO - [2026-04-22 21:34:05] User 6593438966 (@KizLyar115): /unban 8455683591
+2026-04-22 21:34:06,186 - aiogram.event - INFO - Update id=33576402 is handled. Duration 325 ms by bot id=8710550961
+2026-04-22 21:34:35,626 - middlewares.logging_mw - INFO - [2026-04-22 21:34:35] User 6593438966 (@KizLyar115): /start
+2026-04-22 21:34:35,806 - aiogram.event - INFO - Update id=33576403 is handled. Duration 180 ms by bot id=8710550961
+2026-04-22 21:34:37,655 - aiogram.event - INFO - Update id=33576404 is handled. Duration 213 ms by bot id=8710550961
+2026-04-22 21:34:39,652 - aiogram.event - INFO - Update id=33576405 is handled. Duration 956 ms by bot id=8710550961
+2026-04-22 21:34:40,183 - aiogram.event - INFO - Update id=33576406 is handled. Duration 222 ms by bot id=8710550961
+2026-04-22 21:34:44,252 - aiogram.event - INFO - Update id=33576407 is handled. Duration 300 ms by bot id=8710550961
+2026-04-22 21:34:45,351 - aiogram.event - INFO - Update id=33576408 is handled. Duration 641 ms by bot id=8710550961
+2026-04-22 21:34:46,165 - aiogram.event - INFO - Update id=33576409 is handled. Duration 201 ms by bot id=8710550961
+2026-04-22 21:34:47,859 - aiogram.event - INFO - Update id=33576410 is handled. Duration 416 ms by bot id=8710550961
+2026-04-22 21:34:49,880 - aiogram.event - INFO - Update id=33576411 is handled. Duration 204 ms by bot id=8710550961
+2026-04-22 21:34:51,334 - middlewares.logging_mw - INFO - [2026-04-22 21:34:51] User 6593438966 (@KizLyar115): /support hello
+2026-04-22 21:34:51,447 - aiogram.event - INFO - Update id=33576412 is handled. Duration 113 ms by bot id=8710550961
+2026-04-22 21:34:53,544 - aiogram.event - INFO - Update id=33576413 is handled. Duration 252 ms by bot id=8710550961
+2026-04-22 21:34:56,735 - aiogram.event - INFO - Update id=33576414 is handled. Duration 109 ms by bot id=8710550961
+2026-04-22 21:35:08,425 - aiogram.event - INFO - Update id=33576415 is handled. Duration 118 ms by bot id=8710550961
+2026-04-22 21:35:50,557 - aiogram.event - INFO - Update id=33576416 is handled. Duration 105 ms by bot id=8710550961
+2026-04-22 21:35:52,201 - middlewares.logging_mw - INFO - [2026-04-22 21:35:52] User 6593438966 (@KizLyar115): чё делать туда сюда
+2026-04-22 21:35:52,440 - aiogram.event - INFO - Update id=33576417 is handled. Duration 239 ms by bot id=8710550961
+2026-04-22 21:35:57,251 - middlewares.logging_mw - INFO - [2026-04-22 21:35:57] User 6593438966 (@KizLyar115): /start
+2026-04-22 21:35:57,365 - aiogram.event - INFO - Update id=33576418 is handled. Duration 114 ms by bot id=8710550961
+2026-04-22 21:35:58,928 - aiogram.event - INFO - Update id=33576419 is handled. Duration 250 ms by bot id=8710550961
+2026-04-22 21:36:00,746 - aiogram.event - INFO - Update id=33576420 is handled. Duration 203 ms by bot id=8710550961
+2026-04-22 21:36:08,529 - middlewares.logging_mw - INFO - [2026-04-22 21:36:08] User 6593438966 (@KizLyar115): оа
+2026-04-22 21:36:08,838 - aiogram.event - INFO - Update id=33576421 is handled. Duration 309 ms by bot id=8710550961
+2026-04-22 21:36:18,464 - middlewares.logging_mw - INFO - [2026-04-22 21:36:18] User 6593438966 (@KizLyar115): пон
+2026-04-22 21:36:18,715 - aiogram.event - INFO - Update id=33576422 is handled. Duration 252 ms by bot id=8710550961
+2026-04-22 21:36:21,748 - aiogram.event - INFO - Update id=33576423 is handled. Duration 208 ms by bot id=8710550961
+2026-04-22 21:36:26,711 - aiogram.event - INFO - Update id=33576424 is handled. Duration 227 ms by bot id=8710550961
+2026-04-22 21:36:30,733 - middlewares.logging_mw - INFO - [2026-04-22 21:36:30] User 6593438966 (@KizLyar115): не спамьте в тикет.
+2026-04-22 21:36:31,141 - aiogram.event - INFO - Update id=33576425 is handled. Duration 409 ms by bot id=8710550961
+2026-04-22 21:37:00,078 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 21:37:00,079 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-22 21:37:05,500 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8710550961)
+2026-04-22 21:37:06,925 - aiogram.event - INFO - Update id=33576427 is handled. Duration 1423 ms by bot id=8710550961
+2026-04-22 21:37:08,181 - aiogram.event - INFO - Update id=33576426 is handled. Duration 2679 ms by bot id=8710550961
+2026-04-22 21:38:33,132 - middlewares.logging_mw - INFO - [2026-04-22 21:38:33] User 6593438966 (@KizLyar115): /start
+2026-04-22 21:38:33,240 - aiogram.event - INFO - Update id=33576428 is handled. Duration 109 ms by bot id=8710550961
+2026-04-22 21:38:34,986 - aiogram.event - INFO - Update id=33576429 is handled. Duration 248 ms by bot id=8710550961
+2026-04-22 21:38:36,941 - aiogram.event - INFO - Update id=33576430 is handled. Duration 421 ms by bot id=8710550961
+2026-04-22 21:38:39,779 - aiogram.event - INFO - Update id=33576431 is not handled. Duration 437 ms by bot id=8710550961
+2026-04-22 21:38:39,779 - aiogram.event - ERROR - Cause exception while process update id=33576431 by bot id=8710550961
+TelegramBadRequest: Telegram server says - Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+Traceback (most recent call last):
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 191, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 183, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\middlewares\throttling.py", line 29, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\middlewares\ban_middleware.py", line 23, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\handlers\common.py", line 376, in admin_tickets_list
+    await call.message.edit_text(text, reply_markup=builder.as_markup(), parse_mode="HTML")
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\methods\base.py", line 82, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\bot.py", line 493, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\base.py", line 259, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 177, in make_request
+    response = self.check_response(
+        bot=bot,
+    ...<2 lines>...
+        content=raw_result,
+    )
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\base.py", line 121, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2026-04-22 21:38:41,997 - aiogram.event - INFO - Update id=33576432 is handled. Duration 880 ms by bot id=8710550961
+2026-04-22 21:38:43,681 - aiogram.event - INFO - Update id=33576433 is handled. Duration 231 ms by bot id=8710550961
+2026-04-22 21:38:49,083 - aiogram.event - INFO - Update id=33576434 is handled. Duration 346 ms by bot id=8710550961
+2026-04-22 21:39:00,568 - aiogram.event - INFO - Update id=33576435 is handled. Duration 449 ms by bot id=8710550961
+2026-04-22 21:39:01,481 - aiogram.event - INFO - Update id=33576436 is handled. Duration 293 ms by bot id=8710550961
+2026-04-22 21:39:28,074 - aiogram.event - INFO - Update id=33576437 is not handled. Duration 19167 ms by bot id=8710550961
+2026-04-22 21:39:28,074 - aiogram.event - ERROR - Cause exception while process update id=33576437 by bot id=8710550961
+TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+Traceback (most recent call last):
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 167, in make_request
+    async with session.post(
+               ~~~~~~~~~~~~^
+        url,
+        ^^^^
+        data=form,
+        ^^^^^^^^^^
+        timeout=self.timeout if timeout is None else timeout,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as resp:
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\client.py", line 1521, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\client.py", line 788, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\client.py", line 766, in _connect_and_send_request
+    await resp.start(conn)
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\client_reqrep.py", line 539, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\streams.py", line 707, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 191, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 183, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\middlewares\throttling.py", line 29, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\middlewares\ban_middleware.py", line 23, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\handlers\common.py", line 376, in admin_tickets_list
+    await call.message.edit_text(text, reply_markup=builder.as_markup(), parse_mode="HTML")
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\methods\base.py", line 82, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\bot.py", line 493, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\base.py", line 259, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 176, in make_request
+    raise TelegramNetworkError(method=method, message=f"{type(e).__name__}: {e}") from e
+aiogram.exceptions.TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 21:39:28,089 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 21:39:28,089 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-22 21:40:29,106 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [None]
+2026-04-22 21:40:29,106 - aiogram.dispatcher - WARNING - Sleep for 1.294178 seconds and try again... (tryings = 1, bot id = 8710550961)
+2026-04-22 21:40:31,732 - aiogram.dispatcher - INFO - Connection established (tryings = 2, bot id = 8710550961)
+2026-04-22 21:40:33,424 - aiogram.event - INFO - Update id=33576438 is not handled. Duration 1690 ms by bot id=8710550961
+2026-04-22 21:40:33,424 - aiogram.event - ERROR - Cause exception while process update id=33576438 by bot id=8710550961
+TelegramBadRequest: Telegram server says - Bad Request: query is too old and response timeout expired or query ID is invalid
+Traceback (most recent call last):
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 191, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 183, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\middlewares\throttling.py", line 29, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\middlewares\ban_middleware.py", line 23, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\handlers\common.py", line 377, in admin_tickets_list
+    await call.answer()
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\methods\base.py", line 82, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\bot.py", line 493, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\base.py", line 259, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 177, in make_request
+    response = self.check_response(
+        bot=bot,
+    ...<2 lines>...
+        content=raw_result,
+    )
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\base.py", line 121, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: query is too old and response timeout expired or query ID is invalid
+2026-04-22 21:41:03,956 - middlewares.logging_mw - INFO - [2026-04-22 21:41:03] User 6593438966 (@KizLyar115): /start
+2026-04-22 21:41:04,179 - aiogram.event - INFO - Update id=33576439 is handled. Duration 224 ms by bot id=8710550961
+2026-04-22 21:41:07,055 - aiogram.event - INFO - Update id=33576440 is handled. Duration 431 ms by bot id=8710550961
+2026-04-22 21:41:11,110 - aiogram.event - INFO - Update id=33576441 is handled. Duration 299 ms by bot id=8710550961
+2026-04-22 21:41:12,812 - aiogram.event - INFO - Update id=33576442 is not handled. Duration 105 ms by bot id=8710550961
+2026-04-22 21:41:12,813 - aiogram.event - ERROR - Cause exception while process update id=33576442 by bot id=8710550961
+TelegramBadRequest: Telegram server says - Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+Traceback (most recent call last):
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 191, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 183, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\middlewares\throttling.py", line 29, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\middlewares\ban_middleware.py", line 23, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\handlers\common.py", line 376, in admin_tickets_list
+    await call.message.edit_text(text, reply_markup=builder.as_markup(), parse_mode="HTML")
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\methods\base.py", line 82, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\bot.py", line 493, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\base.py", line 259, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 177, in make_request
+    response = self.check_response(
+        bot=bot,
+    ...<2 lines>...
+        content=raw_result,
+    )
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\base.py", line 121, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2026-04-22 21:41:16,458 - aiogram.event - INFO - Update id=33576443 is handled. Duration 207 ms by bot id=8710550961
+2026-04-22 21:41:19,055 - aiogram.event - INFO - Update id=33576444 is not handled. Duration 4 ms by bot id=8710550961
+2026-04-22 21:41:31,881 - aiogram.event - INFO - Update id=33576445 is handled. Duration 291 ms by bot id=8710550961
+2026-04-22 21:41:40,831 - middlewares.logging_mw - INFO - [2026-04-22 21:41:40] User 6593438966 (@KizLyar115): /broadcast ten
+2026-04-22 21:41:40,969 - aiogram.event - INFO - Update id=33576446 is handled. Duration 138 ms by bot id=8710550961
+2026-04-22 21:41:43,194 - aiogram.event - INFO - Update id=33576447 is handled. Duration 980 ms by bot id=8710550961
+2026-04-22 21:42:20,600 - aiogram.event - INFO - Update id=33576448 is handled. Duration 239 ms by bot id=8710550961
+2026-04-22 21:43:30,154 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 21:43:30,154 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-22 21:43:46,140 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8710550961)
+2026-04-22 21:44:45,642 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 21:44:45,643 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-22 21:45:09,890 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [None]
+2026-04-22 21:45:09,890 - aiogram.dispatcher - WARNING - Sleep for 1.301434 seconds and try again... (tryings = 1, bot id = 8710550961)
+2026-04-22 21:45:15,648 - aiogram.dispatcher - INFO - Connection established (tryings = 2, bot id = 8710550961)
+2026-04-22 21:45:23,041 - aiogram.event - INFO - Update id=33576450 is handled. Duration 1451 ms by bot id=8710550961
+2026-04-22 21:45:40,748 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 21:45:40,748 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-22 21:45:41,937 - aiogram.event - INFO - Update id=33576449 is not handled. Duration 26288 ms by bot id=8710550961
+2026-04-22 21:46:08,268 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [None]
+2026-04-22 21:46:08,268 - aiogram.dispatcher - WARNING - Sleep for 1.321666 seconds and try again... (tryings = 1, bot id = 8710550961)
+2026-04-22 21:46:14,633 - aiogram.dispatcher - INFO - Connection established (tryings = 2, bot id = 8710550961)
+2026-04-22 21:46:14,634 - middlewares.logging_mw - INFO - [2026-04-22 21:46:14] User 6593438966 (@KizLyar115): /start
+2026-04-22 21:46:14,635 - middlewares.logging_mw - INFO - [2026-04-22 21:46:14] User 6593438966 (@KizLyar115): /start
+2026-04-22 21:46:15,661 - middlewares.logging_mw - INFO - [2026-04-22 21:46:15] User 6593438966 (@KizLyar115): /start
+2026-04-22 21:46:20,309 - aiogram.event - INFO - Update id=33576452 is handled. Duration 5674 ms by bot id=8710550961
+2026-04-22 21:46:20,343 - aiogram.event - INFO - Update id=33576453 is handled. Duration 4682 ms by bot id=8710550961
+2026-04-22 21:46:20,460 - aiogram.event - INFO - Update id=33576451 is handled. Duration 5827 ms by bot id=8710550961
+2026-04-22 21:46:33,212 - aiogram.event - INFO - Update id=33576454 is handled. Duration 216 ms by bot id=8710550961
+2026-04-22 21:46:37,805 - aiogram.event - INFO - Update id=33576455 is handled. Duration 232 ms by bot id=8710550961
+2026-04-22 21:46:39,388 - aiogram.event - INFO - Update id=33576456 is handled. Duration 210 ms by bot id=8710550961
+2026-04-22 21:46:42,258 - aiogram.event - INFO - Update id=33576457 is handled. Duration 648 ms by bot id=8710550961
+2026-04-22 21:46:46,964 - aiogram.event - INFO - Update id=33576458 is handled. Duration 109 ms by bot id=8710550961
+2026-04-22 21:48:15,169 - aiogram.event - INFO - Update id=33576459 is handled. Duration 316 ms by bot id=8710550961
+2026-04-22 21:48:38,916 - aiogram.event - INFO - Update id=33576460 is not handled. Duration 21610 ms by bot id=8710550961
+2026-04-22 21:48:38,916 - aiogram.event - ERROR - Cause exception while process update id=33576460 by bot id=8710550961
+TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+Traceback (most recent call last):
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 167, in make_request
+    async with session.post(
+               ~~~~~~~~~~~~^
+        url,
+        ^^^^
+        data=form,
+        ^^^^^^^^^^
+        timeout=self.timeout if timeout is None else timeout,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as resp:
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\client.py", line 1521, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\client.py", line 788, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\client.py", line 766, in _connect_and_send_request
+    await resp.start(conn)
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\client_reqrep.py", line 539, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\streams.py", line 707, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 191, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 183, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\middlewares\throttling.py", line 29, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\middlewares\ban_middleware.py", line 23, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\handlers\support.py", line 174, in reply_ticket_start
+    await call.message.edit_text(
+    ...<4 lines>...
+    )
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\methods\base.py", line 82, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\bot.py", line 493, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\base.py", line 259, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 176, in make_request
+    raise TelegramNetworkError(method=method, message=f"{type(e).__name__}: {e}") from e
+aiogram.exceptions.TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 21:48:38,931 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 21:48:38,931 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-22 21:48:46,168 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8710550961)
+2026-04-22 21:48:52,210 - aiogram.event - INFO - Update id=33576462 is handled. Duration 6041 ms by bot id=8710550961
+2026-04-22 21:49:07,227 - aiogram.event - INFO - Update id=33576461 is not handled. Duration 21059 ms by bot id=8710550961
+2026-04-22 21:49:07,228 - aiogram.event - ERROR - Cause exception while process update id=33576461 by bot id=8710550961
+TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+Traceback (most recent call last):
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\connector.py", line 1310, in _wrap_create_connection
+    sock = await aiohappyeyeballs.start_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohappyeyeballs\impl.py", line 122, in start_connection
+    raise first_exception
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohappyeyeballs\impl.py", line 73, in start_connection
+    sock = await _connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohappyeyeballs\impl.py", line 208, in _connect_sock
+    await loop.sock_connect(sock, address)
+  File "C:\Users\aboba_01\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\proactor_events.py", line 728, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\aboba_01\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\windows_events.py", line 600, in finish_connect
+    ov.getresult()
+    ~~~~~~~~~~~~^^
+OSError: [WinError 121] Превышен таймаут семафора
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 167, in make_request
+    async with session.post(
+               ~~~~~~~~~~~~^
+        url,
+        ^^^^
+        data=form,
+        ^^^^^^^^^^
+        timeout=self.timeout if timeout is None else timeout,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as resp:
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\client.py", line 1521, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\client.py", line 788, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\client.py", line 742, in _connect_and_send_request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\connector.py", line 672, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\connector.py", line 1251, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\connector.py", line 1623, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\connector.py", line 1592, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiohttp\connector.py", line 1333, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 191, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 183, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\middlewares\throttling.py", line 29, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\middlewares\ban_middleware.py", line 23, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\handlers\support.py", line 174, in reply_ticket_start
+    await call.message.edit_text(
+    ...<4 lines>...
+    )
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\methods\base.py", line 82, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\bot.py", line 493, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\base.py", line 259, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 176, in make_request
+    raise TelegramNetworkError(method=method, message=f"{type(e).__name__}: {e}") from e
+aiogram.exceptions.TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+2026-04-22 21:49:28,188 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 121] Превышен таймаут семафора
+2026-04-22 21:49:28,189 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-22 21:49:58,264 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [None]
+2026-04-22 21:49:58,264 - aiogram.dispatcher - WARNING - Sleep for 1.077454 seconds and try again... (tryings = 1, bot id = 8710550961)
+2026-04-22 21:50:15,369 - aiogram.dispatcher - INFO - Connection established (tryings = 2, bot id = 8710550961)
+2026-04-22 21:51:56,779 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 21:51:56,780 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-22 21:52:09,111 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8710550961)
+2026-04-22 21:52:38,370 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 21:52:38,371 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-22 21:52:55,239 - aiogram.dispatcher - INFO - Polling stopped
+2026-04-22 21:54:14,393 - __main__ - INFO - Бот запущен
+2026-04-22 21:54:16,631 - aiogram.dispatcher - INFO - Start polling
+2026-04-22 21:54:20,863 - middlewares.logging_mw - INFO - [2026-04-22 21:54:20] User 6593438966 (@KizLyar115): /start
+2026-04-22 21:54:22,203 - aiogram.event - INFO - Update id=33576463 is handled. Duration 1341 ms by bot id=8710550961
+2026-04-22 21:55:52,225 - aiogram.event - INFO - Update id=33576464 is handled. Duration 1701 ms by bot id=8710550961
+2026-04-22 21:55:58,117 - aiogram.event - INFO - Update id=33576465 is handled. Duration 243 ms by bot id=8710550961
+2026-04-22 21:56:01,514 - aiogram.event - INFO - Update id=33576466 is handled. Duration 511 ms by bot id=8710550961
+2026-04-22 21:56:04,478 - middlewares.logging_mw - INFO - [2026-04-22 21:56:04] User 6593438966 (@KizLyar115): /support
+2026-04-22 21:56:04,607 - aiogram.event - INFO - Update id=33576467 is handled. Duration 129 ms by bot id=8710550961
+2026-04-22 21:56:09,022 - middlewares.logging_mw - INFO - [2026-04-22 21:56:09] User 6593438966 (@KizLyar115): Привет
+2026-04-22 21:56:09,299 - aiogram.event - INFO - Update id=33576468 is handled. Duration 277 ms by bot id=8710550961
+2026-04-22 21:56:32,208 - middlewares.logging_mw - INFO - [2026-04-22 21:56:32] User 6593438966 (@KizLyar115): /start
+2026-04-22 21:56:32,363 - aiogram.event - INFO - Update id=33576469 is handled. Duration 155 ms by bot id=8710550961
+2026-04-22 21:56:33,902 - aiogram.event - INFO - Update id=33576470 is handled. Duration 235 ms by bot id=8710550961
+2026-04-22 21:56:36,080 - aiogram.event - INFO - Update id=33576471 is handled. Duration 280 ms by bot id=8710550961
+2026-04-22 21:56:38,177 - aiogram.event - INFO - Update id=33576472 is handled. Duration 228 ms by bot id=8710550961
+2026-04-22 21:56:40,426 - middlewares.logging_mw - INFO - [2026-04-22 21:56:40] User 6593438966 (@KizLyar115): Пол
+2026-04-22 21:56:40,671 - aiogram.event - INFO - Update id=33576473 is handled. Duration 245 ms by bot id=8710550961
+2026-04-22 21:56:56,115 - middlewares.logging_mw - INFO - [2026-04-22 21:56:56] User 6593438966 (@KizLyar115): /start
+2026-04-22 21:56:56,229 - aiogram.event - INFO - Update id=33576474 is handled. Duration 114 ms by bot id=8710550961
+2026-04-22 21:56:57,950 - aiogram.event - INFO - Update id=33576475 is handled. Duration 227 ms by bot id=8710550961
+2026-04-22 21:59:00,218 - middlewares.logging_mw - INFO - [2026-04-22 21:59:00] User 6593438966 (@KizLyar115): /start
+2026-04-22 21:59:00,478 - aiogram.event - INFO - Update id=33576476 is handled. Duration 260 ms by bot id=8710550961
+2026-04-22 21:59:04,672 - aiogram.event - INFO - Update id=33576477 is handled. Duration 243 ms by bot id=8710550961
+2026-04-22 21:59:08,949 - aiogram.event - INFO - Update id=33576478 is handled. Duration 327 ms by bot id=8710550961
+2026-04-22 21:59:10,783 - aiogram.event - INFO - Update id=33576479 is handled. Duration 279 ms by bot id=8710550961
+2026-04-22 21:59:12,950 - middlewares.logging_mw - INFO - [2026-04-22 21:59:12] User 6593438966 (@KizLyar115): /key
+2026-04-22 21:59:13,073 - aiogram.event - INFO - Update id=33576480 is handled. Duration 123 ms by bot id=8710550961
+2026-04-22 21:59:17,542 - aiogram.event - INFO - Update id=33576481 is handled. Duration 264 ms by bot id=8710550961
+2026-04-22 21:59:19,693 - aiogram.event - INFO - Update id=33576482 is handled. Duration 252 ms by bot id=8710550961
+2026-04-22 21:59:21,418 - aiogram.event - INFO - Update id=33576483 is handled. Duration 295 ms by bot id=8710550961
+2026-04-22 21:59:22,800 - aiogram.event - INFO - Update id=33576484 is handled. Duration 237 ms by bot id=8710550961
+2026-04-22 21:59:24,227 - aiogram.event - INFO - Update id=33576485 is handled. Duration 362 ms by bot id=8710550961
+2026-04-22 21:59:27,240 - aiogram.event - INFO - Update id=33576486 is handled. Duration 283 ms by bot id=8710550961
+2026-04-22 21:59:29,252 - aiogram.event - INFO - Update id=33576487 is handled. Duration 313 ms by bot id=8710550961
+2026-04-22 22:04:15,072 - middlewares.logging_mw - INFO - [2026-04-22 22:04:15] User 6593438966 (@KizLyar115): /start
+2026-04-22 22:04:15,201 - aiogram.event - INFO - Update id=33576488 is handled. Duration 129 ms by bot id=8710550961
+2026-04-22 22:04:18,131 - aiogram.event - INFO - Update id=33576489 is handled. Duration 272 ms by bot id=8710550961
+2026-04-22 22:04:19,121 - aiogram.event - INFO - Update id=33576490 is handled. Duration 258 ms by bot id=8710550961
+2026-04-22 22:04:20,950 - aiogram.event - INFO - Update id=33576491 is handled. Duration 585 ms by bot id=8710550961
+2026-04-22 22:04:25,023 - middlewares.logging_mw - INFO - [2026-04-22 22:04:25] User 6593438966 (@KizLyar115): Дарова сынули
+2026-04-22 22:04:25,460 - aiogram.event - INFO - Update id=33576492 is handled. Duration 438 ms by bot id=8710550961
+2026-04-22 22:05:09,970 - middlewares.logging_mw - INFO - [2026-04-22 22:05:09] User 6593438966 (@KizLyar115): /support вы хуевые типы
+2026-04-22 22:05:10,180 - aiogram.event - INFO - Update id=33576493 is handled. Duration 210 ms by bot id=8710550961
+2026-04-22 22:05:12,897 - middlewares.logging_mw - INFO - [2026-04-22 22:05:12] User 6593438966 (@KizLyar115): /support
+2026-04-22 22:05:13,031 - aiogram.event - INFO - Update id=33576494 is handled. Duration 134 ms by bot id=8710550961
+2026-04-22 22:05:19,549 - middlewares.logging_mw - INFO - [2026-04-22 22:05:19] User 6593438966 (@KizLyar115): /start
+2026-04-22 22:05:19,674 - aiogram.event - INFO - Update id=33576495 is handled. Duration 124 ms by bot id=8710550961
+2026-04-22 22:05:22,706 - aiogram.event - INFO - Update id=33576496 is handled. Duration 306 ms by bot id=8710550961
+2026-04-22 22:05:24,756 - aiogram.event - INFO - Update id=33576497 is handled. Duration 290 ms by bot id=8710550961
+2026-04-22 22:05:25,878 - aiogram.event - INFO - Update id=33576498 is not handled. Duration 183 ms by bot id=8710550961
+2026-04-22 22:05:25,879 - aiogram.event - ERROR - Cause exception while process update id=33576498 by bot id=8710550961
+TelegramBadRequest: Telegram server says - Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+Traceback (most recent call last):
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 191, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 183, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\middlewares\throttling.py", line 29, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\middlewares\ban_middleware.py", line 23, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\handlers\support.py", line 156, in view_ticket
+    await call.message.edit_text(
+    ...<3 lines>...
+    )
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\methods\base.py", line 82, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\bot.py", line 493, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\base.py", line 259, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 177, in make_request
+    response = self.check_response(
+        bot=bot,
+    ...<2 lines>...
+        content=raw_result,
+    )
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\base.py", line 121, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2026-04-22 22:05:37,507 - aiogram.event - INFO - Update id=33576499 is handled. Duration 226 ms by bot id=8710550961
+2026-04-22 22:05:40,795 - aiogram.event - INFO - Update id=33576500 is handled. Duration 140 ms by bot id=8710550961
+2026-04-22 22:05:44,322 - aiogram.event - INFO - Update id=33576501 is handled. Duration 120 ms by bot id=8710550961
+2026-04-22 22:07:35,759 - middlewares.logging_mw - INFO - [2026-04-22 22:07:35] User 8081402866 (@None): /start
+2026-04-22 22:07:35,902 - aiogram.event - INFO - Update id=33576502 is handled. Duration 143 ms by bot id=8710550961
+2026-04-22 22:09:04,709 - middlewares.logging_mw - INFO - [2026-04-22 22:09:04] User 6593438966 (@KizLyar115): /start
+2026-04-22 22:09:04,939 - aiogram.event - INFO - Update id=33576503 is handled. Duration 230 ms by bot id=8710550961
+2026-04-22 22:09:09,887 - aiogram.event - INFO - Update id=33576504 is handled. Duration 216 ms by bot id=8710550961
+2026-04-22 22:09:11,686 - aiogram.event - INFO - Update id=33576505 is handled. Duration 270 ms by bot id=8710550961
+2026-04-22 22:09:14,220 - aiogram.event - INFO - Update id=33576506 is handled. Duration 256 ms by bot id=8710550961
+2026-04-22 22:09:16,824 - middlewares.logging_mw - INFO - [2026-04-22 22:09:16] User 6593438966 (@KizLyar115): бэм
+2026-04-22 22:09:17,078 - aiogram.event - INFO - Update id=33576507 is handled. Duration 1376 ms by bot id=8710550961
+2026-04-22 22:09:17,923 - middlewares.logging_mw - INFO - [2026-04-22 22:09:17] User 6593438966 (@KizLyar115): бэм
+2026-04-22 22:09:18,213 - aiogram.event - INFO - Update id=33576509 is handled. Duration 290 ms by bot id=8710550961
+2026-04-22 22:09:18,395 - aiogram.event - INFO - Update id=33576508 is handled. Duration 1571 ms by bot id=8710550961
+2026-04-22 22:09:21,823 - aiogram.event - INFO - Update id=33576510 is handled. Duration 130 ms by bot id=8710550961
+2026-04-22 22:10:41,509 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 22:10:41,509 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-22 22:10:43,822 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8710550961)
+2026-04-22 22:10:43,823 - middlewares.logging_mw - INFO - [2026-04-22 22:10:43] User 8081402866 (@None): /start
+2026-04-22 22:10:45,360 - aiogram.event - INFO - Update id=33576511 is handled. Duration 1537 ms by bot id=8710550961
+2026-04-22 22:11:13,072 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 22:11:13,072 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-22 22:11:25,424 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8710550961)
+2026-04-22 22:11:42,418 - middlewares.logging_mw - INFO - [2026-04-22 22:11:42] User 6593438966 (@KizLyar115): /ban 8081402866 хуеглот
+2026-04-22 22:12:04,853 - aiogram.event - INFO - Update id=33576512 is handled. Duration 22434 ms by bot id=8710550961
+2026-04-22 22:12:11,727 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 22:12:11,727 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-22 22:12:12,865 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8710550961)
+2026-04-22 22:12:12,865 - middlewares.logging_mw - INFO - [2026-04-22 22:12:12] User 6593438966 (@KizLyar115): /ban
+2026-04-22 22:12:14,338 - aiogram.event - INFO - Update id=33576513 is handled. Duration 1472 ms by bot id=8710550961
+2026-04-22 22:13:09,254 - middlewares.logging_mw - INFO - [2026-04-22 22:13:09] User 6593438966 (@KizLyar115): /start
+2026-04-22 22:13:09,391 - aiogram.event - INFO - Update id=33576514 is handled. Duration 138 ms by bot id=8710550961
+2026-04-22 22:13:19,836 - aiogram.event - INFO - Update id=33576515 is handled. Duration 272 ms by bot id=8710550961
+2026-04-22 22:13:20,888 - aiogram.event - INFO - Update id=33576516 is handled. Duration 347 ms by bot id=8710550961
+2026-04-22 22:13:22,963 - aiogram.event - INFO - Update id=33576517 is handled. Duration 293 ms by bot id=8710550961
+2026-04-22 22:13:30,160 - middlewares.logging_mw - INFO - [2026-04-22 22:13:30] User 6593438966 (@KizLyar115): добрый день, почему вы меня наебали
+2026-04-22 22:13:30,695 - aiogram.event - INFO - Update id=33576518 is handled. Duration 535 ms by bot id=8710550961
+2026-04-22 22:13:54,785 - middlewares.logging_mw - INFO - [2026-04-22 22:13:54] User 6593438966 (@KizLyar115): Вы меня обманули
+2026-04-22 22:13:55,128 - aiogram.event - INFO - Update id=33576519 is handled. Duration 343 ms by bot id=8710550961
+2026-04-22 22:14:14,382 - aiogram.event - INFO - Update id=33576520 is handled. Duration 112 ms by bot id=8710550961
+2026-04-22 22:15:06,222 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 121] Превышен таймаут семафора
+2026-04-22 22:15:06,222 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-22 22:15:18,507 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8710550961)
+2026-04-22 22:15:38,644 - aiogram.event - INFO - Update id=33576521 is handled. Duration 0 ms by bot id=8710550961
+2026-04-22 22:15:48,834 - middlewares.logging_mw - INFO - [2026-04-22 22:15:48] User 8081402866 (@None): Хуеплет ебаный
+2026-04-22 22:15:50,192 - aiogram.event - INFO - Update id=33576522 is handled. Duration 1358 ms by bot id=8710550961
+2026-04-22 22:15:51,105 - middlewares.logging_mw - INFO - [2026-04-22 22:15:51] User 8081402866 (@None): Шпингалет
+2026-04-22 22:15:51,243 - aiogram.event - INFO - Update id=33576523 is handled. Duration 138 ms by bot id=8710550961
+2026-04-22 22:15:54,238 - middlewares.logging_mw - INFO - [2026-04-22 22:15:54] User 8081402866 (@None): Какие тебе темки
+2026-04-22 22:15:54,402 - aiogram.event - INFO - Update id=33576524 is handled. Duration 164 ms by bot id=8710550961
+2026-04-22 22:16:09,680 - middlewares.logging_mw - INFO - [2026-04-22 22:16:09] User 6593438966 (@KizLyar115): /ban 6593438966 чё нахуй несет
+2026-04-22 22:16:09,991 - aiogram.event - INFO - Update id=33576525 is handled. Duration 311 ms by bot id=8710550961
+2026-04-22 22:17:36,826 - middlewares.logging_mw - INFO - [2026-04-22 22:17:36] User 8455683591 (@misha231663): рассылка
+2026-04-22 22:17:36,959 - aiogram.event - INFO - Update id=33576526 is handled. Duration 132 ms by bot id=8710550961
+2026-04-22 22:17:39,181 - middlewares.logging_mw - INFO - [2026-04-22 22:17:39] User 8455683591 (@misha231663): /start
+2026-04-22 22:17:39,342 - aiogram.event - INFO - Update id=33576527 is handled. Duration 161 ms by bot id=8710550961
+2026-04-22 22:17:45,521 - middlewares.logging_mw - INFO - [2026-04-22 22:17:45] User 8081402866 (@None): /start
+2026-04-22 22:17:45,641 - aiogram.event - INFO - Update id=33576528 is handled. Duration 120 ms by bot id=8710550961
+2026-04-22 22:17:50,836 - aiogram.event - INFO - Update id=33576529 is handled. Duration 145 ms by bot id=8710550961
+2026-04-22 22:17:53,086 - aiogram.event - INFO - Update id=33576530 is handled. Duration 240 ms by bot id=8710550961
+2026-04-22 22:17:57,252 - aiogram.event - INFO - Update id=33576531 is handled. Duration 294 ms by bot id=8710550961
+2026-04-22 22:18:10,160 - aiogram.event - INFO - Update id=33576534 is handled. Duration 357 ms by bot id=8710550961
+2026-04-22 22:18:10,481 - aiogram.event - INFO - Update id=33576532 is handled. Duration 11748 ms by bot id=8710550961
+2026-04-22 22:18:12,188 - aiogram.event - INFO - Update id=33576533 is handled. Duration 6541 ms by bot id=8710550961
+2026-04-22 22:20:44,653 - middlewares.logging_mw - INFO - [2026-04-22 22:20:44] User 5313141497 (@Kutik_06): /start
+2026-04-22 22:20:44,842 - aiogram.event - INFO - Update id=33576535 is handled. Duration 188 ms by bot id=8710550961
+2026-04-22 22:22:21,408 - aiogram.event - INFO - Update id=33576536 is handled. Duration 1402 ms by bot id=8710550961
+2026-04-22 22:22:24,247 - aiogram.event - INFO - Update id=33576537 is handled. Duration 204 ms by bot id=8710550961
+2026-04-22 22:22:26,574 - aiogram.event - INFO - Update id=33576538 is handled. Duration 381 ms by bot id=8710550961
+2026-04-22 22:22:29,572 - middlewares.logging_mw - INFO - [2026-04-22 22:22:29] User 6593438966 (@KizLyar115): /start
+2026-04-22 22:22:29,727 - aiogram.event - INFO - Update id=33576539 is handled. Duration 155 ms by bot id=8710550961
+2026-04-22 22:22:31,303 - aiogram.event - INFO - Update id=33576540 is handled. Duration 228 ms by bot id=8710550961
+2026-04-22 22:22:33,589 - aiogram.event - INFO - Update id=33576541 is not handled. Duration 199 ms by bot id=8710550961
+2026-04-22 22:22:33,589 - aiogram.event - ERROR - Cause exception while process update id=33576541 by bot id=8710550961
+TelegramBadRequest: Telegram server says - Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+Traceback (most recent call last):
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 191, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 183, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\middlewares\throttling.py", line 29, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\middlewares\ban_middleware.py", line 23, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\handlers\payment.py", line 23, in show_payment_info
+    await call.message.edit_text(
+    ...<2 lines>...
+    )
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\methods\base.py", line 82, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\bot.py", line 493, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\base.py", line 259, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 177, in make_request
+    response = self.check_response(
+        bot=bot,
+    ...<2 lines>...
+        content=raw_result,
+    )
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\base.py", line 121, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2026-04-22 22:22:34,753 - middlewares.logging_mw - INFO - [2026-04-22 22:22:34] User 6593438966 (@KizLyar115): /key
+2026-04-22 22:22:34,914 - aiogram.event - INFO - Update id=33576542 is handled. Duration 161 ms by bot id=8710550961
+2026-04-22 22:22:43,428 - middlewares.logging_mw - INFO - [2026-04-22 22:22:43] User 6593438966 (@KizLyar115): /key
+2026-04-22 22:22:43,546 - aiogram.event - INFO - Update id=33576543 is handled. Duration 119 ms by bot id=8710550961
+2026-04-22 22:22:48,267 - middlewares.logging_mw - INFO - [2026-04-22 22:22:48] User 6593438966 (@KizLyar115): /start
+2026-04-22 22:22:48,433 - aiogram.event - INFO - Update id=33576544 is handled. Duration 166 ms by bot id=8710550961
+2026-04-22 22:24:12,287 - middlewares.logging_mw - INFO - [2026-04-22 22:24:12] User 6593438966 (@KizLyar115): пр
+2026-04-22 22:24:12,421 - aiogram.event - INFO - Update id=33576545 is handled. Duration 135 ms by bot id=8710550961
+2026-04-22 22:24:14,570 - middlewares.logging_mw - INFO - [2026-04-22 22:24:14] User 6593438966 (@KizLyar115): /admin
+2026-04-22 22:24:14,765 - aiogram.event - INFO - Update id=33576546 is handled. Duration 194 ms by bot id=8710550961
+2026-04-22 22:24:34,442 - middlewares.logging_mw - INFO - [2026-04-22 22:24:34] User 6593438966 (@KizLyar115): /setamount 99
+2026-04-22 22:24:34,589 - aiogram.event - INFO - Update id=33576547 is handled. Duration 147 ms by bot id=8710550961
+2026-04-22 22:24:37,053 - middlewares.logging_mw - INFO - [2026-04-22 22:24:37] User 6593438966 (@KizLyar115): /start
+2026-04-22 22:24:37,205 - aiogram.event - INFO - Update id=33576548 is handled. Duration 153 ms by bot id=8710550961
+2026-04-22 22:24:39,031 - aiogram.event - INFO - Update id=33576549 is handled. Duration 297 ms by bot id=8710550961
+2026-04-22 22:24:40,769 - aiogram.event - INFO - Update id=33576550 is not handled. Duration 110 ms by bot id=8710550961
+2026-04-22 22:24:40,769 - aiogram.event - ERROR - Cause exception while process update id=33576550 by bot id=8710550961
+TelegramBadRequest: Telegram server says - Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+Traceback (most recent call last):
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 191, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 183, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\middlewares\throttling.py", line 29, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\middlewares\ban_middleware.py", line 23, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\handlers\payment.py", line 23, in show_payment_info
+    await call.message.edit_text(
+    ...<2 lines>...
+    )
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\methods\base.py", line 82, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\bot.py", line 493, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\base.py", line 259, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 177, in make_request
+    response = self.check_response(
+        bot=bot,
+    ...<2 lines>...
+        content=raw_result,
+    )
+  File "C:\Users\aboba_01\Desktop\проект\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\base.py", line 121, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2026-04-22 22:24:41,516 - aiogram.event - INFO - Update id=33576551 is handled. Duration 242 ms by bot id=8710550961
+2026-04-22 22:24:43,221 - aiogram.event - INFO - Update id=33576552 is handled. Duration 237 ms by bot id=8710550961
+2026-04-22 22:24:57,212 - middlewares.logging_mw - INFO - [2026-04-22 22:24:57] User 6593438966 (@KizLyar115): /opentickets
+2026-04-22 22:24:57,368 - aiogram.event - INFO - Update id=33576553 is handled. Duration 157 ms by bot id=8710550961
+2026-04-22 22:25:01,138 - aiogram.event - INFO - Update id=33576554 is handled. Duration 127 ms by bot id=8710550961
+2026-04-22 22:25:45,766 - aiogram.event - INFO - Update id=33576555 is handled. Duration 155 ms by bot id=8710550961
+2026-04-22 22:26:03,826 - middlewares.logging_mw - INFO - [2026-04-22 22:26:03] User 6593438966 (@KizLyar115): /ban 8455683591 Открывание платежа без оплаты (Для разбана пишите менеджеру @KizLyar115)
+2026-04-22 22:26:04,151 - aiogram.event - INFO - Update id=33576556 is handled. Duration 325 ms by bot id=8710550961
+2026-04-22 22:28:24,478 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 22:28:24,478 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-22 22:28:37,545 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8710550961)
+2026-04-22 22:48:22,306 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 22:48:22,306 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-22 22:48:34,643 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8710550961)
+2026-04-22 22:54:37,983 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-22 22:54:37,984 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-22 22:55:00,470 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8710550961)
+2026-04-22 23:34:35,180 - middlewares.logging_mw - INFO - [2026-04-22 23:34:35] User 5928474823 (@None): /start
+2026-04-22 23:34:36,510 - aiogram.event - INFO - Update id=33576557 is handled. Duration 1329 ms by bot id=8710550961
+2026-04-22 23:35:06,997 - aiogram.event - INFO - Update id=33576558 is handled. Duration 203 ms by bot id=8710550961
+2026-04-22 23:35:25,916 - aiogram.event - INFO - Update id=33576559 is handled. Duration 213 ms by bot id=8710550961
+2026-04-22 23:35:42,906 - aiogram.event - INFO - Update id=33576560 is handled. Duration 315 ms by bot id=8710550961
+2026-04-22 23:35:56,470 - middlewares.logging_mw - INFO - [2026-04-22 23:35:56] User 5928474823 (@None): /start
+2026-04-22 23:35:56,490 - aiogram.event - INFO - Update id=33576564 is handled. Duration 3369 ms by bot id=8710550961
+2026-04-22 23:35:57,836 - aiogram.event - INFO - Update id=33576563 is handled. Duration 6256 ms by bot id=8710550961
+2026-04-22 23:35:57,940 - aiogram.event - INFO - Update id=33576566 is handled. Duration 4600 ms by bot id=8710550961
+2026-04-22 23:35:57,972 - aiogram.event - INFO - Update id=33576562 is handled. Duration 7885 ms by bot id=8710550961
+2026-04-22 23:35:59,111 - aiogram.event - INFO - Update id=33576567 is handled. Duration 2641 ms by bot id=8710550961
+2026-04-22 23:35:59,184 - aiogram.event - INFO - Update id=33576561 is handled. Duration 14304 ms by bot id=8710550961
+2026-04-22 23:36:00,545 - aiogram.event - INFO - Update id=33576565 is handled. Duration 7314 ms by bot id=8710550961
+2026-04-22 23:36:12,748 - aiogram.event - INFO - Update id=33576568 is handled. Duration 1884 ms by bot id=8710550961
+2026-04-22 23:36:17,478 - aiogram.event - INFO - Update id=33576569 is handled. Duration 115 ms by bot id=8710550961
+2026-04-22 23:38:00,488 - aiogram.event - INFO - Update id=33576570 is handled. Duration 240 ms by bot id=8710550961
+2026-04-22 23:38:02,108 - aiogram.event - INFO - Update id=33576571 is handled. Duration 253 ms by bot id=8710550961
+2026-04-22 23:38:06,290 - aiogram.event - INFO - Update id=33576572 is handled. Duration 233 ms by bot id=8710550961
+2026-04-22 23:38:09,431 - middlewares.logging_mw - INFO - [2026-04-22 23:38:09] User 5928474823 (@None): Здравствуйте
+2026-04-22 23:38:09,671 - aiogram.event - INFO - Update id=33576573 is handled. Duration 240 ms by bot id=8710550961
+2026-04-22 23:38:15,767 - middlewares.logging_mw - INFO - [2026-04-22 23:38:15] User 5928474823 (@None): Почему у меня не оплачивается
+2026-04-22 23:38:16,035 - aiogram.event - INFO - Update id=33576574 is handled. Duration 267 ms by bot id=8710550961
+2026-04-22 23:40:04,388 - middlewares.logging_mw - INFO - [2026-04-22 23:40:04] User 5928474823 (@None): Закройте тикет
+2026-04-22 23:40:04,863 - aiogram.event - INFO - Update id=33576575 is handled. Duration 476 ms by bot id=8710550961
+2026-04-22 23:41:21,120 - middlewares.logging_mw - INFO - [2026-04-22 23:41:21] User 6593438966 (@KizLyar115): /start
+2026-04-22 23:41:21,278 - aiogram.event - INFO - Update id=33576576 is handled. Duration 157 ms by bot id=8710550961
+2026-04-22 23:41:23,421 - aiogram.event - INFO - Update id=33576577 is handled. Duration 418 ms by bot id=8710550961
+2026-04-22 23:41:25,035 - aiogram.event - INFO - Update id=33576578 is handled. Duration 361 ms by bot id=8710550961
+2026-04-23 21:49:57,149 - __main__ - INFO - Р‘РѕС‚ Р·Р°РїСѓС‰РµРЅ!
+2026-04-23 21:50:18,206 - aiogram.dispatcher - INFO - Start polling
+2026-04-23 21:50:18,504 - aiogram.dispatcher - INFO - Run polling for bot @ai_accessS_bot id=8710550961 - 'Ai Acess рџ«†'
+2026-04-23 21:50:18,589 - middlewares.logging_mw - INFO - [2026-04-23 21:50:18] User 7948137191 (@Nastya602): /start
+2026-04-23 21:50:18,887 - aiogram.event - INFO - Update id=33576579 is handled. Duration 298 ms by bot id=8710550961
+2026-04-23 21:50:46,108 - middlewares.logging_mw - INFO - [2026-04-23 21:50:46] User 6593438966 (@KizLyar115): /start
+2026-04-23 21:50:46,244 - aiogram.event - INFO - Update id=33576580 is handled. Duration 135 ms by bot id=8710550961
+2026-04-23 21:50:52,006 - aiogram.event - INFO - Update id=33576581 is handled. Duration 217 ms by bot id=8710550961
+2026-04-23 21:50:54,308 - aiogram.event - INFO - Update id=33576582 is not handled. Duration 3 ms by bot id=8710550961
+2026-04-23 21:50:54,308 - aiogram.event - ERROR - Cause exception while process update id=33576582 by bot id=8710550961
+KeyError: 'sim_paid'
+Traceback (most recent call last):
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 191, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 183, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\middlewares\throttling.py", line 29, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\middlewares\ban_middleware.py", line 23, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\handlers\common.py", line 175, in start_sim_order
+    if not UserModel.is_sim_premium(call.from_user.id):
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\database\models.py", line 294, in is_sim_premium
+    if user['sim_paid'] == 1:
+       ~~~~^^^^^^^^^^^^
+KeyError: 'sim_paid'
+2026-04-23 21:51:57,273 - aiogram.event - INFO - Update id=33576583 is handled. Duration 203 ms by bot id=8710550961
+2026-04-23 21:51:58,300 - aiogram.event - INFO - Update id=33576584 is handled. Duration 208 ms by bot id=8710550961
+2026-04-23 21:52:00,002 - aiogram.event - INFO - Update id=33576585 is not handled. Duration 4 ms by bot id=8710550961
+2026-04-23 21:52:00,002 - aiogram.event - ERROR - Cause exception while process update id=33576585 by bot id=8710550961
+KeyError: 'sim_paid'
+Traceback (most recent call last):
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 191, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 183, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\middlewares\throttling.py", line 29, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\middlewares\ban_middleware.py", line 23, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\handlers\common.py", line 131, in show_profile
+    sim_premium = UserModel.is_sim_premium(call.from_user.id)
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\database\models.py", line 294, in is_sim_premium
+    if user['sim_paid'] == 1:
+       ~~~~^^^^^^^^^^^^
+KeyError: 'sim_paid'
+2026-04-23 21:52:02,211 - aiogram.event - INFO - Update id=33576586 is not handled. Duration 4 ms by bot id=8710550961
+2026-04-23 21:52:02,211 - aiogram.event - ERROR - Cause exception while process update id=33576586 by bot id=8710550961
+KeyError: 'sim_paid'
+Traceback (most recent call last):
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 191, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 183, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\middlewares\throttling.py", line 29, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\middlewares\ban_middleware.py", line 23, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\handlers\payment.py", line 56, in show_sim_payment
+    if UserModel.is_sim_premium(call.from_user.id):
+       ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\database\models.py", line 294, in is_sim_premium
+    if user['sim_paid'] == 1:
+       ~~~~^^^^^^^^^^^^
+KeyError: 'sim_paid'
+2026-04-23 21:52:04,689 - aiogram.event - INFO - Update id=33576587 is handled. Duration 262 ms by bot id=8710550961
+2026-04-23 21:52:09,126 - aiogram.event - INFO - Update id=33576588 is handled. Duration 373 ms by bot id=8710550961
+2026-04-23 21:52:09,962 - aiogram.event - INFO - Update id=33576589 is handled. Duration 225 ms by bot id=8710550961
+2026-04-23 21:52:12,873 - aiogram.event - INFO - Update id=33576590 is handled. Duration 339 ms by bot id=8710550961
+2026-04-23 21:52:15,391 - aiogram.event - INFO - Update id=33576591 is not handled. Duration 2 ms by bot id=8710550961
+2026-04-23 21:52:15,392 - aiogram.event - ERROR - Cause exception while process update id=33576591 by bot id=8710550961
+KeyError: 'sim_paid'
+Traceback (most recent call last):
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 191, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 183, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\middlewares\throttling.py", line 29, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\middlewares\ban_middleware.py", line 23, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\handlers\common.py", line 131, in show_profile
+    sim_premium = UserModel.is_sim_premium(call.from_user.id)
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\database\models.py", line 294, in is_sim_premium
+    if user['sim_paid'] == 1:
+       ~~~~^^^^^^^^^^^^
+KeyError: 'sim_paid'
+2026-04-23 21:52:33,621 - aiogram.event - INFO - Update id=33576592 is not handled. Duration 3 ms by bot id=8710550961
+2026-04-23 21:52:33,621 - aiogram.event - ERROR - Cause exception while process update id=33576592 by bot id=8710550961
+KeyError: 'sim_paid'
+Traceback (most recent call last):
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 191, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 183, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\middlewares\throttling.py", line 29, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\middlewares\ban_middleware.py", line 23, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\handlers\common.py", line 131, in show_profile
+    sim_premium = UserModel.is_sim_premium(call.from_user.id)
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\database\models.py", line 294, in is_sim_premium
+    if user['sim_paid'] == 1:
+       ~~~~^^^^^^^^^^^^
+KeyError: 'sim_paid'
+2026-04-23 21:52:36,248 - middlewares.logging_mw - INFO - [2026-04-23 21:52:36] User 6593438966 (@KizLyar115): /start
+2026-04-23 21:52:36,353 - aiogram.event - INFO - Update id=33576593 is handled. Duration 105 ms by bot id=8710550961
+2026-04-23 21:52:38,050 - aiogram.event - INFO - Update id=33576594 is handled. Duration 97 ms by bot id=8710550961
+2026-04-23 21:54:16,708 - aiogram.dispatcher - INFO - Polling stopped
+2026-04-23 21:54:16,709 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-23 21:54:16,709 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-23 21:54:16,970 - aiogram.dispatcher - INFO - Polling stopped for bot @ai_accessS_bot id=8710550961 - 'Ai Acess рџ«†'
+2026-04-23 21:54:21,315 - __main__ - INFO - Р‘РѕС‚ Р·Р°РїСѓС‰РµРЅ!
+2026-04-23 21:54:21,683 - aiogram.dispatcher - INFO - Start polling
+2026-04-23 21:54:21,780 - aiogram.dispatcher - INFO - Run polling for bot @ai_accessS_bot id=8710550961 - 'Ai Acess рџ«†'
+2026-04-23 21:54:25,520 - middlewares.logging_mw - INFO - [2026-04-23 21:54:25] User 6593438966 (@KizLyar115): /start
+2026-04-23 21:54:25,917 - aiogram.event - INFO - Update id=33576595 is handled. Duration 396 ms by bot id=8710550961
+2026-04-23 21:54:28,099 - aiogram.event - INFO - Update id=33576596 is handled. Duration 361 ms by bot id=8710550961
+2026-04-23 21:54:29,071 - aiogram.event - INFO - Update id=33576597 is handled. Duration 166 ms by bot id=8710550961
+2026-04-23 21:54:32,312 - aiogram.event - INFO - Update id=33576598 is handled. Duration 230 ms by bot id=8710550961
+2026-04-23 21:54:33,876 - aiogram.event - INFO - Update id=33576599 is handled. Duration 217 ms by bot id=8710550961
+2026-04-23 21:54:35,271 - aiogram.event - INFO - Update id=33576600 is handled. Duration 228 ms by bot id=8710550961
+2026-04-23 21:54:38,684 - aiogram.event - INFO - Update id=33576601 is handled. Duration 301 ms by bot id=8710550961
+2026-04-23 21:54:39,450 - aiogram.event - INFO - Update id=33576602 is handled. Duration 231 ms by bot id=8710550961
+2026-04-23 21:54:40,282 - aiogram.event - INFO - Update id=33576603 is handled. Duration 379 ms by bot id=8710550961
+2026-04-23 21:54:42,444 - aiogram.event - INFO - Update id=33576604 is handled. Duration 246 ms by bot id=8710550961
+2026-04-23 21:54:43,566 - aiogram.event - INFO - Update id=33576605 is handled. Duration 277 ms by bot id=8710550961
+2026-04-23 21:54:46,641 - aiogram.event - INFO - Update id=33576606 is handled. Duration 92 ms by bot id=8710550961
+2026-04-23 21:54:48,471 - aiogram.event - INFO - Update id=33576607 is handled. Duration 139 ms by bot id=8710550961
+2026-04-23 21:56:56,966 - aiogram.event - INFO - Update id=33576608 is handled. Duration 225 ms by bot id=8710550961
+2026-04-23 21:56:59,328 - aiogram.event - INFO - Update id=33576609 is handled. Duration 320 ms by bot id=8710550961
+2026-04-23 21:57:01,979 - aiogram.event - INFO - Update id=33576610 is handled. Duration 238 ms by bot id=8710550961
+2026-04-23 21:57:07,986 - aiogram.event - INFO - Update id=33576611 is handled. Duration 226 ms by bot id=8710550961
+2026-04-23 21:57:09,547 - aiogram.event - INFO - Update id=33576612 is handled. Duration 288 ms by bot id=8710550961
+2026-04-23 21:57:10,970 - aiogram.event - INFO - Update id=33576613 is handled. Duration 275 ms by bot id=8710550961
+2026-04-23 21:57:12,922 - aiogram.event - INFO - Update id=33576614 is handled. Duration 252 ms by bot id=8710550961
+2026-04-23 21:57:13,670 - aiogram.event - INFO - Update id=33576615 is handled. Duration 267 ms by bot id=8710550961
+2026-04-23 21:57:19,102 - aiogram.event - INFO - Update id=33576616 is handled. Duration 563 ms by bot id=8710550961
+2026-04-23 21:57:21,046 - aiogram.event - INFO - Update id=33576617 is handled. Duration 369 ms by bot id=8710550961
+2026-04-23 21:57:25,033 - middlewares.logging_mw - INFO - [2026-04-23 21:57:25] User 6593438966 (@KizLyar115): /start
+2026-04-23 21:57:25,154 - aiogram.event - INFO - Update id=33576618 is handled. Duration 120 ms by bot id=8710550961
+2026-04-23 21:57:26,462 - aiogram.event - INFO - Update id=33576619 is handled. Duration 95 ms by bot id=8710550961
+2026-04-23 21:59:51,229 - middlewares.logging_mw - INFO - [2026-04-23 21:59:51] User 6593438966 (@KizLyar115): /start
+2026-04-23 21:59:51,377 - aiogram.event - INFO - Update id=33576620 is handled. Duration 148 ms by bot id=8710550961
+2026-04-23 21:59:52,930 - aiogram.event - INFO - Update id=33576621 is handled. Duration 240 ms by bot id=8710550961
+2026-04-23 21:59:54,397 - aiogram.event - INFO - Update id=33576622 is handled. Duration 222 ms by bot id=8710550961
+2026-04-23 21:59:56,175 - aiogram.event - INFO - Update id=33576623 is handled. Duration 236 ms by bot id=8710550961
+2026-04-23 21:59:58,556 - aiogram.event - INFO - Update id=33576624 is handled. Duration 232 ms by bot id=8710550961
+2026-04-23 22:00:00,089 - aiogram.event - INFO - Update id=33576625 is handled. Duration 300 ms by bot id=8710550961
+2026-04-23 22:00:03,524 - aiogram.event - INFO - Update id=33576626 is handled. Duration 218 ms by bot id=8710550961
+2026-04-23 22:00:04,888 - aiogram.event - INFO - Update id=33576627 is handled. Duration 270 ms by bot id=8710550961
+2026-04-23 22:00:06,744 - aiogram.event - INFO - Update id=33576628 is handled. Duration 230 ms by bot id=8710550961
+2026-04-23 22:00:07,448 - aiogram.event - INFO - Update id=33576629 is not handled. Duration 5 ms by bot id=8710550961
+2026-04-23 22:00:10,134 - aiogram.event - INFO - Update id=33576630 is handled. Duration 264 ms by bot id=8710550961
+2026-04-23 22:00:17,464 - middlewares.logging_mw - INFO - [2026-04-23 22:00:17] User 5928474823 (@AiAcessManager): /start
+2026-04-23 22:00:17,586 - aiogram.event - INFO - Update id=33576631 is handled. Duration 122 ms by bot id=8710550961
+2026-04-23 22:00:19,119 - aiogram.event - INFO - Update id=33576632 is handled. Duration 216 ms by bot id=8710550961
+2026-04-23 22:00:20,112 - aiogram.event - INFO - Update id=33576633 is not handled. Duration 5 ms by bot id=8710550961
+2026-04-23 22:00:23,883 - middlewares.logging_mw - INFO - [2026-04-23 22:00:23] User 5928474823 (@AiAcessManager): /support
+2026-04-23 22:00:23,991 - aiogram.event - INFO - Update id=33576634 is handled. Duration 108 ms by bot id=8710550961
+2026-04-23 22:00:27,933 - middlewares.logging_mw - INFO - [2026-04-23 22:00:27] User 5928474823 (@AiAcessManager): /support
+2026-04-23 22:00:28,041 - aiogram.event - INFO - Update id=33576635 is handled. Duration 108 ms by bot id=8710550961
+2026-04-23 22:01:58,521 - middlewares.logging_mw - INFO - [2026-04-23 22:01:58] User 5928474823 (@AiAcessManager): /start
+2026-04-23 22:01:58,635 - aiogram.event - INFO - Update id=33576636 is handled. Duration 114 ms by bot id=8710550961
+2026-04-23 22:02:00,828 - aiogram.event - INFO - Update id=33576637 is handled. Duration 220 ms by bot id=8710550961
+2026-04-23 22:02:02,686 - aiogram.event - INFO - Update id=33576638 is handled. Duration 222 ms by bot id=8710550961
+2026-04-23 22:02:05,080 - aiogram.event - INFO - Update id=33576639 is handled. Duration 304 ms by bot id=8710550961
+2026-04-23 22:02:07,334 - aiogram.event - INFO - Update id=33576640 is handled. Duration 867 ms by bot id=8710550961
+2026-04-23 22:07:28,919 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-23 22:07:28,920 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-23 22:07:40,544 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8710550961)
+2026-04-23 22:14:03,474 - aiogram.event - INFO - Update id=33576641 is handled. Duration 500 ms by bot id=8710550961
+2026-04-23 22:14:08,756 - aiogram.event - INFO - Update id=33576642 is handled. Duration 213 ms by bot id=8710550961
+2026-04-23 22:14:11,395 - aiogram.event - INFO - Update id=33576643 is handled. Duration 500 ms by bot id=8710550961
+2026-04-23 22:14:13,861 - aiogram.event - INFO - Update id=33576644 is handled. Duration 282 ms by bot id=8710550961
+2026-04-23 22:14:28,450 - aiogram.event - INFO - Update id=33576645 is handled. Duration 107 ms by bot id=8710550961
+2026-04-23 22:14:31,426 - aiogram.event - INFO - Update id=33576646 is handled. Duration 370 ms by bot id=8710550961
+2026-04-23 22:14:35,114 - aiogram.event - INFO - Update id=33576647 is handled. Duration 227 ms by bot id=8710550961
+2026-04-23 22:14:39,093 - aiogram.event - INFO - Update id=33576648 is handled. Duration 1817 ms by bot id=8710550961
+2026-04-23 22:14:44,716 - aiogram.event - INFO - Update id=33576649 is handled. Duration 586 ms by bot id=8710550961
+2026-04-23 22:14:53,244 - aiogram.event - INFO - Update id=33576650 is handled. Duration 1573 ms by bot id=8710550961
+2026-04-23 22:14:57,178 - aiogram.event - INFO - Update id=33576651 is handled. Duration 126 ms by bot id=8710550961
+2026-04-23 22:15:01,944 - aiogram.event - INFO - Update id=33576652 is handled. Duration 1491 ms by bot id=8710550961
+2026-04-23 22:16:01,777 - aiogram.event - INFO - Update id=33576653 is handled. Duration 118 ms by bot id=8710550961
+2026-04-23 22:16:35,761 - aiogram.dispatcher - INFO - Polling stopped
+2026-04-23 22:16:35,761 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-23 22:16:35,761 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-23 22:16:36,027 - aiogram.dispatcher - INFO - Polling stopped for bot @ai_accessS_bot id=8710550961 - 'Ai Acess рџ«†'
+2026-04-23 22:16:41,136 - __main__ - INFO - Р‘РѕС‚ Р·Р°РїСѓС‰РµРЅ!
+2026-04-23 22:16:41,500 - aiogram.dispatcher - INFO - Start polling
+2026-04-23 22:16:41,602 - aiogram.dispatcher - INFO - Run polling for bot @ai_accessS_bot id=8710550961 - 'Ai Acess рџ«†'
+2026-04-23 22:16:46,687 - middlewares.logging_mw - INFO - [2026-04-23 22:16:46] User 6593438966 (@KizLyar115): /start
+2026-04-23 22:16:47,134 - aiogram.event - INFO - Update id=33576654 is handled. Duration 447 ms by bot id=8710550961
+2026-04-23 22:16:48,729 - aiogram.event - INFO - Update id=33576655 is handled. Duration 265 ms by bot id=8710550961
+2026-04-23 22:16:51,303 - aiogram.event - INFO - Update id=33576656 is handled. Duration 476 ms by bot id=8710550961
+2026-04-23 22:16:56,111 - middlewares.logging_mw - INFO - [2026-04-23 22:16:56] User 6593438966 (@KizLyar115): РЅРµ РјРѕРіСѓ РѕРїР»Р°С‚РёС‚СЊ
+2026-04-23 22:16:56,558 - aiogram.event - INFO - Update id=33576657 is handled. Duration 448 ms by bot id=8710550961
+2026-04-23 22:17:01,869 - aiogram.event - INFO - Update id=33576658 is handled. Duration 1001 ms by bot id=8710550961
+2026-04-23 22:17:08,726 - middlewares.logging_mw - INFO - [2026-04-23 22:17:08] User 6593438966 (@KizLyar115): С‡С‘ Р·Р° С…СѓР№РЅСЏ Р·Р°С‡РµРј РІС‹ РјРµРЅСЏ РЅР°РµР±Р°Р»Рё
+2026-04-23 22:17:27,906 - aiogram.event - INFO - Update id=33576659 is not handled. Duration 19180 ms by bot id=8710550961
+2026-04-23 22:17:27,906 - aiogram.event - ERROR - Cause exception while process update id=33576659 by bot id=8710550961
+TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+Traceback (most recent call last):
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 167, in make_request
+    async with session.post(
+               ~~~~~~~~~~~~^
+        url,
+        ^^^^
+        data=form,
+        ^^^^^^^^^^
+        timeout=self.timeout if timeout is None else timeout,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as resp:
+    ^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiohttp\client.py", line 1521, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiohttp\client.py", line 788, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiohttp\client.py", line 766, in _connect_and_send_request
+    await resp.start(conn)
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiohttp\client_reqrep.py", line 539, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiohttp\streams.py", line 707, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 191, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 163, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 155, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 183, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\middlewares\throttling.py", line 29, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\middlewares\ban_middleware.py", line 23, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\middlewares\logging_mw.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\handlers\common.py", line 301, in process_question
+    thinking_msg = await message.answer("рџ¤” <i>РС‰Сѓ РѕС‚РІРµС‚...</i>", parse_mode="HTML")
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\methods\base.py", line 82, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\client\bot.py", line 493, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\base.py", line 259, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aboba_01\Desktop\РїСЂРѕРµРєС‚\ai_access_bot\venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 176, in make_request
+    raise TelegramNetworkError(method=method, message=f"{type(e).__name__}: {e}") from e
+aiogram.exceptions.TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-23 22:17:27,938 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-23 22:17:27,938 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-23 22:17:32,523 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8710550961)
+2026-04-23 22:17:32,524 - middlewares.logging_mw - INFO - [2026-04-23 22:17:32] User 6593438966 (@KizLyar115): /start
+2026-04-23 22:17:32,530 - middlewares.logging_mw - INFO - [2026-04-23 22:17:32] User 6593438966 (@KizLyar115): Р°Р»С‘С‘
+2026-04-23 22:17:33,923 - aiogram.event - INFO - Update id=33576661 is handled. Duration 1399 ms by bot id=8710550961
+2026-04-23 22:17:34,870 - aiogram.event - INFO - Update id=33576663 is handled. Duration 2346 ms by bot id=8710550961
+2026-04-23 22:17:34,969 - aiogram.event - INFO - Update id=33576660 is handled. Duration 2445 ms by bot id=8710550961
+2026-04-23 22:17:35,772 - aiogram.event - INFO - Update id=33576662 is handled. Duration 3248 ms by bot id=8710550961
+2026-04-23 22:17:41,833 - aiogram.event - INFO - Update id=33576664 is handled. Duration 1435 ms by bot id=8710550961
+2026-04-23 22:17:47,283 - middlewares.logging_mw - INFO - [2026-04-23 22:17:47] User 5928474823 (@AiAcessManager): /start
+2026-04-23 22:17:48,964 - aiogram.event - INFO - Update id=33576665 is handled. Duration 1681 ms by bot id=8710550961
+2026-04-23 22:17:50,755 - aiogram.event - INFO - Update id=33576666 is handled. Duration 1255 ms by bot id=8710550961
+2026-04-23 22:17:56,425 - aiogram.event - INFO - Update id=33576667 is handled. Duration 2148 ms by bot id=8710550961
+2026-04-23 22:18:04,776 - middlewares.logging_mw - INFO - [2026-04-23 22:18:04] User 5928474823 (@AiAcessManager): РІС‹ Р·Р°С‡РµРј РјРµРЅСЏ РѕР±РјР°РЅСѓР»Рё Р°Р»С‘
+2026-04-23 22:18:06,787 - aiogram.event - INFO - Update id=33576668 is handled. Duration 2012 ms by bot id=8710550961
+2026-04-23 22:18:14,799 - aiogram.event - INFO - Update id=33576669 is handled. Duration 703 ms by bot id=8710550961
+2026-04-23 22:18:19,476 - middlewares.logging_mw - INFO - [2026-04-23 22:18:19] User 5928474823 (@AiAcessManager): РќРµ СЂР°Р±РѕС‚Р°РµС‚ РѕРїР»Р°С‚Р°
+2026-04-23 22:18:20,112 - aiogram.event - INFO - Update id=33576670 is handled. Duration 636 ms by bot id=8710550961
+2026-04-23 22:18:25,133 - aiogram.event - INFO - Update id=33576671 is handled. Duration 268 ms by bot id=8710550961
+2026-04-23 22:18:29,922 - aiogram.event - INFO - Update id=33576672 is handled. Duration 452 ms by bot id=8710550961
+2026-04-23 22:18:31,197 - aiogram.event - INFO - Update id=33576673 is handled. Duration 250 ms by bot id=8710550961
+2026-04-23 22:18:38,346 - middlewares.logging_mw - INFO - [2026-04-23 22:18:38] User 5928474823 (@AiAcessManager): Р—РґСЂР°РІСЃС‚РІСѓР№С‚Рµ РїРѕС‡РµРјСѓ РІС‹ РјРµРЅСЏ РѕР±РјР°РЅСѓР»Рё
+2026-04-23 22:18:38,661 - aiogram.event - INFO - Update id=33576674 is handled. Duration 315 ms by bot id=8710550961
+2026-04-23 22:19:03,116 - middlewares.logging_mw - INFO - [2026-04-23 22:19:03] User 5928474823 (@AiAcessManager): Р’СЃС‘ РЅРµ С‚Р°Рє.
+2026-04-23 22:19:03,440 - aiogram.event - INFO - Update id=33576675 is handled. Duration 325 ms by bot id=8710550961
+2026-04-23 22:20:05,242 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 121] РџСЂРµРІС‹С€РµРЅ С‚Р°Р№РјР°СѓС‚ СЃРµРјР°С„РѕСЂР°
+2026-04-23 22:20:05,242 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-23 22:20:16,779 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8710550961)
+2026-04-23 22:23:35,816 - aiogram.event - INFO - Update id=33576676 is handled. Duration 512 ms by bot id=8710550961
+2026-04-23 22:23:37,378 - aiogram.event - INFO - Update id=33576677 is handled. Duration 227 ms by bot id=8710550961
+2026-04-23 22:23:39,138 - aiogram.event - INFO - Update id=33576678 is handled. Duration 683 ms by bot id=8710550961
+2026-04-23 22:23:43,300 - aiogram.event - INFO - Update id=33576679 is handled. Duration 233 ms by bot id=8710550961
+2026-04-23 22:23:46,597 - aiogram.event - INFO - Update id=33576680 is handled. Duration 247 ms by bot id=8710550961
+2026-04-23 22:27:11,643 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-23 22:27:11,643 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-23 22:27:23,008 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8710550961)
+2026-04-23 22:28:42,784 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-23 22:28:42,784 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-23 22:28:54,098 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8710550961)
+2026-04-23 22:29:53,634 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-23 22:29:53,635 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-23 22:30:04,988 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8710550961)
+2026-04-23 22:31:55,027 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-23 22:31:55,028 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-23 22:32:06,661 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8710550961)
+2026-04-23 22:35:36,093 - aiogram.dispatcher - INFO - Polling stopped
+2026-04-23 22:35:36,094 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-23 22:35:36,094 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-23 22:35:36,354 - aiogram.dispatcher - INFO - Polling stopped for bot @ai_accessS_bot id=8710550961 - 'Ai Acess рџ«†'
+2026-04-23 22:35:41,689 - __main__ - INFO - Р‘РѕС‚ Р·Р°РїСѓС‰РµРЅ!
+2026-04-23 22:35:42,269 - aiogram.dispatcher - INFO - Start polling
+2026-04-23 22:35:42,361 - aiogram.dispatcher - INFO - Run polling for bot @ai_accessS_bot id=8710550961 - 'MultiAcess рџ«†'
+2026-04-23 22:35:47,151 - middlewares.logging_mw - INFO - [2026-04-23 22:35:47] User 6593438966 (@KizLyar115): /start
+2026-04-23 22:35:47,263 - aiogram.event - INFO - Update id=33576681 is handled. Duration 113 ms by bot id=8710550961
+2026-04-23 22:35:50,010 - aiogram.event - INFO - Update id=33576682 is handled. Duration 256 ms by bot id=8710550961
+2026-04-23 22:35:51,280 - aiogram.event - INFO - Update id=33576683 is handled. Duration 428 ms by bot id=8710550961
+2026-04-23 22:36:33,125 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-23 22:36:33,126 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-23 22:36:44,492 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8710550961)
+2026-04-23 22:37:44,077 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-23 22:37:44,077 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-23 22:38:06,119 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [РџСЂРµРІС‹С€РµРЅ С‚Р°Р№РјР°СѓС‚ СЃРµРјР°С„РѕСЂР°]
+2026-04-23 22:38:06,119 - aiogram.dispatcher - WARNING - Sleep for 1.350827 seconds and try again... (tryings = 1, bot id = 8710550961)
+2026-04-23 22:38:22,906 - aiogram.dispatcher - INFO - Connection established (tryings = 2, bot id = 8710550961)
+2026-04-23 22:43:26,188 - aiogram.event - INFO - Update id=33576684 is handled. Duration 1558 ms by bot id=8710550961
+2026-04-23 22:43:27,204 - aiogram.event - INFO - Update id=33576685 is handled. Duration 240 ms by bot id=8710550961
+2026-04-23 22:51:43,287 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-23 22:51:43,287 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-23 22:52:14,536 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [РџРѕРґРєР»СЋС‡РµРЅРёРµ Рє СЃРµС‚Рё Р±С‹Р»Рѕ СЂР°Р·РѕСЂРІР°РЅРѕ Р»РѕРєР°Р»СЊРЅРѕР№ СЃРёСЃС‚РµРјРѕР№]
+2026-04-23 22:52:14,539 - aiogram.dispatcher - WARNING - Sleep for 1.299765 seconds and try again... (tryings = 1, bot id = 8710550961)
+2026-04-23 22:52:36,876 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [РџСЂРµРІС‹С€РµРЅ С‚Р°Р№РјР°СѓС‚ СЃРµРјР°С„РѕСЂР°]
+2026-04-23 22:52:36,876 - aiogram.dispatcher - WARNING - Sleep for 1.842150 seconds and try again... (tryings = 2, bot id = 8710550961)
+2026-04-23 22:52:49,138 - aiogram.dispatcher - INFO - Connection established (tryings = 3, bot id = 8710550961)
+2026-04-23 23:07:02,530 - aiogram.dispatcher - INFO - Polling stopped
+2026-04-23 23:07:02,530 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-23 23:07:02,530 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-23 23:07:02,782 - aiogram.dispatcher - INFO - Polling stopped for bot @ai_accessS_bot id=8710550961 - 'MultiAcess рџ«†'
+2026-04-23 23:07:07,216 - __main__ - INFO - Р‘РѕС‚ Р·Р°РїСѓС‰РµРЅ!
+2026-04-23 23:07:07,890 - aiogram.dispatcher - INFO - Start polling
+2026-04-23 23:07:07,962 - aiogram.dispatcher - INFO - Run polling for bot @ai_accessS_bot id=8710550961 - 'MultiAcess рџ«†'
+2026-04-23 23:07:24,821 - middlewares.logging_mw - INFO - [2026-04-23 23:07:24] User 6593438966 (@KizLyar115): /start
+2026-04-23 23:07:25,233 - aiogram.event - INFO - Update id=33576686 is handled. Duration 412 ms by bot id=8710550961
+2026-04-23 23:07:29,234 - aiogram.event - INFO - Update id=33576687 is handled. Duration 320 ms by bot id=8710550961
+2026-04-23 23:07:30,355 - aiogram.event - INFO - Update id=33576688 is handled. Duration 187 ms by bot id=8710550961
+2026-04-23 23:07:31,605 - aiogram.event - INFO - Update id=33576689 is handled. Duration 187 ms by bot id=8710550961
+2026-04-23 23:08:19,370 - aiogram.event - INFO - Update id=33576690 is handled. Duration 174 ms by bot id=8710550961
+2026-04-23 23:08:20,811 - aiogram.event - INFO - Update id=33576691 is handled. Duration 166 ms by bot id=8710550961
+2026-04-23 23:08:22,043 - aiogram.event - INFO - Update id=33576692 is handled. Duration 177 ms by bot id=8710550961
+2026-04-23 23:08:24,018 - aiogram.event - INFO - Update id=33576693 is handled. Duration 210 ms by bot id=8710550961
+2026-04-23 23:09:43,479 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-23 23:09:43,479 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-23 23:09:54,899 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8710550961)
+2026-04-23 23:10:14,053 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2026-04-23 23:10:14,053 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8710550961)
+2026-04-23 23:10:26,965 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8710550961)
