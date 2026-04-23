@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход - AI Access Bot Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .login-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+            padding: 50px 40px;
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+            animation: fadeIn 0.5s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .logo-icon {
+            font-size: 64px;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1a1a2e;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .telegram-widget {
+            margin: 30px 0;
+            min-height: 50px;
+        }
+        .footer-note {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #999;
+            font-size: 13px;
+        }
+        .feature-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            color: #888;
+            font-size: 14px;
+        }
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+        .feature-item i {
+            font-size: 24px;
+            color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <div class="logo-icon">
+            <i class="bi bi-robot"></i>
+        </div>
+        <h2>AI Access Bot</h2>
+        <p class="subtitle">Административная панель</p>
+        
+        <div class="feature-list">
+            <div class="feature-item">
+                <i class="bi bi-people"></i>
+                <span>Пользователи</span>
+            </div>
+            <div class="feature-item">
+                <i class="bi bi-graph-up"></i>
+                <span>Статистика</span>
+            </div>
+            <div class="feature-item">
+                <i class="bi bi-chat"></i>
+                <span>Тикеты</span>
+            </div>
+        </div>
+        
+        <div class="telegram-widget">
+            <script async src="https://telegram.org/js/telegram-widget.js?22" 
+                    data-telegram-login="ai_accessS_bot" 
+                    data-size="large" 
+                    data-auth-url="/dashboard" 
+                    data-request-access="write">
+            </script>
+        </div>
+        
+        <div class="footer-note">
+            <i class="bi bi-shield-lock"></i> 
+            Доступ только для администраторов<br>
+            <small>Войдите через Telegram для продолжения</small>
+        </div>
+    </div>
+</body>
+</html>

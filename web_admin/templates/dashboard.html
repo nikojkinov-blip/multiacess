@@ -1,0 +1,308 @@
+{% extends "base.html" %}
+
+{% block title %}Дашборд - AI Access Bot{% endblock %}
+{% block header %}Дашборд{% endblock %}
+
+{% block content %}
+<!-- Статистические карточки -->
+<div class="row mb-4">
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card stat-card border-left-primary h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Всего пользователей
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                            {{ stats.total_users }}
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="bi bi-people fs-2 text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card stat-card border-left-success h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                            Premium пользователи
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                            {{ stats.paid_users }}
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="bi bi-star-fill fs-2 text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card stat-card border-left-info h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                            Открыто тикетов
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                            {{ stats.open_tickets }}
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="bi bi-chat-dots fs-2 text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card stat-card border-left-warning h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                            Доход
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                            {{ stats.total_revenue }} ₽
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="bi bi-cash-stack fs-2 text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- График и последние действия -->
+<div class="row">
+    <div class="col-lg-8 mb-4">
+        <div class="card shadow">
+            <div class="card-header">
+                <h6 class="m-0 font-weight-bold">
+                    <i class="bi bi-graph-up me-2"></i>
+                    Статистика за 7 дней
+                </h6>
+            </div>
+            <div class="card-body">
+                <canvas id="weeklyChart" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-4 mb-4">
+        <div class="card shadow">
+            <div class="card-header">
+                <h6 class="m-0 font-weight-bold">
+                    <i class="bi bi-activity me-2"></i>
+                    За 24 часа
+                </h6>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="text-muted">Новых пользователей</label>
+                    <h4>{{ stats.new_users_24h }}</h4>
+                </div>
+                <div class="mb-3">
+                    <label class="text-muted">Новых оплат</label>
+                    <h4>{{ stats.payments_24h }}</h4>
+                </div>
+                <div>
+                    <label class="text-muted">Конверсия</label>
+                    <h4>
+                        {% if stats.new_users_24h > 0 %}
+                            {{ (stats.payments_24h / stats.new_users_24h * 100)|round(1) }}%
+                        {% else %}
+                            0%
+                        {% endif %}
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Последние пользователи и платежи -->
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <div class="card shadow">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h6 class="m-0 font-weight-bold">
+                    <i class="bi bi-person-plus me-2"></i>
+                    Последние пользователи
+                </h6>
+                <a href="/users" class="btn btn-sm btn-outline-primary">Все</a>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Username</th>
+                                <th>Статус</th>
+                                <th>Дата</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for u in recent_users[:5] %}
+                            <tr>
+                                <td><code>{{ u.user_id }}</code></td>
+                                <td>@{{ u.username or '—' }}</td>
+                                <td>
+                                    {% if u.paid %}
+                                    <span class="badge bg-success">Premium</span>
+                                    {% else %}
+                                    <span class="badge bg-secondary">Free</span>
+                                    {% endif %}
+                                </td>
+                                <td>{{ u.joined_date[:10] if u.joined_date else '—' }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card shadow">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h6 class="m-0 font-weight-bold">
+                    <i class="bi bi-credit-card me-2"></i>
+                    Последние платежи
+                </h6>
+                <a href="/stats" class="btn btn-sm btn-outline-primary">Все</a>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Пользователь</th>
+                                <th>Сумма</th>
+                                <th>Статус</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for p in recent_payments[:5] %}
+                            <tr>
+                                <td>#{{ p.payment_id }}</td>
+                                <td>{{ p.user_id }}</td>
+                                <td>{{ p.amount }} ₽</td>
+                                <td>
+                                    {% if p.status == 'confirmed' %}
+                                    <span class="badge bg-success">Оплачен</span>
+                                    {% else %}
+                                    <span class="badge bg-warning">Ожидает</span>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Открытые тикеты -->
+<div class="row">
+    <div class="col-12 mb-4">
+        <div class="card shadow">
+            <div class="card-header">
+                <h6 class="m-0 font-weight-bold">
+                    <i class="bi bi-chat me-2"></i>
+                    Открытые тикеты ({{ open_tickets|length }})
+                </h6>
+            </div>
+            <div class="card-body p-0">
+                {% if open_tickets %}
+                <div class="list-group list-group-flush">
+                    {% for t in open_tickets[:5] %}
+                    <div class="list-group-item">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span>
+                                <strong>#{{ t.ticket_id }}</strong> 
+                                от пользователя {{ t.user_id }}
+                            </span>
+                            <span class="text-muted">{{ t.created_at[:16] if t.created_at else '—' }}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="card-body text-center text-muted">
+                    <i class="bi bi-check-circle fs-1"></i>
+                    <p class="mt-2">Нет открытых тикетов</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Данные для графика
+const dailyData = {{ daily|tojson }};
+const labels = dailyData.map(d => d.date).reverse();
+const usersData = dailyData.map(d => d.users).reverse();
+const paymentsData = dailyData.map(d => d.payments).reverse();
+
+const ctx = document.getElementById('weeklyChart').getContext('2d');
+new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: labels,
+        datasets: [{
+            label: 'Новые пользователи',
+            data: usersData,
+            borderColor: '#4e73df',
+            backgroundColor: 'rgba(78, 115, 223, 0.05)',
+            tension: 0.3,
+            fill: true
+        }, {
+            label: 'Оплаты',
+            data: paymentsData,
+            borderColor: '#1cc88a',
+            backgroundColor: 'rgba(28, 200, 138, 0.05)',
+            tension: 0.3,
+            fill: true
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                position: 'top',
+            }
+        },
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    stepSize: 1
+                }
+            }
+        }
+    }
+});
+</script>
+{% endblock %}
