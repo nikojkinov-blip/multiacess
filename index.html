@@ -224,7 +224,7 @@
 
     <script>
         const tg = window.Telegram.WebApp; tg.ready(); tg.expand();
-        const API = 'https://ai-access-bot.onrender.com';
+        const API = 'https://multiacess.onrender.com';
         const user = tg.initDataUnsafe?.user;
         const userId = user?.id || new URLSearchParams(location.search).get('user_id');
         if(user) document.getElementById('user-greeting').textContent = '👋 ' + user.first_name + (user.username ? ' (@'+user.username+')' : '');
