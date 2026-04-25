@@ -4,16 +4,16 @@
 import asyncio
 import logging
 import sys
+import threading
 from aiogram import Bot, Dispatcher
 from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from aiogram.client.session.aiohttp import AiohttpSession
-from aiohttp_socks import ProxyConnector
-from datetime import datetime
+from fastapi import FastAPI
+import uvicorn
 
 from config import BOT_TOKEN, ADMIN_IDS
-from database.core import Database
 from database.models import init_database, UserModel
 from middlewares.throttling import ThrottlingMiddleware
 from middlewares.ban_middleware import BanCheckMiddleware
@@ -35,86 +35,71 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('logs/bot.log', encoding='utf-8'),
         logging.StreamHandler(sys.stdout)
     ]
 )
 logger = logging.getLogger(__name__)
 
 
+# ============== ВЕБ-СЕРВЕР ==============
+app = FastAPI(title="AI Access Bot")
+
+
+@app.get("/")
+async def root():
+    return {"status": "ok", "bot": "running", "service": "ai-access-bot"}
+
+
+@app.get("/health")
+async def health():
+    return {"status": "alive", "timestamp": __import__('datetime').datetime.now().isoformat()}
+
+
+def run_web_server():
+    """Запуск веб-сервера в отдельном потоке"""
+    uvicorn.run(app, host="0.0.0.0", port=10000, log_level="error")
+
+
+# ============== ФОНОВЫЕ ЗАДАЧИ ==============
 async def background_tasks(bot: Bot):
     """Фоновые задачи"""
     while True:
         try:
-            # Проверка подписок
-            users = UserModel.check_subscription_ending()
-            for user in users:
-                try:
-                    await bot.send_message(
-                        user['user_id'],
-                        "⚠️ <b>Подписка истекает завтра!</b>\n"
-                        "Продлите: /start",
-                        parse_mode="HTML"
-                    )
-                except:
-                    pass
-            
             # Авторассылки по расписанию
             pending = AutoBroadcast.get_pending()
             for broadcast in pending:
                 sent, failed = await AutoBroadcast.send_broadcast(bot, broadcast)
                 logger.info(f"Broadcast {broadcast['id']}: sent={sent}, failed={failed}")
-            
-            # Проверка достижений
-            active_users = db.fetchall(
-                "SELECT user_id FROM users WHERE last_activity >= datetime('now', '-1 day')"
-            )
-            for user in active_users:
-                new_ach = AchievementSystem.check_and_award(user['user_id'])
-                if new_ach:
-                    for ach_key in new_ach:
-                        ach = AchievementSystem.get_achievement_info(ach_key)
-                        try:
-                            await bot.send_message(
-                                user['user_id'],
-                                f"{ach['emoji']} <b>Новое достижение!</b>\n{ach['name']}",
-                                parse_mode="HTML"
-                            )
-                        except:
-                            pass
-            
+
         except Exception as e:
             logger.error(f"Background error: {e}")
-        
-        await asyncio.sleep(3600)  # Раз в час
+
+        await asyncio.sleep(3600)
 
 
+# ============== ЗАПУСК БОТА ==============
 async def main():
+    # Инициализация БД
     init_database()
-    
-    # Прокси
-    try:
-        connector = ProxyConnector.from_url('socks5://127.0.0.1:9150')
-        session = AiohttpSession(connector=connector)
-    except:
-        session = AiohttpSession()
-    
+
+    # Создание бота
+    session = AiohttpSession()
     bot = Bot(
         token=BOT_TOKEN,
         session=session,
         default=DefaultBotProperties(parse_mode=ParseMode.HTML)
     )
-    
+
     storage = MemoryStorage()
     dp = Dispatcher(storage=storage)
-    
+
     # Middlewares
     dp.message.middleware(ThrottlingMiddleware(rate_limit=5))
     dp.message.middleware(BanCheckMiddleware())
     dp.message.middleware(LoggingMiddleware())
     dp.callback_query.middleware(ThrottlingMiddleware(rate_limit=10))
     dp.callback_query.middleware(BanCheckMiddleware())
-    
+
     # Роутеры
     dp.include_router(admin_router)
     dp.include_router(common_router)
@@ -122,22 +107,27 @@ async def main():
     dp.include_router(support_router)
     dp.include_router(ai_router)
     dp.include_router(webapp_router)
-    
-    logger.info("Бот запущен!")
-    
-    # Фоновые задачи
-    asyncio.create_task(background_tasks(bot))
-    
+
+    logger.info("Бот запущен! Порт 10000 слушает.")
+
+    # Уведомление админам
     for admin_id in ADMIN_IDS:
         try:
-            await bot.send_message(admin_id, "🟢 Бот запущен!")
+            await bot.send_message(admin_id, "🟢 Бот запущен на Render!")
         except:
             pass
-    
+
+    # Фоновые задачи
+    asyncio.create_task(background_tasks(bot))
+
+    # Запуск бота
     await dp.start_polling(bot)
 
 
 if __name__ == '__main__':
-    # Импорт db здесь чтобы избежать циклического импорта
-    from database.models import db
+    # Запуск веб-сервера в отдельном потоке
+    web_thread = threading.Thread(target=run_web_server, daemon=True)
+    web_thread.start()
+    
+    # Запуск бота
     asyncio.run(main())
