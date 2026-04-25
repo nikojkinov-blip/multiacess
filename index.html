@@ -7,569 +7,262 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
         :root {
-            --bg: #0f0f1a;
-            --card: #1a1a2e;
-            --accent: #6c5ce7;
-            --accent2: #a855f7;
-            --green: #10b981;
-            --yellow: #f59e0b;
-            --red: #ef4444;
-            --text: #f1f5f9;
-            --text2: #94a3b8;
-            --border: rgba(255,255,255,0.06);
+            --bg: #0a0a14; --card: #141428; --accent: #7c3aed; --accent2: #a78bfa;
+            --green: #10b981; --yellow: #f59e0b; --red: #ef4444; --text: #f1f5f9;
+            --text2: #94a3b8; --border: rgba(255,255,255,0.06); --radius: 20px;
         }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
+        * { margin:0; padding:0; box-sizing:border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            min-height: 100vh;
-            padding-bottom: 20px;
-            -webkit-tap-highlight-color: transparent;
-            user-select: none;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg); color: var(--text); min-height: 100vh;
+            padding-bottom: 30px; -webkit-tap-highlight-color: transparent;
+            overflow-x: hidden;
         }
-
-        /* Header */
+        .bg-glow {
+            position: fixed; top: -100px; left: 50%; transform: translateX(-50%);
+            width: 300px; height: 300px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(124,58,237,0.3) 0%, transparent 70%);
+            pointer-events: none; z-index: 0;
+        }
         .header {
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            padding: 32px 20px 24px;
-            text-align: center;
-            border-radius: 0 0 32px 32px;
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(135deg, #4c1d95, #7c3aed, #a78bfa);
+            padding: 40px 24px 30px; text-align: center; border-radius: 0 0 40px 40px;
+            position: relative; z-index: 1; box-shadow: 0 20px 60px rgba(124,58,237,0.3);
         }
-        .header::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 20px 20px;
-            animation: moveGrid 20s linear infinite;
+        .header .emoji { font-size: 56px; animation: float 3s ease infinite; }
+        @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-15px)} }
+        .header h1 { font-size: 24px; font-weight: 800; margin-top: 8px; letter-spacing: -0.5px; }
+        .header p { font-size: 14px; opacity: 0.9; margin-top: 6px; font-weight: 400; }
+        .header .badge-row { display: flex; gap: 8px; justify-content: center; margin-top: 14px; }
+        .header .badge {
+            background: rgba(255,255,255,0.2); backdrop-filter: blur(10px);
+            padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 500;
         }
-        @keyframes moveGrid {
-            from { transform: translate(0, 0); }
-            to { transform: translate(20px, 20px); }
-        }
-        .header-content { position: relative; z-index: 1; }
-        .header .emoji { font-size: 48px; animation: bounce 2s ease infinite; }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        .header h1 { font-size: 22px; font-weight: 700; margin-top: 8px; }
-        .header p { font-size: 13px; opacity: 0.85; margin-top: 4px; }
 
-        /* Tabs */
+        .tabs-container { position: sticky; top: 10px; z-index: 100; padding: 0 16px; margin-top: -20px; }
         .tabs {
-            display: flex;
-            gap: 4px;
-            margin: 20px 16px;
-            background: var(--card);
-            border-radius: 16px;
-            padding: 4px;
-            position: sticky;
-            top: 10px;
-            z-index: 100;
-            border: 1px solid var(--border);
+            display: flex; gap: 4px; background: var(--card); border-radius: 16px;
+            padding: 5px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
         .tab {
-            flex: 1;
-            padding: 12px 8px;
-            border: none;
-            border-radius: 12px;
-            background: transparent;
-            color: var(--text2);
-            cursor: pointer;
-            font-size: 12px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            white-space: nowrap;
+            flex: 1; padding: 14px 8px; border: none; border-radius: 12px;
+            background: transparent; color: var(--text2); cursor: pointer;
+            font-size: 13px; font-weight: 600; transition: all 0.3s ease; position: relative;
         }
-        .tab.active {
-            background: var(--accent);
-            color: white;
-            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
-        }
+        .tab.active { background: var(--accent); color: white; box-shadow: 0 4px 20px rgba(124,58,237,0.5); }
+        .tab:not(.active):active { background: rgba(255,255,255,0.05); }
 
-        /* Content */
-        .tab-content { display: none; padding: 0 16px; }
-        .tab-content.active { display: block; animation: fadeIn 0.3s ease; }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        .tab-content { display: none; padding: 20px 16px; animation: fadeSlide 0.4s ease; }
+        .tab-content.active { display: block; }
+        @keyframes fadeSlide { from{opacity:0;transform:translateY(15px)} to{opacity:1;transform:translateY(0)} }
 
-        /* Cards */
         .card {
-            background: var(--card);
-            border-radius: 20px;
-            padding: 20px;
-            margin-bottom: 14px;
-            border: 1px solid var(--border);
-            transition: transform 0.2s ease;
+            background: var(--card); border-radius: var(--radius); padding: 20px;
+            margin-bottom: 14px; border: 1px solid var(--border); position: relative; z-index: 1;
+            backdrop-filter: blur(10px); transition: all 0.2s;
         }
         .card:active { transform: scale(0.98); }
-        .card h3 {
-            font-size: 16px;
-            margin-bottom: 14px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .card h3 .icon { font-size: 20px; }
+        .card h3 { font-size: 17px; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; font-weight: 700; }
+        .card h3 .icon { font-size: 22px; }
 
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin-bottom: 18px;
-        }
+        .stats-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 18px; }
         .stat-box {
-            background: var(--card);
-            border-radius: 16px;
-            padding: 16px 12px;
-            text-align: center;
-            border: 1px solid var(--border);
+            background: var(--card); border-radius: 16px; padding: 18px 12px;
+            text-align: center; border: 1px solid var(--border);
         }
-        .stat-box .value {
-            font-size: 26px;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .stat-box .label {
-            font-size: 11px;
-            color: var(--text2);
-            margin-top: 4px;
-        }
+        .stat-box .value { font-size: 28px; font-weight: 800; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .stat-box .label { font-size: 10px; color: var(--text2); margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* XP Bar */
-        .xp-bar {
-            background: rgba(255,255,255,0.08);
-            border-radius: 12px;
-            height: 10px;
-            margin-top: 12px;
-            overflow: hidden;
-        }
-        .xp-fill {
-            height: 100%;
-            border-radius: 12px;
-            background: linear-gradient(90deg, var(--accent), var(--accent2));
-            transition: width 0.5s ease;
-            position: relative;
-        }
-        .xp-fill::after {
-            content: '';
-            position: absolute;
-            right: 0; top: 0; bottom: 0;
-            width: 20px;
-            background: white;
-            opacity: 0.3;
-            border-radius: 0 12px 12px 0;
-        }
+        .xp-bar { background: rgba(255,255,255,0.06); border-radius: 12px; height: 8px; margin-top: 10px; overflow: hidden; }
+        .xp-fill { height: 100%; border-radius: 12px; background: linear-gradient(90deg, var(--accent), var(--accent2)); transition: width 0.6s ease; box-shadow: 0 0 10px rgba(124,58,237,0.5); }
+        .xp-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--text2); margin-top: 6px; }
 
-        /* Buttons */
+        .sub-row { display: flex; gap: 10px; }
+        .sub-box { flex: 1; background: rgba(255,255,255,0.03); border-radius: 14px; padding: 14px; text-align: center; border: 1px solid var(--border); }
+        .sub-box .sub-emoji { font-size: 28px; }
+        .sub-box .sub-name { font-size: 12px; color: var(--text2); margin-top: 4px; }
+        .sub-box .sub-status { font-size: 14px; font-weight: 700; margin-top: 2px; }
+        .sub-box.active { border-color: var(--accent); background: rgba(124,58,237,0.1); }
+
         .btn {
-            display: block;
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 14px;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-bottom: 8px;
-            transition: all 0.2s ease;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+            display: block; width: 100%; padding: 16px; border: none; border-radius: 16px;
+            font-size: 15px; font-weight: 600; cursor: pointer; margin-bottom: 10px;
+            transition: all 0.2s; text-align: center; letter-spacing: 0.3px;
         }
-        .btn:active {
-            transform: scale(0.96);
-            opacity: 0.85;
-        }
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            color: white;
-            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
-        }
-        .btn-success { background: var(--green); color: white; }
-        .btn-warning { background: var(--yellow); color: #1a1a2e; }
-        .btn-outline {
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.15);
-            color: var(--text);
-        }
+        .btn:active { transform: scale(0.95); }
+        .btn-primary { background: linear-gradient(135deg, var(--accent), #6d28d9); color: white; box-shadow: 0 8px 25px rgba(124,58,237,0.4); }
+        .btn-success { background: var(--green); color: white; box-shadow: 0 8px 25px rgba(16,185,129,0.3); }
+        .btn-outline { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: var(--text); }
+        .btn-sm { padding: 10px 16px; font-size: 13px; border-radius: 12px; }
 
-        /* Key Box */
         .key-box {
-            background: rgba(0,0,0,0.3);
-            padding: 14px;
-            border-radius: 12px;
-            font-family: 'Courier New', monospace;
-            font-size: 12px;
-            word-break: break-all;
-            margin-top: 8px;
-            border: 1px solid var(--border);
-            position: relative;
+            background: rgba(0,0,0,0.3); padding: 14px; border-radius: 12px;
+            font-family: 'SF Mono', 'Courier New', monospace; font-size: 12px;
+            word-break: break-all; margin-bottom: 8px; border: 1px solid var(--border);
+            position: relative; display: flex; align-items: center; justify-content: space-between; gap: 10px;
         }
-        .key-box .copy-btn {
-            position: absolute;
-            right: 8px;
-            top: 8px;
-            background: var(--accent);
-            color: white;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 11px;
-            cursor: pointer;
+        .copy-btn {
+            background: var(--accent); color: white; border: none; padding: 8px 12px;
+            border-radius: 10px; font-size: 11px; cursor: pointer; white-space: nowrap; flex-shrink: 0;
         }
 
-        /* Achievements */
-        .achievement-tag {
-            display: inline-block;
-            background: rgba(255,255,255,0.06);
-            padding: 8px 14px;
-            border-radius: 20px;
-            margin: 3px;
-            font-size: 13px;
-            border: 1px solid var(--border);
-        }
-
-        /* Orders */
-        .order-item {
-            background: rgba(255,255,255,0.03);
-            padding: 14px;
-            border-radius: 12px;
-            margin-bottom: 8px;
-            border-left: 3px solid var(--accent);
-        }
+        .achievement-tag { display: inline-block; background: rgba(255,255,255,0.06); padding: 8px 14px; border-radius: 20px; margin: 4px; font-size: 13px; border: 1px solid var(--border); }
+        .order-item { background: rgba(255,255,255,0.03); padding: 14px; border-radius: 12px; margin-bottom: 8px; border-left: 4px solid var(--accent); }
         .order-item.completed { border-left-color: var(--green); }
         .order-item.pending { border-left-color: var(--yellow); }
 
-        /* Toast */
         .toast {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--green);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 14px;
-            font-weight: 600;
-            font-size: 14px;
-            z-index: 999;
-            animation: slideUp 0.3s ease;
-            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+            background: var(--card); color: white; padding: 14px 24px; border-radius: 16px;
+            font-weight: 600; z-index: 999; animation: toastIn 0.3s ease;
+            border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-        @keyframes slideUp {
-            from { transform: translateX(-50%) translateY(100px); opacity: 0; }
-            to { transform: translateX(-50%) translateY(0); opacity: 1; }
-        }
+        @keyframes toastIn { from{transform:translateX(-50%) translateY(80px);opacity:0} to{transform:translateX(-50%) translateY(0);opacity:1} }
 
-        /* Modal */
         .modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.8);
-            z-index: 200;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+            display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.8); z-index: 200; align-items: center; justify-content: center; padding: 20px;
         }
         .modal.active { display: flex; }
-        .modal-content {
-            background: var(--card);
-            border-radius: 20px;
-            padding: 24px;
-            max-width: 400px;
-            width: 100%;
-            border: 1px solid var(--border);
-        }
-        .modal h3 { margin-bottom: 16px; }
+        .modal-content { background: var(--card); border-radius: 24px; padding: 24px; max-width: 400px; width: 100%; border: 1px solid var(--border); }
+        .modal h3 { margin-bottom: 14px; }
         .modal textarea {
-            width: 100%;
-            height: 100px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            color: var(--text);
-            padding: 12px;
-            font-family: inherit;
-            font-size: 14px;
-            resize: vertical;
+            width: 100%; height: 100px; background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+            border-radius: 14px; color: var(--text); padding: 14px; font-family: inherit; font-size: 14px; resize: vertical;
         }
 
-        /* Pulse Animation */
-        .pulse {
-            animation: pulse 2s ease infinite;
+        .loading-spinner {
+            width: 30px; height: 30px; border: 3px solid var(--border); border-top-color: var(--accent);
+            border-radius: 50%; animation: spin 0.8s linear infinite; margin: 20px auto;
         }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        /* Loading */
-        .loading {
-            text-align: center;
-            padding: 30px;
-            color: var(--text2);
-        }
-        .loading .spinner {
-            width: 40px;
-            height: 40px;
-            border: 3px solid var(--border);
-            border-top-color: var(--accent);
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-            margin: 0 auto 12px;
-        }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
+        @keyframes spin { to{transform:rotate(360deg)} }
     </style>
 </head>
 <body>
+    <div class="bg-glow"></div>
 
-    <!-- Header -->
     <div class="header">
-        <div class="header-content">
-            <div class="emoji">🤖</div>
-            <h1>AI Access Bot</h1>
-            <p id="user-greeting">Загрузка...</p>
+        <div class="emoji">🤖</div>
+        <h1>AI Access Bot</h1>
+        <p id="user-greeting">Загрузка...</p>
+        <div class="badge-row">
+            <span class="badge">ChatGPT</span>
+            <span class="badge">Claude</span>
+            <span class="badge">Midjourney</span>
+            <span class="badge">SIM.DL</span>
         </div>
     </div>
 
-    <!-- Tabs -->
-    <div class="tabs">
-        <button class="tab active" onclick="switchTab('profile')">👤 Профиль</button>
-        <button class="tab" onclick="switchTab('keys')">🔑 Ключи</button>
-        <button class="tab" onclick="switchTab('sim')">📱 SIM</button>
-        <button class="tab" onclick="switchTab('help')">💬</button>
+    <div class="tabs-container">
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('profile')">👤 Профиль</button>
+            <button class="tab" onclick="switchTab('keys')">🔑 Ключи</button>
+            <button class="tab" onclick="switchTab('sim')">📱 SIM</button>
+            <button class="tab" onclick="switchTab('help')">💬</button>
+        </div>
     </div>
 
-    <!-- Profile Tab -->
     <div id="tab-profile" class="tab-content active">
         <div class="stats-grid">
-            <div class="stat-box">
-                <div class="value" id="stat-requests">0</div>
-                <div class="label">Запросов</div>
-            </div>
-            <div class="stat-box">
-                <div class="value" id="stat-level">1</div>
-                <div class="label">Уровень</div>
-            </div>
-            <div class="stat-box">
-                <div class="value" id="stat-xp">0</div>
-                <div class="label">XP</div>
-            </div>
+            <div class="stat-box"><div class="value" id="stat-requests">—</div><div class="label">Запросов</div></div>
+            <div class="stat-box"><div class="value" id="stat-level">—</div><div class="label">Уровень</div></div>
+            <div class="stat-box"><div class="value" id="stat-xp">—</div><div class="label">XP</div></div>
         </div>
 
         <div class="card">
-            <h3><span class="icon">📊</span> Прогресс уровня</h3>
-            <p id="level-name" style="margin-bottom:4px;">Новичок</p>
-            <small style="color:var(--text2);" id="xp-text">0 / 100 XP</small>
-            <div class="xp-bar">
-                <div class="xp-fill" id="xp-bar" style="width: 0%;"></div>
-            </div>
+            <h3><span class="icon">📊</span> Прогресс</h3>
+            <div class="xp-label"><span id="level-name">—</span><span id="xp-text">—</span></div>
+            <div class="xp-bar"><div class="xp-fill" id="xp-bar" style="width:0%"></div></div>
         </div>
 
         <div class="card">
-            <h3><span class="icon">💎</span> Статус подписок</h3>
-            <div id="sub-info">Загрузка...</div>
+            <h3><span class="icon">💎</span> Подписки</h3>
+            <div class="sub-row" id="sub-info">
+                <div class="sub-box"><div class="sub-emoji">🤖</div><div class="sub-name">AI Access</div><div class="sub-status">—</div></div>
+                <div class="sub-box"><div class="sub-emoji">📱</div><div class="sub-name">SIM.DL</div><div class="sub-status">—</div></div>
+            </div>
         </div>
 
         <div class="card">
             <h3><span class="icon">🏆</span> Достижения</h3>
-            <div id="achievements">Загрузка...</div>
+            <div id="achievements"><div class="loading-spinner"></div></div>
         </div>
 
-        <button class="btn btn-primary" onclick="sendBotCmd('key')">🔑 Получить API ключ</button>
+        <button class="btn btn-primary" onclick="sendBotCmd('key')">🔑 Получить ключ</button>
         <button class="btn btn-outline" onclick="sendBotCmd('profile')">👤 Открыть в боте</button>
     </div>
 
-    <!-- Keys Tab -->
     <div id="tab-keys" class="tab-content">
-        <div class="card">
-            <h3><span class="icon">🔑</span> AI API Ключи</h3>
-            <div id="keys-list">Загрузка...</div>
-        </div>
-        <button class="btn btn-primary" onclick="generateKey()">🔄 Сгенерировать новый ключ</button>
-        <button class="btn btn-outline" onclick="sendBotCmd('key')">📋 Все ключи в боте</button>
+        <div class="card"><h3><span class="icon">🔑</span> API Ключи</h3><div id="keys-list"><div class="loading-spinner"></div></div></div>
+        <button class="btn btn-primary" onclick="generateKey()">🔄 Сгенерировать ключ</button>
+        <button class="btn btn-outline" onclick="sendBotCmd('key')">📋 В боте</button>
     </div>
 
-    <!-- SIM Tab -->
     <div id="tab-sim" class="tab-content">
-        <div class="card">
-            <h3><span class="icon">📱</span> Мои SIM заказы</h3>
-            <div id="sim-orders">Загрузка...</div>
-        </div>
+        <div class="card"><h3><span class="icon">📱</span> Мои заказы</h3><div id="sim-orders"><div class="loading-spinner"></div></div></div>
         <button class="btn btn-primary" onclick="sendBotCmd('start')">📱 Новый заказ</button>
     </div>
 
-    <!-- Help Tab -->
     <div id="tab-help" class="tab-content">
-        <div class="card">
-            <h3><span class="icon">💬</span> Частые вопросы</h3>
-            <button class="btn btn-outline" onclick="showFAQ('price')">💰 Сколько стоит?</button>
-            <button class="btn btn-outline" onclick="showFAQ('trial')">🆓 Есть ли триал?</button>
-            <button class="btn btn-outline" onclick="showFAQ('key')">🔑 Как получить ключ?</button>
-            <button class="btn btn-outline" onclick="showFAQ('sim')">📱 Как работает SIM.DL?</button>
-            <button class="btn btn-outline" onclick="showFAQ('pay')">💳 Способы оплаты?</button>
+        <div class="card"><h3><span class="icon">💬</span> FAQ</h3>
+            <button class="btn btn-outline btn-sm" onclick="showFAQ('price')">💰 Цены</button>
+            <button class="btn btn-outline btn-sm" onclick="showFAQ('trial')">🆓 Триал</button>
+            <button class="btn btn-outline btn-sm" onclick="showFAQ('key')">🔑 Ключи</button>
+            <button class="btn btn-outline btn-sm" onclick="showFAQ('sim')">📱 SIM</button>
         </div>
-
-        <div class="card">
-            <h3><span class="icon">📝</span> Нужна помощь?</h3>
+        <div class="card"><h3><span class="icon">📝</span> Поддержка</h3>
             <textarea id="help-msg" placeholder="Опишите проблему..."></textarea>
-            <button class="btn btn-success" onclick="sendHelp()" style="margin-top:8px;">📞 Отправить</button>
+            <button class="btn btn-success" onclick="sendHelp()" style="margin-top:10px;">📞 Отправить</button>
         </div>
     </div>
 
-    <!-- FAQ Modal -->
     <div class="modal" id="faq-modal">
-        <div class="modal-content">
-            <h3 id="faq-title">Ответ</h3>
-            <p id="faq-text" style="line-height:1.6;"></p>
-            <button class="btn btn-primary" onclick="closeModal()" style="margin-top:16px;">Понятно</button>
+        <div class="modal-content"><h3 id="faq-title"></h3><p id="faq-text" style="line-height:1.7;"></p>
+            <button class="btn btn-primary" onclick="closeModal()" style="margin-top:16px;">Ок</button>
         </div>
     </div>
 
     <script>
-        // ============== INIT ==============
-        const tg = window.Telegram.WebApp;
-        tg.ready();
-        tg.expand();
-
-        // User data
+        const tg = window.Telegram.WebApp; tg.ready(); tg.expand();
+        const API = 'https://ai-access-bot.onrender.com';
         const user = tg.initDataUnsafe?.user;
         const userId = user?.id || new URLSearchParams(location.search).get('user_id');
+        if(user) document.getElementById('user-greeting').textContent = '👋 ' + user.first_name + (user.username ? ' (@'+user.username+')' : '');
         
-        if (user) {
-            document.getElementById('user-greeting').textContent = 
-                '👋 ' + user.first_name + (user.username ? ' (@' + user.username + ')' : '');
-        }
-
-        // ============== FAQ DATA ==============
-        const faq = {
-            price: '💰 <b>Стоимость:</b><br><br>🤖 AI Access:<br>• 30 дней — 49 ₽<br>• 90 дней — 99 ₽<br>• 365 дней — 299 ₽<br><br>📱 SIM.DL:<br>• 30 дней — 299 ₽<br>• 90 дней — 599 ₽<br>• 365 дней — 1499 ₽',
-            trial: '🆓 <b>Да, есть триал!</b><br><br>AI Access — 3 дня бесллатно.<br>Нажмите кнопку «Триал» в боте или используйте команду /trial',
-            key: '🔑 <b>Как получить ключ:</b><br><br>1. Оплатите доступ<br>2. Нажмите «Мой ключ» в боте<br>3. Или команда /key<br><br>Ключ активируется через 10-15 минут.',
-            sim: '📱 <b>SIM.DL — активация сим-карт:</b><br><br>1. Оплатите доступ (299 ₽)<br>2. Выберите оператора<br>3. Выберите регион<br>4. Выберите тариф<br>5. Получите номер<br><br>Операторы: Билайн, МТС, Мегафон, Tele2',
-            pay: '💳 <b>Способы оплаты:</b><br><br>• Перевод на карту (СБП)<br>• Криптовалюта (TON, USDT, BTC)<br>• Telegram Stars<br><br>Выберите способ в боте.'
-        };
-
-        // ============== TAB SWITCHING ==============
-        function switchTab(name) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
-            document.getElementById('tab-' + name).classList.add('active');
-            event.target.classList.add('active');
-        }
-
-        // ============== FAQ ==============
-        function showFAQ(key) {
-            document.getElementById('faq-title').textContent = '💬 ' + Object.keys(faq).find(k => faq[k] === faq[key]) || 'Ответ';
-            document.getElementById('faq-text').innerHTML = faq[key];
-            document.getElementById('faq-modal').classList.add('active');
-        }
-
-        function closeModal() {
-            document.getElementById('faq-modal').classList.remove('active');
-        }
-
-        // ============== BOT COMMANDS ==============
-        function sendBotCmd(cmd) {
-            tg.sendData(JSON.stringify({action: cmd, user_id: userId}));
-            showToast('✅ Отправлено в бота!');
-        }
-
-        function sendHelp() {
-            const msg = document.getElementById('help-msg').value.trim();
-            if (msg) {
-                tg.sendData(JSON.stringify({action: 'support', message: msg, user_id: userId}));
-                document.getElementById('help-msg').value = '';
-                showToast('✅ Сообщение отправлено!');
-            } else {
-                showToast('⚠️ Введите сообщение');
-            }
-        }
-
-        function generateKey() {
-            tg.sendData(JSON.stringify({action: 'generate_key', user_id: userId}));
-            showToast('🔄 Запрос на новый ключ...');
-        }
-
-        // ============== TOAST ==============
-        function showToast(text) {
-            const existing = document.querySelector('.toast');
-            if (existing) existing.remove();
-            
-            const toast = document.createElement('div');
-            toast.className = 'toast';
-            toast.textContent = text;
-            document.body.appendChild(toast);
-            setTimeout(() => toast.remove(), 2500);
-        }
-
-        // ============== LOAD DATA ==============
-        function loadProfile() {
-            document.getElementById('stat-requests').textContent = '...';
-            document.getElementById('sub-info').innerHTML = '🤖 AI: ...<br>📱 SIM: ...';
-            document.getElementById('achievements').innerHTML = '<span class="achievement-tag">Загрузка...</span>';
-        }
-
-        function loadKeys() {
-            document.getElementById('keys-list').innerHTML = 
-                '<div class="key-box">Загрузка ключей...<br><small style="color:var(--text2);">Нажмите «Сгенерировать» или откройте бота</small></div>';
-        }
-
-        function loadSimOrders() {
-            document.getElementById('sim-orders').innerHTML = 
-                '<div class="loading"><div class="spinner"></div>Загрузка заказов...</div>';
-        }
-
-        // Init
-        loadProfile();
-        loadKeys();
-        loadSimOrders();
-
-        // ============== RECEIVE DATA FROM BOT ==============
-        tg.onEvent('mainButtonClicked', () => {
-            tg.sendData(JSON.stringify({action: 'main_button'}));
-        });
-
-        // Close modal on background click
-        document.getElementById('faq-modal').addEventListener('click', function(e) {
-            if (e.target === this) closeModal();
-        });
-
-        // Swipe between tabs
-        let touchStartX = 0;
-        document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
-        document.addEventListener('touchend', e => {
-            const diff = touchStartX - e.changedTouches[0].clientX;
-            if (Math.abs(diff) > 80) {
-                const tabs = ['profile', 'keys', 'sim', 'help'];
-                const current = tabs.findIndex(t => document.getElementById('tab-' + t).classList.contains('active'));
-                const next = diff > 0 ? Math.min(tabs.length - 1, current + 1) : Math.max(0, current - 1);
-                if (next !== current) {
-                    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-                    document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
-                    document.getElementById('tab-' + tabs[next]).classList.add('active');
-                    document.querySelectorAll('.tab')[next].classList.add('active');
-                }
-            }
-        });
+        const faq={price:'💰 <b>Цены:</b><br><br>🤖 AI: 49₽/30д, 99₽/90д, 299₽/365д<br>📱 SIM: 299₽/30д, 599₽/90д, 1499₽/365д',
+                   trial:'🆓 Триал AI — 3 дня!<br>Кнопка «Триал» или /trial',
+                   key:'🔑 После оплаты: кнопка «Мой ключ», /key или вкладка «Ключи» тут',
+                   sim:'📱 SIM.DL:<br>1. Оплати 2. Выбери оператора/регион 3. Получи номер<br>Операторы: Билайн, МТС, Мегафон, Tele2'};
+        
+        function switchTab(n){document.querySelectorAll('.tab-content,.tab').forEach(e=>e.classList.remove('active'));document.getElementById('tab-'+n).classList.add('active');event.target.classList.add('active')}
+        function showFAQ(k){document.getElementById('faq-title').textContent='💬';document.getElementById('faq-text').innerHTML=faq[k];document.getElementById('faq-modal').classList.add('active')}
+        function closeModal(){document.getElementById('faq-modal').classList.remove('active')}
+        function sendBotCmd(c){tg.sendData(JSON.stringify({action:c,user_id:userId}));toast('✅ Отправлено!')}
+        function sendHelp(){const m=document.getElementById('help-msg').value.trim();if(m){tg.sendData(JSON.stringify({action:'support',message:m,user_id:userId}));document.getElementById('help-msg').value='';toast('✅ Отправлено!')}else toast('⚠️ Введите текст')}
+        function toast(t){const o=document.querySelector('.toast');if(o)o.remove();const d=document.createElement('div');d.className='toast';d.textContent=t;document.body.appendChild(d);setTimeout(()=>d.remove(),2500)}
+        
+        async function generateKey(){try{const r=await fetch(API+'/api/new-key?user_id='+userId);const d=await r.json();d.key?(toast('🔑 Ключ создан!'),loadKeys()):toast('❌ Нужен AI Premium')}catch(e){toast('❌ Ошибка')}}
+        async function loadProfile(){if(!userId)return;try{const r=await fetch(API+'/api/profile?user_id='+userId);const d=await r.json();if(d.error)return;
+            document.getElementById('stat-requests').textContent=d.total_requests||0;
+            document.getElementById('stat-level').textContent=d.level||1;
+            document.getElementById('stat-xp').textContent=d.experience||0;
+            document.getElementById('level-name').textContent=(d.level_emoji||'')+' '+(d.level_name||'Новичок');
+            document.getElementById('xp-text').textContent=(d.experience||0)+' / '+(d.next_xp||100)+' XP';
+            document.getElementById('xp-bar').style.width=(d.xp_percent||0)+'%';
+            let sub=document.getElementById('sub-info');
+            sub.innerHTML='<div class="sub-box'+(d.ai_premium||d.trial_active?' active':'')+'"><div class="sub-emoji">🤖</div><div class="sub-name">AI</div><div class="sub-status">'+(d.ai_premium?'✅ Premium':(d.trial_active?'🆓 Триал':'❌ Нет'))+'</div></div><div class="sub-box'+(d.sim_premium?' active':'')+'"><div class="sub-emoji">📱</div><div class="sub-name">SIM</div><div class="sub-status">'+(d.sim_premium?'✅ Premium':'❌ Нет')+'</div></div>';
+            let ach='';if(d.achievements&&d.achievements.length){d.achievements.forEach(a=>ach+='<span class="achievement-tag">'+a.emoji+' '+a.name+'</span>')}else ach='<span style="color:var(--text2)">Пока нет</span>';
+            document.getElementById('achievements').innerHTML=ach}catch(e){console.error(e)}}
+        
+        async function loadKeys(){if(!userId)return;try{const r=await fetch(API+'/api/keys?user_id='+userId);const d=await r.json();let h='';if(d.keys&&d.keys.length)d.keys.forEach(k=>h+='<div class="key-box"><span>'+k+'</span><button class="copy-btn" onclick="copyKey(\''+k+'\')">📋</button></div>');else h='<p style="color:var(--text2)">Нет ключей</p>';document.getElementById('keys-list').innerHTML=h}catch(e){document.getElementById('keys-list').innerHTML='<p style="color:var(--red)">Ошибка</p>'}}
+        
+        async function loadSimOrders(){if(!userId)return;try{const r=await fetch(API+'/api/sim-orders?user_id='+userId);const d=await r.json();let h='';if(d.orders&&d.orders.length)d.orders.forEach(o=>{const s=o.status==='completed'?'✅':'⏳';h+='<div class="order-item '+(o.status==='completed'?'completed':'pending')+'">'+s+' <b>#'+o.order_id+'</b>: '+o.operator+' | '+o.region+(o.sim_number?' | 📱'+o.sim_number:'')+'</div>'});else h='<p style="color:var(--text2)">Нет заказов</p>';document.getElementById('sim-orders').innerHTML=h}catch(e){document.getElementById('sim-orders').innerHTML='<p style="color:var(--red)">Ошибка</p>'}}
+        
+        function copyKey(k){navigator.clipboard.writeText(k);toast('📋 Скопировано!')}
+        
+        document.getElementById('faq-modal').addEventListener('click',function(e){if(e.target===this)closeModal()});
+        
+        loadProfile();loadKeys();loadSimOrders();
     </script>
 </body>
 </html>
