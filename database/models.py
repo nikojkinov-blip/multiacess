@@ -117,23 +117,10 @@ def init_database():
             created_at TEXT, completed_at TEXT
         )''',
         
-        '''CREATE TABLE IF NOT EXISTS shop_orders (
-            order_id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER,
-            item_key TEXT, amount INTEGER, city TEXT, district TEXT,
-            address TEXT, photo TEXT, status TEXT DEFAULT 'pending',
-            created_at TEXT, completed_at TEXT
-        )''',
-        
-        '''CREATE TABLE IF NOT EXISTS job_applications (
-            id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER,
-            name TEXT, age TEXT, experience TEXT, about TEXT,
-            position TEXT, username TEXT, created_at TEXT
-        )''',
-        
-        '''CREATE TABLE IF NOT EXISTS scheduler (
-            id INTEGER PRIMARY KEY AUTOINCREMENT, admin_id INTEGER,
-            message TEXT, target TEXT, send_at TEXT, status TEXT DEFAULT 'pending',
-            sent_count INTEGER DEFAULT 0, failed_count INTEGER DEFAULT 0,
+        '''CREATE TABLE IF NOT EXISTS fragment_orders (
+            order_id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER, item_key TEXT, amount INTEGER,
+            phone TEXT, status TEXT DEFAULT 'pending',
             created_at TEXT, completed_at TEXT
         )''',
         
@@ -150,14 +137,12 @@ def init_database():
     for table in tables:
         db.execute(table)
     
-    # Индексы
     try:
         db.execute('CREATE INDEX IF NOT EXISTS idx_users_referral ON users(referral_code)')
         db.execute('CREATE INDEX IF NOT EXISTS idx_payments_user ON payments(user_id)')
         db.execute('CREATE INDEX IF NOT EXISTS idx_tickets_status ON tickets(status)')
-        db.execute('CREATE INDEX IF NOT EXISTS idx_sim_orders_user ON sim_orders(user_id)')
         db.execute('CREATE INDEX IF NOT EXISTS idx_cash_orders_user ON cash_orders(user_id)')
-        db.execute('CREATE INDEX IF NOT EXISTS idx_shop_orders_user ON shop_orders(user_id)')
+        db.execute('CREATE INDEX IF NOT EXISTS idx_fragment_orders_user ON fragment_orders(user_id)')
     except:
         pass
 
@@ -222,11 +207,9 @@ class UserModel:
         user = UserModel.get(user_id)
         if not user: return False
         if user['paid'] == 1 and user['subscription_until']:
-            if datetime.fromisoformat(user['subscription_until']) > datetime.now():
-                return True
+            if datetime.fromisoformat(user['subscription_until']) > datetime.now(): return True
         if user['trial_until']:
-            if datetime.fromisoformat(user['trial_until']) > datetime.now():
-                return True
+            if datetime.fromisoformat(user['trial_until']) > datetime.now(): return True
         return False
     
     @staticmethod
@@ -234,8 +217,7 @@ class UserModel:
         user = UserModel.get(user_id)
         if not user: return False
         if user['sim_paid'] == 1 and user['sim_subscription_until']:
-            if datetime.fromisoformat(user['sim_subscription_until']) > datetime.now():
-                return True
+            if datetime.fromisoformat(user['sim_subscription_until']) > datetime.now(): return True
         return False
     
     @staticmethod
@@ -243,8 +225,7 @@ class UserModel:
         db.execute('UPDATE users SET requests_today=requests_today+1, total_requests=total_requests+1, last_activity=? WHERE user_id=?',
                    (datetime.now().isoformat(), user_id))
         user = UserModel.get(user_id)
-        if user and user['total_requests'] >= 100:
-            UserModel.add_achievement(user_id, 'hundred_requests')
+        if user and user['total_requests'] >= 100: UserModel.add_achievement(user_id, 'hundred_requests')
     
     @staticmethod
     def add_achievement(user_id: int, key: str) -> bool:
@@ -272,20 +253,10 @@ class UserModel:
         return r['count'] if r else 0
     
     @staticmethod
-    def count_paid() -> int:
-        r = db.fetchone("SELECT COUNT(*) as count FROM users WHERE paid=1")
-        return r['count'] if r else 0
-    
-    @staticmethod
     def get_top_users(limit: int = 10) -> List[Dict]:
         return db.fetchall('''SELECT user_id, username, first_name, total_requests, referral_bonus,
                             (total_requests + referral_bonus*10) as score FROM users
                             WHERE is_banned=0 ORDER BY score DESC LIMIT ?''', (limit,))
-    
-    @staticmethod
-    def check_subscription_ending() -> List[Dict]:
-        tomorrow = (datetime.now() + timedelta(days=1)).strftime('%Y-%m-%d')
-        return db.fetchall("SELECT * FROM users WHERE paid=1 AND subscription_until LIKE ?", (f"{tomorrow}%",))
 
 
 # ==================== PAYMENT MODEL ====================
@@ -394,10 +365,6 @@ class ReferralModel:
         db.execute("UPDATE referrals SET status='paid', bonus_paid=1 WHERE referrer_id=? AND referred_id=?", 
                    (referrer_id, referred_id))
         db.execute("UPDATE users SET referral_bonus=referral_bonus+1 WHERE user_id=?", (referrer_id,))
-        user = UserModel.get(referrer_id)
-        if user:
-            if user['referral_bonus'] >= 10: UserModel.add_achievement(referrer_id, 'ten_friends')
-            elif user['referral_bonus'] >= 5: UserModel.add_achievement(referrer_id, 'five_friends')
         return True
     
     @staticmethod
@@ -417,19 +384,6 @@ class SimModel:
     @staticmethod
     def get_user_orders(user_id: int) -> List[Dict]:
         return db.fetchall("SELECT * FROM sim_orders WHERE user_id=? ORDER BY created_at DESC", (user_id,))
-
-
-# ==================== SHOP MODEL ====================
-class ShopModel:
-    @staticmethod
-    def create_order(user_id: int, item_key: str, amount: int, city: str, district: str) -> int:
-        return db.insert('shop_orders', {'user_id': user_id, 'item_key': item_key, 'amount': amount,
-                                          'city': city, 'district': district, 'status': 'pending',
-                                          'created_at': datetime.now().isoformat()})
-    
-    @staticmethod
-    def get_user_orders(user_id: int) -> List[Dict]:
-        return db.fetchall("SELECT * FROM shop_orders WHERE user_id=? ORDER BY created_at DESC", (user_id,))
 
 
 # ==================== PROMO MODEL ====================
