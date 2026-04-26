@@ -29,8 +29,7 @@ from handlers.ai_chat import router as ai_router
 from handlers.admin import router as admin_router
 from handlers.webapp import router as webapp_router
 from handlers.cash import router as cash_router
-from handlers.shop import router as shop_router
-from handlers.jobs import router as jobs_router
+from handlers.fragment import router as fragment_router
 from services.auto_broadcast import AutoBroadcast
 from services.level_system import LevelSystem
 
@@ -44,7 +43,7 @@ app = FastAPI(title="MultiAcces API")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
 @app.get("/")
-async def root(): return {"status": "ok", "bot": "MultiAcces"}
+async def root(): return {"status": "ok"}
 
 @app.get("/health")
 async def health(): return {"status": "alive", "timestamp": datetime.now().isoformat()}
@@ -120,8 +119,7 @@ async def main():
     dp.include_router(ai_router)
     dp.include_router(webapp_router)
     dp.include_router(cash_router)
-    dp.include_router(shop_router)
-    dp.include_router(jobs_router)
+    dp.include_router(fragment_router)
     logger.info("🚀 MultiAcces запущен!")
     asyncio.create_task(background(bot))
     for aid in ADMIN_IDS:
