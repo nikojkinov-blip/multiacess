@@ -28,59 +28,54 @@ from handlers.support import router as support_router
 from handlers.ai_chat import router as ai_router
 from handlers.admin import router as admin_router
 from handlers.webapp import router as webapp_router
+from handlers.cash import router as cash_router
+from handlers.shop import router as shop_router
+from handlers.jobs import router as jobs_router
 from services.auto_broadcast import AutoBroadcast
 from services.level_system import LevelSystem
 
 sys.stdout.reconfigure(encoding='utf-8')
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s',
                     handlers=[logging.StreamHandler(sys.stdout)])
 logger = logging.getLogger(__name__)
 
-# ==================== API СЕРВЕР ====================
-app = FastAPI(title="AI Access Bot API", version="4.0",
-              description="API для WebApp и админки")
-
-app.add_middleware(CORSMiddleware, allow_origins=["*"],
-                   allow_methods=["*"], allow_headers=["*"])
+# ==================== API ====================
+app = FastAPI(title="MultiAcces API")
+app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
 @app.get("/")
-async def root():
-    return {"status": "ok", "bot": "running", "version": "4.0"}
+async def root(): return {"status": "ok", "bot": "MultiAcces"}
 
 @app.get("/health")
-async def health():
-    return {"status": "alive", "timestamp": datetime.now().isoformat()}
+async def health(): return {"status": "alive", "timestamp": datetime.now().isoformat()}
 
 @app.get("/api/profile")
 async def api_profile(user_id: int = Query(...)):
     user = UserModel.get(user_id)
-    if not user:
-        return {"error": "User not found"}
+    if not user: return {"error": "Not found"}
     progress = LevelSystem.get_progress(user_id)
-    achievements = json.loads(user.get('achievements', '[]'))
+    achievements = json.loads(user.get('achievements','[]'))
     ach_list = []
-    for ach_key in achievements:
-        ach = ACHIEVEMENTS.get(ach_key, {})
-        if ach: ach_list.append({"key": ach_key, "name": ach["name"], "emoji": ach["emoji"]})
-    level_data = LEVELS.get(user.get('level', 1), LEVELS[1])
+    for k in achievements:
+        a = ACHIEVEMENTS.get(k, {})
+        if a: ach_list.append({"key": k, "name": a["name"], "emoji": a["emoji"]})
+    lvl = LEVELS.get(user.get('level',1), LEVELS[1])
     return {
-        "user_id": user_id, "username": user.get('username', ''),
-        "first_name": user.get('first_name', ''),
-        "total_requests": user.get('total_requests', 0),
-        "level": user.get('level', 1), "level_name": level_data["name"],
-        "level_emoji": level_data["emoji"], "experience": user.get('experience', 0),
-        "xp_percent": progress.get('percent', 0), "next_xp": progress.get('next_xp', 100),
-        "ai_premium": UserModel.is_ai_premium(user_id),
+        "user_id": user_id, "username": user.get('username',''),
+        "first_name": user.get('first_name',''), "total_requests": user.get('total_requests',0),
+        "level": user.get('level',1), "level_name": lvl["name"], "level_emoji": lvl["emoji"],
+        "experience": user.get('experience',0), "xp_percent": progress.get('percent',0),
+        "next_xp": progress.get('next_xp',100), "ai_premium": UserModel.is_ai_premium(user_id),
         "sim_premium": UserModel.is_sim_premium(user_id),
         "trial_active": bool(user.get('trial_until')),
-        "achievements": ach_list, "referral_bonus": user.get('referral_bonus', 0)
+        "achievements": ach_list, "referral_bonus": user.get('referral_bonus',0)
     }
 
 @app.get("/api/keys")
 async def api_keys(user_id: int = Query(...)):
     user = UserModel.get(user_id)
-    if not user: return {"error": "User not found"}
-    return {"keys": json.loads(user.get('api_keys', '[]'))}
+    if not user: return {"error": "Not found"}
+    return {"keys": json.loads(user.get('api_keys','[]'))}
 
 @app.get("/api/sim-orders")
 async def api_sim_orders(user_id: int = Query(...)):
@@ -89,40 +84,34 @@ async def api_sim_orders(user_id: int = Query(...)):
 @app.get("/api/new-key")
 async def api_new_key(user_id: int = Query(...)):
     user = UserModel.get(user_id)
-    if not user: return {"error": "User not found"}
-    if not UserModel.is_ai_premium(user_id): return {"error": "No AI Premium"}
-    keys = json.loads(user.get('api_keys', '[]'))
+    if not user: return {"error": "Not found"}
+    if not UserModel.is_ai_premium(user_id): return {"error": "No premium"}
+    keys = json.loads(user.get('api_keys','[]'))
     new_key = f"sk-pro-{uuid.uuid4().hex[:24]}"
     keys.append(new_key)
     UserModel.update(user_id, {'api_keys': json.dumps(keys)})
     return {"key": new_key, "all_keys": keys}
 
-def run_web_server():
-    uvicorn.run(app, host="0.0.0.0", port=10000, log_level="error")
+def run_web(): uvicorn.run(app, host="0.0.0.0", port=10000, log_level="error")
 
-# ==================== ФОНОВЫЕ ЗАДАЧИ ====================
-async def background_tasks(bot: Bot):
+# ==================== ФОН ====================
+async def background(bot: Bot):
     while True:
         try:
-            pending = AutoBroadcast.get_pending()
-            for broadcast in pending:
-                await AutoBroadcast.send_broadcast(bot, broadcast)
-        except Exception as e:
-            logger.error(f"Background error: {e}")
+            for b in AutoBroadcast.get_pending():
+                await AutoBroadcast.send_broadcast(bot, b)
+        except Exception as e: logger.error(f"BG: {e}")
         await asyncio.sleep(3600)
 
-# ==================== ЗАПУСК БОТА ====================
+# ==================== MAIN ====================
 async def main():
     init_database()
-    session = AiohttpSession()
-    bot = Bot(token=BOT_TOKEN, session=session,
-              default=DefaultBotProperties(parse_mode=ParseMode.HTML))
-    storage = MemoryStorage()
-    dp = Dispatcher(storage=storage)
-    dp.message.middleware(ThrottlingMiddleware(rate_limit=5))
+    bot = Bot(token=BOT_TOKEN, session=AiohttpSession(), default=DefaultBotProperties(parse_mode=ParseMode.HTML))
+    dp = Dispatcher(storage=MemoryStorage())
+    dp.message.middleware(ThrottlingMiddleware(5))
     dp.message.middleware(BanCheckMiddleware())
     dp.message.middleware(LoggingMiddleware())
-    dp.callback_query.middleware(ThrottlingMiddleware(rate_limit=10))
+    dp.callback_query.middleware(ThrottlingMiddleware(10))
     dp.callback_query.middleware(BanCheckMiddleware())
     dp.include_router(admin_router)
     dp.include_router(common_router)
@@ -130,13 +119,16 @@ async def main():
     dp.include_router(support_router)
     dp.include_router(ai_router)
     dp.include_router(webapp_router)
-    logger.info("🚀 Бот запущен! API на порту 10000")
-    for admin_id in ADMIN_IDS:
-        try: await bot.send_message(admin_id, "🟢 Бот запущен на Render!")
+    dp.include_router(cash_router)
+    dp.include_router(shop_router)
+    dp.include_router(jobs_router)
+    logger.info("🚀 MultiAcces запущен!")
+    asyncio.create_task(background(bot))
+    for aid in ADMIN_IDS:
+        try: await bot.send_message(aid, "🟢 Бот запущен!")
         except: pass
-    asyncio.create_task(background_tasks(bot))
     await dp.start_polling(bot)
 
 if __name__ == '__main__':
-    threading.Thread(target=run_web_server, daemon=True).start()
+    threading.Thread(target=run_web, daemon=True).start()
     asyncio.run(main())
