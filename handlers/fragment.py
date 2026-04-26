@@ -59,12 +59,14 @@ async def show_info(call: CallbackQuery):
         "📛 <b>КАК КУПИТЬ ЮЗЕРНЕЙМ:</b>\n\n"
         "1. Выбираешь юзернейм\n"
         "2. Оплачиваешь\n"
-        "3. Отправляешь <b>номер телефона</b>\n"
-        "4. Мы заходим на Fragment\n"
-        "5. Telegram пришлёт «Подтвердить вход»\n"
-        "6. Нажимаешь «Разрешить»\n"
-        "7. Юзернейм привязан!\n\n"
-        "⚠️ Без подтверждения входа — не сможем привязать.",
+        "3. Пишешь в поддержку скрин оплаты\n"
+        "4. Отправляешь номер телефона от Telegram\n"
+        "5. Мы заходим на Fragment\n"
+        "6. Telegram пришлёт «Подтвердить вход»\n"
+        "7. Нажимаешь «Разрешить»\n"
+        "8. Юзернейм привязан!\n\n"
+        "📞 Поддержка: <b>@MultiAccessHelp</b>\n"
+        "🕐 15:00 — 01:00",
         reply_markup=InlineKeyboardBuilder().button(
             text="📛 К КАТАЛОГУ", callback_data="fragment_catalog"
         ).as_markup(), parse_mode="HTML"
@@ -98,10 +100,18 @@ async def buy_fragment(call: CallbackQuery, state: FSMContext):
     
     await call.message.edit_text(
         f"✅ <b>ЗАКАЗ #{order_id}</b>\n\n"
-        f"📛 {item['name']}\n💰 {item['price']} ₽\n\n"
-        f"💳 <b>ОПЛАТА:</b>\n<code>{CARD_NUMBER}</code>\n🏦 {BANK_NAME}\n\n"
-        f"📱 После оплаты отправьте <b>номер телефона</b> от Telegram.",
-        reply_markup=InlineKeyboardBuilder().button(text="❌ ОТМЕНА", callback_data="fragment_catalog").as_markup(),
+        f"📛 {item['name']}\n"
+        f"💰 {item['price']} ₽\n\n"
+        f"💳 <b>ОПЛАТА:</b>\n"
+        f"<code>{CARD_NUMBER}</code>\n"
+        f"🏦 {BANK_NAME}\n\n"
+        f"📞 <b>После оплаты обратитесь в поддержку:</b>\n"
+        f"👉 <b>@MultiAccessHelp</b>\n"
+        f"🕐 Время работы: <b>15:00 — 01:00</b>\n\n"
+        f"Отправьте скрин оплаты и номер телефона.",
+        reply_markup=InlineKeyboardBuilder().button(
+            text="📋 МОИ ПОКУПКИ", callback_data="fragment_orders"
+        ).as_markup(),
         parse_mode="HTML"
     )
     await call.answer()
@@ -130,7 +140,9 @@ async def process_phone(message: Message, state: FSMContext):
         f"📛 {item.get('name')}\n📱 <code>{phone}</code>\n\n"
         f"⚡ Админ зайдёт на Fragment.\n"
         f"📩 Telegram пришлёт «Подтвердить вход» → нажми «Разрешить»",
-        reply_markup=InlineKeyboardBuilder().button(text="📋 МОИ ПОКУПКИ", callback_data="fragment_orders").as_markup(),
+        reply_markup=InlineKeyboardBuilder().button(
+            text="📋 МОИ ПОКУПКИ", callback_data="fragment_orders"
+        ).as_markup(),
         parse_mode="HTML"
     )
 
@@ -139,13 +151,14 @@ async def process_phone(message: Message, state: FSMContext):
 async def show_orders(call: CallbackQuery):
     orders = db.fetchall("SELECT * FROM fragment_orders WHERE user_id=? ORDER BY created_at DESC", (call.from_user.id,))
     if not orders:
-        text = "📛 Нет покупок."
+        text = "📛 Нет покупок.\n\n📞 Поддержка: @MultiAccessHelp"
     else:
         text = "📛 <b>ВАШИ ПОКУПКИ:</b>\n\n"
         for o in orders:
             item = FRAGMENT_ITEMS.get(o['item_key'], {})
             status = "✅ ВЫДАН" if o['status']=='completed' else "⏳ ОЖИДАЕТ"
             text += f"{'✅' if o['status']=='completed' else '⏳'} <b>#{o['order_id']}</b>\n📛 {item.get('name', o['item_key'])}\n💰 {o['amount']}₽ | {status}\n\n"
+        text += "📞 Поддержка: @MultiAccessHelp\n🕐 15:00 — 01:00"
     builder = InlineKeyboardBuilder()
     builder.button(text="📛 КАТАЛОГ", callback_data="fragment_catalog")
     builder.button(text="◀️ НАЗАД", callback_data="mode_fragment")
