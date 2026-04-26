@@ -1,5 +1,5 @@
 from aiogram import Router, F, types
-from aiogram.types import CallbackQuery, Message
+from aiogram.types import CallbackQuery
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from database.models import ShopModel
 from config import (
@@ -15,7 +15,6 @@ WELCOME = f"""
 
 🔬 Лабораторные исследования с 2024
 🧪 Чистота продуктов — наш приоритет
-📊 Все партии проходят тестирование
 
 🏙 <b>Кластеры:</b> {', '.join(SHOP_CITIES)}
 
@@ -30,15 +29,10 @@ async def show_shop_menu(call: CallbackQuery):
     builder.button(text="🧪 КАТАЛОГ", callback_data="shop_catalog")
     builder.button(text="🔥 ХИТЫ", callback_data="shop_hits")
     builder.button(text="📋 МОИ ЗАКАЗЫ", callback_data="shop_orders")
-    builder.button(text="📞 ТЕХПОДДЕРЖКА", callback_data="support")
     builder.button(text="◀️ СМЕНИТЬ РЕЖИМ", callback_data="main_menu")
     builder.adjust(1)
     
-    await call.message.edit_text(
-        WELCOME,
-        reply_markup=builder.as_markup(),
-        parse_mode="HTML"
-    )
+    await call.message.edit_text(WELCOME, reply_markup=builder.as_markup(), parse_mode="HTML")
     await call.answer()
 
 
@@ -52,8 +46,7 @@ async def show_cities(call: CallbackQuery):
     
     await call.message.edit_text(
         f"{SHOP_BRAND}\n\n📍 <b>ВЫБЕРИ КЛАСТЕР:</b>",
-        reply_markup=builder.as_markup(),
-        parse_mode="HTML"
+        reply_markup=builder.as_markup(), parse_mode="HTML"
     )
     await call.answer()
 
@@ -72,15 +65,14 @@ async def show_hits(call: CallbackQuery):
     
     await call.message.edit_text(
         f"{SHOP_BRAND}\n\n🔥 <b>ХИТЫ ПРОДАЖ:</b>",
-        reply_markup=builder.as_markup(),
-        parse_mode="HTML"
+        reply_markup=builder.as_markup(), parse_mode="HTML"
     )
     await call.answer()
 
 
 @router.callback_query(F.data.startswith("shopcity_"))
 async def show_categories(call: CallbackQuery):
-    city = call.data.split("_")[1]
+    city = call.data.replace("shopcity_", "")
     
     builder = InlineKeyboardBuilder()
     for cat_key, cat_name in SHOP_CATEGORIES.items():
@@ -91,17 +83,17 @@ async def show_categories(call: CallbackQuery):
     
     await call.message.edit_text(
         f"{SHOP_BRAND}\n🏙 {city}\n\n🧪 <b>ВЫБЕРИ ФОРМУЛУ:</b>",
-        reply_markup=builder.as_markup(),
-        parse_mode="HTML"
+        reply_markup=builder.as_markup(), parse_mode="HTML"
     )
     await call.answer()
 
 
 @router.callback_query(F.data.startswith("shopcat_"))
 async def show_items(call: CallbackQuery):
-    parts = call.data.split("_")
-    city = parts[1]
-    category = parts[2]
+    data = call.data.replace("shopcat_", "")
+    parts = data.split("_", 1)  # ['Астрахань', 'crystal']
+    city = parts[0]
+    category = parts[1] if len(parts) > 1 else data
     
     cat_name = SHOP_CATEGORIES.get(category, category)
     
@@ -124,26 +116,25 @@ async def show_items(call: CallbackQuery):
     
     await call.message.edit_text(
         f"{SHOP_BRAND}\n🏙 {city}\n🧪 {cat_name}\n\n📊 <b>ДОСТУПНЫЕ ПРОДУКТЫ:</b>",
-        reply_markup=builder.as_markup(),
-        parse_mode="HTML"
+        reply_markup=builder.as_markup(), parse_mode="HTML"
     )
     await call.answer()
 
 
 @router.callback_query(F.data.startswith("shopbuy_"))
 async def select_district(call: CallbackQuery):
-    item_key = call.data.split("_")[1]
+    item_key = call.data.replace("shopbuy_", "")
     item = SHOP_ITEMS.get(item_key)
     
     if not item:
-        await call.answer("Продукт не найден")
+        await call.answer(f"❌ Продукт не найден: {item_key}", show_alert=True)
         return
     
     districts = SHOP_DISTRICTS.get(item['city'], ["Центр"])
     
     builder = InlineKeyboardBuilder()
-    for district in districts:
-        builder.button(text=district, callback_data=f"shopaddr_{item_key}_{district}")
+    for i, district in enumerate(districts):
+        builder.button(text=district, callback_data=f"shopaddr_{item_key}_{i}")
     builder.button(text="◀️ НАЗАД", callback_data=f"shopcity_{item['city']}")
     builder.adjust(1)
     
@@ -153,22 +144,26 @@ async def select_district(call: CallbackQuery):
         f"💰 {item['price']}₽\n"
         f"📝 {item['desc']}\n\n"
         f"📍 <b>ВЫБЕРИ КЛАСТЕР ДОСТАВКИ:</b>",
-        reply_markup=builder.as_markup(),
-        parse_mode="HTML"
+        reply_markup=builder.as_markup(), parse_mode="HTML"
     )
     await call.answer()
 
 
 @router.callback_query(F.data.startswith("shopaddr_"))
 async def confirm_order(call: CallbackQuery):
-    parts = call.data.split("_")
-    item_key = parts[1]
-    district = parts[2]
+    data = call.data.replace("shopaddr_", "")
+    parts = data.rsplit("_", 1)  # ['crystal_05_ast', '0']
+    item_key = parts[0]
+    district_idx = int(parts[1]) if len(parts) > 1 else 0
+    
     item = SHOP_ITEMS.get(item_key)
     
     if not item:
-        await call.answer("Ошибка")
+        await call.answer(f"❌ Продукт не найден: {item_key}", show_alert=True)
         return
+    
+    districts = SHOP_DISTRICTS.get(item['city'], ["Центр"])
+    district = districts[district_idx] if district_idx < len(districts) else districts[0]
     
     order_id = ShopModel.create_order(
         call.from_user.id, item_key, item['price'],
@@ -224,7 +219,7 @@ async def show_orders(call: CallbackQuery):
             status = "✅ ВЫПОЛНЕН" if o['status'] == 'completed' else "⏳ ОЖИДАЕТ"
             addr = f"\n📍 {o.get('address', '')}" if o.get('address') else ""
             text += f"{'✅' if o['status']=='completed' else '⏳'} <b>#{o['order_id']}</b>\n"
-            text += f"🧪 {item.get('name','?')}\n"
+            text += f"🧪 {item.get('name', o['item_key'])}\n"
             text += f"💰 {o['amount']}₽ | {status}{addr}\n\n"
     
     builder = InlineKeyboardBuilder()
