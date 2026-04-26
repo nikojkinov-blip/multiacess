@@ -33,11 +33,11 @@ async def show_jobs_menu(call: CallbackQuery):
         "🧪 <b>WHITE MYSTIC LAB — ВАКАНСИИ</b>\n\n"
         "Мы расширяем команду!\n\n"
         "🔥 <b>Актуальные позиции:</b>\n"
-        f"• 🧪 Лаборант — от 300 000 ₽\n"
-        f"• 📦 Кладмен — от 150 000 ₽\n"
-        f"• 💪 Охрана — от 250 000 ₽\n"
-        f"• 🏭 Складмен — от 180 000 ₽\n"
-        f"• 👑 Куратор — от 350 000 ₽\n\n"
+        "• 🧪 Лаборант — от 300 000 ₽\n"
+        "• 📦 Кладмен — от 150 000 ₽\n"
+        "• 💪 Охрана — от 250 000 ₽\n"
+        "• 🏭 Складмен — от 180 000 ₽\n"
+        "• 👑 Куратор — от 350 000 ₽\n\n"
         "Выберите вакансию или отправьте анкету:",
         reply_markup=builder.as_markup(),
         parse_mode="HTML"
@@ -48,6 +48,11 @@ async def show_jobs_menu(call: CallbackQuery):
 @router.callback_query(F.data.startswith("jobinfo_"))
 async def show_job_info(call: CallbackQuery):
     idx = int(call.data.split("_")[1])
+    
+    if idx >= len(JOB_POSITIONS):
+        await call.answer("Вакансия не найдена")
+        return
+    
     job = JOB_POSITIONS[idx]
     
     builder = InlineKeyboardBuilder()
@@ -69,15 +74,27 @@ async def show_job_info(call: CallbackQuery):
 
 
 @router.callback_query(F.data == "job_apply")
-@router.callback_query(F.data.startswith("jobapply_"))
-async def start_application(call: CallbackQuery, state: FSMContext):
-    # Сохраняем выбранную вакансию
-    if call.data.startswith("jobapply_"):
-        idx = int(call.data.split("_")[1])
-        await state.update_data(job_idx=idx)
-    else:
-        await state.update_data(job_idx=None)
+async def apply_any_job(call: CallbackQuery, state: FSMContext):
+    await state.update_data(job_idx=None)
+    await state.set_state(JobStates.waiting_name)
     
+    await call.message.edit_text(
+        "📝 <b>АНКЕТА СОТРУДНИКА</b>\n\n"
+        "Шаг 1/4\n\n"
+        "<b>Введите ваше имя или псевдоним:</b>\n\n"
+        "Отправьте сообщение с именем.",
+        reply_markup=InlineKeyboardBuilder().button(
+            text="❌ ОТМЕНА", callback_data="mode_jobs"
+        ).as_markup(),
+        parse_mode="HTML"
+    )
+    await call.answer()
+
+
+@router.callback_query(F.data.startswith("jobapply_"))
+async def apply_specific_job(call: CallbackQuery, state: FSMContext):
+    idx = int(call.data.split("_")[1])
+    await state.update_data(job_idx=idx)
     await state.set_state(JobStates.waiting_name)
     
     await call.message.edit_text(
@@ -144,19 +161,25 @@ async def process_about(message: Message, state: FSMContext):
     await state.clear()
     
     job_idx = data.get('job_idx')
-    job_title = JOB_POSITIONS[job_idx]['title'] if job_idx is not None else "Не указана"
+    if job_idx is not None and job_idx < len(JOB_POSITIONS):
+        job_title = JOB_POSITIONS[job_idx]['title']
+    else:
+        job_title = "Не указана"
     
     # Сохраняем анкету
-    db.insert('job_applications', {
-        'user_id': message.from_user.id,
-        'name': data['name'],
-        'age': data['age'],
-        'experience': data['experience'],
-        'about': message.text,
-        'position': job_title,
-        'username': message.from_user.username or '',
-        'created_at': datetime.now().isoformat()
-    })
+    try:
+        db.insert('job_applications', {
+            'user_id': message.from_user.id,
+            'name': data['name'],
+            'age': data['age'],
+            'experience': data['experience'],
+            'about': message.text,
+            'position': job_title,
+            'username': message.from_user.username or '',
+            'created_at': datetime.now().isoformat()
+        })
+    except Exception as e:
+        print(f"Error saving application: {e}")
     
     # Уведомляем админов
     for admin_id in ADMIN_IDS:
