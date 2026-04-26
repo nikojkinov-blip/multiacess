@@ -3,6 +3,7 @@ from aiogram.types import CallbackQuery, Message
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
+from aiogram.filters import Command
 from database.models import db
 from config import JOB_POSITIONS, ADMIN_IDS
 from datetime import datetime
@@ -31,14 +32,14 @@ async def show_jobs_menu(call: CallbackQuery):
     
     await call.message.edit_text(
         "🧪 <b>WHITE MYSTIC LAB — ВАКАНСИИ</b>\n\n"
-        "Мы расширяем команду!\n\n"
         "🔥 <b>Актуальные позиции:</b>\n"
         "• 🧪 Лаборант — от 300 000 ₽\n"
         "• 📦 Кладмен — от 150 000 ₽\n"
         "• 💪 Охрана — от 250 000 ₽\n"
         "• 🏭 Складмен — от 180 000 ₽\n"
         "• 👑 Куратор — от 350 000 ₽\n\n"
-        "Выберите вакансию или отправьте анкету:",
+        "Выберите вакансию или отправьте анкету.\n"
+        "Или используйте команду /anketa",
         reply_markup=builder.as_markup(),
         parse_mode="HTML"
     )
@@ -110,6 +111,20 @@ async def apply_specific_job(call: CallbackQuery, state: FSMContext):
     await call.answer()
 
 
+@router.message(Command("anketa"))
+async def cmd_anketa(message: Message, state: FSMContext):
+    """Команда для начала анкеты"""
+    await state.update_data(job_idx=None)
+    await state.set_state(JobStates.waiting_name)
+    await message.answer(
+        "📝 <b>АНКЕТА СОТРУДНИКА</b>\n\n"
+        "Шаг 1/4\n\n"
+        "<b>Введите ваше имя или псевдоним:</b>\n\n"
+        "Отправьте сообщение с именем.",
+        parse_mode="HTML"
+    )
+
+
 @router.message(JobStates.waiting_name)
 async def process_name(message: Message, state: FSMContext):
     await state.update_data(name=message.text)
@@ -118,9 +133,6 @@ async def process_name(message: Message, state: FSMContext):
     await message.answer(
         "📝 Шаг 2/4\n\n"
         "<b>Введите ваш возраст:</b>",
-        reply_markup=InlineKeyboardBuilder().button(
-            text="❌ ОТМЕНА", callback_data="mode_jobs"
-        ).as_markup(),
         parse_mode="HTML"
     )
 
@@ -133,9 +145,6 @@ async def process_age(message: Message, state: FSMContext):
     await message.answer(
         "📝 Шаг 3/4\n\n"
         "<b>Опишите ваш опыт работы (кратко):</b>",
-        reply_markup=InlineKeyboardBuilder().button(
-            text="❌ ОТМЕНА", callback_data="mode_jobs"
-        ).as_markup(),
         parse_mode="HTML"
     )
 
@@ -148,9 +157,6 @@ async def process_experience(message: Message, state: FSMContext):
     await message.answer(
         "📝 Шаг 4/4\n\n"
         "<b>Расскажите о себе. Почему мы должны взять именно вас?</b>",
-        reply_markup=InlineKeyboardBuilder().button(
-            text="❌ ОТМЕНА", callback_data="mode_jobs"
-        ).as_markup(),
         parse_mode="HTML"
     )
 
@@ -207,7 +213,6 @@ async def process_about(message: Message, state: FSMContext):
         f"📅 Возраст: {data['age']}\n"
         f"📋 Вакансия: {job_title}\n\n"
         "🔍 <b>Ваша анкета на рассмотрении.</b>\n"
-        "Куратор свяжется с вами в ближайшее время.\n\n"
-        "Спасибо за интерес к WHITE MYSTIC LAB!",
+        "Куратор свяжется с вами в ближайшее время.",
         parse_mode="HTML"
     )
