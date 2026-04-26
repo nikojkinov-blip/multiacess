@@ -19,13 +19,9 @@ async def show_cash_menu(call: CallbackQuery):
     
     await call.message.edit_text(
         "💰 <b>CASH.DL — ОБНАЛ И СПЛИТЫ</b>\n\n"
-        "💳 Схемы обнала через самозанятых\n"
-        "₿ Крипто-сплиты без KYC\n"
-        "🏢 Оформление дропов\n"
-        "📊 Схемы возвратов\n\n"
-        "Выберите категорию:",
-        reply_markup=builder.as_markup(),
-        parse_mode="HTML"
+        "💳 Схемы обнала\n₿ Крипто-сплиты\n🏢 Оформление дропов\n📊 Схемы возвратов\n\n"
+        "📞 Поддержка: <b>@MultiAccessHelp</b>\n🕐 15:00 — 01:00",
+        reply_markup=builder.as_markup(), parse_mode="HTML"
     )
     await call.answer()
 
@@ -38,52 +34,33 @@ async def show_cash_items(call: CallbackQuery):
     builder = InlineKeyboardBuilder()
     for key, item in CASH_ITEMS.items():
         if item['category'] == category:
-            builder.button(
-                text=f"{item['name']} — {item['price']}₽",
-                callback_data=f"cashbuy_{key}"
-            )
+            builder.button(text=f"{item['name']} — {item['price']}₽", callback_data=f"cashbuy_{key}")
     builder.button(text="◀️ НАЗАД", callback_data="mode_cash")
     builder.adjust(1)
     
-    await call.message.edit_text(
-        f"💰 {cat_name}\n\n<b>Доступные схемы:</b>",
-        reply_markup=builder.as_markup(),
-        parse_mode="HTML"
-    )
+    await call.message.edit_text(f"💰 {cat_name}\n\n<b>Доступные схемы:</b>", reply_markup=builder.as_markup(), parse_mode="HTML")
     await call.answer()
 
 
 @router.callback_query(F.data.startswith("cashbuy_"))
 async def buy_cash_item(call: CallbackQuery):
-    # Правильно извлекаем ключ
     item_key = call.data.replace("cashbuy_", "")
     item = CASH_ITEMS.get(item_key)
     
-    if not item:
-        await call.answer(f"❌ Товар не найден: {item_key}", show_alert=True)
-        return
+    if not item: await call.answer("Товар не найден"); return
     
     order_id = db.insert('cash_orders', {
-        'user_id': call.from_user.id,
-        'item_key': item_key,
-        'amount': item['price'],
-        'status': 'pending',
+        'user_id': call.from_user.id, 'item_key': item_key,
+        'amount': item['price'], 'status': 'pending',
         'created_at': datetime.now().isoformat()
     })
     
     for admin_id in ADMIN_IDS:
         try:
-            await call.bot.send_message(
-                admin_id,
-                f"🔔 <b>Новый заказ CASH.DL!</b>\n"
-                f"👤 User: <code>{call.from_user.id}</code>\n"
-                f"🛒 {item['name']}\n"
-                f"💰 {item['price']}₽\n"
-                f"🆔 #{order_id}",
-                parse_mode="HTML"
-            )
-        except:
-            pass
+            await call.bot.send_message(admin_id,
+                f"🔔 <b>НОВЫЙ ЗАКАЗ CASH!</b>\n#{order_id}\n{item['name']}\n💰 {item['price']}₽\n👤 <code>{call.from_user.id}</code>",
+                parse_mode="HTML")
+        except: pass
     
     await call.message.edit_text(
         f"✅ <b>ЗАКАЗ #{order_id}</b>\n\n"
@@ -92,7 +69,10 @@ async def buy_cash_item(call: CallbackQuery):
         f"💳 <b>ОПЛАТА:</b>\n"
         f"<code>{CARD_NUMBER}</code>\n"
         f"🏦 {BANK_NAME}\n\n"
-        f"После оплаты материал будет отправлен.",
+        f"📞 <b>После оплаты обратитесь в поддержку:</b>\n"
+        f"👉 <b>@MultiAccessHelp</b>\n"
+        f"🕐 Время работы: <b>15:00 — 01:00</b>\n\n"
+        f"Отправьте скрин оплаты.",
         reply_markup=InlineKeyboardBuilder().button(
             text="📋 МОИ ПОКУПКИ", callback_data="cash_orders"
         ).as_markup(),
@@ -103,24 +83,18 @@ async def buy_cash_item(call: CallbackQuery):
 
 @router.callback_query(F.data == "cash_orders")
 async def show_cash_orders(call: CallbackQuery):
-    orders = db.fetchall(
-        "SELECT * FROM cash_orders WHERE user_id = ? ORDER BY created_at DESC",
-        (call.from_user.id,)
-    )
-    
+    orders = db.fetchall("SELECT * FROM cash_orders WHERE user_id=? ORDER BY created_at DESC", (call.from_user.id,))
     if not orders:
-        text = "💰 У вас пока нет покупок."
+        text = "💰 Нет покупок.\n\n📞 @MultiAccessHelp"
     else:
         text = "💰 <b>ВАШИ ПОКУПКИ:</b>\n\n"
         for o in orders:
             item = CASH_ITEMS.get(o['item_key'], {})
-            emoji = "✅" if o['status'] == 'completed' else "⏳"
+            emoji = "✅" if o['status']=='completed' else "⏳"
             text += f"{emoji} #{o['order_id']}: {item.get('name', o['item_key'])} — {o['amount']}₽\n"
-    
+        text += "\n📞 @MultiAccessHelp | 🕐 15:00-01:00"
     builder = InlineKeyboardBuilder()
     builder.button(text="💰 КАТАЛОГ", callback_data="mode_cash")
     builder.button(text="◀️ НАЗАД", callback_data="main_menu")
-    builder.adjust(1)
-    
     await call.message.edit_text(text, reply_markup=builder.as_markup(), parse_mode="HTML")
     await call.answer()
