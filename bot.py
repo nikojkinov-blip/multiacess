@@ -19,7 +19,6 @@ import uvicorn
 
 from config import BOT_TOKEN, ADMIN_IDS, ACHIEVEMENTS, LEVELS
 from database.models import init_database, UserModel, SimModel
-from middlewares.throttling import ThrottlingMiddleware
 from middlewares.ban_middleware import BanCheckMiddleware
 from middlewares.logging_mw import LoggingMiddleware
 from handlers.common import router as common_router
@@ -93,24 +92,13 @@ async def api_new_key(user_id: int = Query(...)):
 
 def run_web(): uvicorn.run(app, host="0.0.0.0", port=10000, log_level="error")
 
-# ==================== ФОН ====================
-async def background(bot: Bot):
-    while True:
-        try:
-            for b in AutoBroadcast.get_pending():
-                await AutoBroadcast.send_broadcast(bot, b)
-        except Exception as e: logger.error(f"BG: {e}")
-        await asyncio.sleep(3600)
-
 # ==================== MAIN ====================
 async def main():
     init_database()
     bot = Bot(token=BOT_TOKEN, session=AiohttpSession(), default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     dp = Dispatcher(storage=MemoryStorage())
-    dp.message.middleware(ThrottlingMiddleware(5))
     dp.message.middleware(BanCheckMiddleware())
     dp.message.middleware(LoggingMiddleware())
-    dp.callback_query.middleware(ThrottlingMiddleware(10))
     dp.callback_query.middleware(BanCheckMiddleware())
     dp.include_router(admin_router)
     dp.include_router(common_router)
@@ -121,7 +109,6 @@ async def main():
     dp.include_router(cash_router)
     dp.include_router(fragment_router)
     logger.info("🚀 MultiAcces запущен!")
-    asyncio.create_task(background(bot))
     for aid in ADMIN_IDS:
         try: await bot.send_message(aid, "🟢 Бот запущен!")
         except: pass
