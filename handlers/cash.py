@@ -32,7 +32,7 @@ async def show_cash_menu(call: CallbackQuery):
 
 @router.callback_query(F.data.startswith("cashcat_"))
 async def show_cash_items(call: CallbackQuery):
-    category = call.data.split("_")[1]
+    category = call.data.replace("cashcat_", "")
     cat_name = CASH_CATEGORIES.get(category, category)
     
     builder = InlineKeyboardBuilder()
@@ -55,11 +55,12 @@ async def show_cash_items(call: CallbackQuery):
 
 @router.callback_query(F.data.startswith("cashbuy_"))
 async def buy_cash_item(call: CallbackQuery):
-    item_key = call.data.split("_")[1]
+    # Правильно извлекаем ключ
+    item_key = call.data.replace("cashbuy_", "")
     item = CASH_ITEMS.get(item_key)
     
     if not item:
-        await call.answer("Товар не найден")
+        await call.answer(f"❌ Товар не найден: {item_key}", show_alert=True)
         return
     
     order_id = db.insert('cash_orders', {
@@ -75,7 +76,7 @@ async def buy_cash_item(call: CallbackQuery):
             await call.bot.send_message(
                 admin_id,
                 f"🔔 <b>Новый заказ CASH.DL!</b>\n"
-                f"👤 User: {call.from_user.id}\n"
+                f"👤 User: <code>{call.from_user.id}</code>\n"
                 f"🛒 {item['name']}\n"
                 f"💰 {item['price']}₽\n"
                 f"🆔 #{order_id}",
@@ -113,8 +114,8 @@ async def show_cash_orders(call: CallbackQuery):
         text = "💰 <b>ВАШИ ПОКУПКИ:</b>\n\n"
         for o in orders:
             item = CASH_ITEMS.get(o['item_key'], {})
-            status = "✅" if o['status'] == 'completed' else "⏳"
-            text += f"{status} #{o['order_id']}: {item.get('name','?')} — {o['amount']}₽\n"
+            emoji = "✅" if o['status'] == 'completed' else "⏳"
+            text += f"{emoji} #{o['order_id']}: {item.get('name', o['item_key'])} — {o['amount']}₽\n"
     
     builder = InlineKeyboardBuilder()
     builder.button(text="💰 КАТАЛОГ", callback_data="mode_cash")
